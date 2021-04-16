@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+:root {
+  --high-color: #ff735c;
+  --font-color: #454745;
+}
+
+.hide {
+  display: none !important;
+}
+
+*:focus {
+  outline: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--font-color);
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+button {
+  border: none;
+  background-color: var(--high-color);
+  color: white;
+}
+
+.modal {
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em auto;
+  padding: 1em 2em;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 2em;
+  max-width: 500px;
+}
+
+.quit-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-weight: bold;
+  font-size: 3rem;
+  color: var(--high-color);
+}
+
+.quit-modal-btn:hover {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.container {
+  max-width: 850px;
+  max-height: 850px;
+  margin: 2em auto 0em;
+}
+
+/* HEADER STYLE */
+
+header {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.new-event-btn {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 1.4rem;
+  border-radius: 50%;
+}
+
+.new-event-btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.left-arrow {
+  z-index: -1;
+}
+
+/* MAIN STYLE */
+
+main {
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--high-color);
+  padding: 10px;
+  margin: 2em 0em;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  font-size: 1.5rem;
+  background-color: var(--high-color);
+  color: white;
+}
+
+.calendar-header button {
+  padding: 0;
+  font-size: 2rem;
+  color: white;
+}
+
+.day-names {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 3px;
+  text-align: center;
+  background-color: white;
+}
+
+.calendar {
+  display: grid;
+  position: relative;
+  max-width: 850px;
+  min-height: 600px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: auto;
+  background-color: white;
+}
+
+.grid-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-height: 150px;
+  max-width: 120px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.event-container {
+  border-radius: 20px;
+  border: 1px solid var(--high-color);
+  margin-bottom: 0.7rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.event-container:hover {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: var(--high-color);
+}
+
+.event-container p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 7ch;
+  margin: 0;
+}
+
+.grid-cell:hover {
+  background-color: rgba(255, 99, 71, 0.308);
+}
+
+.grid-cell:hover .plus-btn {
+  display: initial;
+}
+
+.current-date-cell {
+  background-color: rgba(255, 99, 71, 0.308);
+}
+
+.plus-btn {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  display: none;
+}
+
+.event-info h1 {
+  padding-bottom: 1rem;
+}
+
+.event-info h4 {
+  margin: 1rem 0rem;
+}
+
+.event-info span {
+  color: gray;
+}
+
+.event-info button {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  margin-top: 2rem;
+  display: block;
+}
+
+.done-event {
+  background-color: var(--high-color);
+  color: white;
+}
+
+.events-done li {
+  padding-bottom: 2rem;
+}
+
+/* FORM STYLE */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  padding-top: 1.5em;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+input[type="text"],
+textarea {
+  margin-top: 1.3rem;
+}
+
+form h1 {
+  margin: 0;
+}
+
+form button {
+  margin: 1.3em 0.5rem 0;
+  font-size: 1.5rem;
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  box-shadow: 5px 10px 5px rgba(252, 175, 166, 0.849);
+  position: relative;
+  transition: box-shadow 100ms ease;
+}
+
+form button:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+.form-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+input,
+select,
+textarea {
+  border-radius: 20px;
+  background-color: white;
+  border: 1.3px solid #44bbff;
+  padding: 0.7rem 1.5rem 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(69, 71, 69, 0.8);
+  transition: transform 200ms ease-in-out;
+}
+
+select,
+input[type="datetime-local"] {
+  margin-left: 1rem;
+}
+
+input:focus {
+  transform: scale(1.06);
+}
+
+input[type="checkbox"] {
+  transform: scale(2) translateY(-10%);
+  margin-right: 1.2rem;
+}
+
+.invalid-input {
+  border-color: var(--high-color);
+}
+
+.error-message {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--high-color);
+  border-radius: 15px;
+  padding: 0em 1em;
+  margin-top: 0.5rem;
+}
+
+/* SCROLLBAR STYLES */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--high-color) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--high-color);
+  border-radius: 20px;
+}
+
+@media (max-width: 860px) {
+  header {
+    text-align: start;
+    font-size: 1.6rem;
+    padding: 0rem 2rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .calendar {
+    min-height: 500px;
+  }
+  .event-container {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 650px) {
+  label {
+    font-size: 0.9rem;
+  }
+  form h1 {
+    font-size: 3rem;
+  }
+  input,
+  select {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 604px) {
+  .event-container {
+    font-size: 0.7rem;
+    border-radius: 50%;
+  }
+  .event-container p {
+    max-width: 1ch;
+  }
+  .grid-cell {
+    max-height: 100px;
+  }
+  .plus-btn {
+    font-size: 0.7rem;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .day-names h3 {
+    font-size: 0.8rem;
+  }
+  form h1 {
+    font-size: 2rem;
+  }
+}

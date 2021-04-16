@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <template id="grid-cell-template">
+      <div class="grid-cell">
+        <h3></h3>
+        <ul class="events-list"></ul>
+        <button class="plus-btn"><i class="fas fa-plus"></i></button>
+      </div>
+    </template>
+
+    <template id="event-info-template">
+      <div class="event-info">
+        <h1 class="event-status"></h1>
+        <h2 class="event-title"></h2>
+        <span class="event-description"></span>
+        <h4>Initial Date</h4>
+        <span class="event-initial-date"></span>
+        <h4>End Date</h4>
+        <span class="event-end-date"></span>
+        <h4>Type</h4>
+        <span class="event-type"></span>
+      </div>
+    </template>
+
+    <div class="modal hide">
+      <div class="modal-content hide">
+        <span class="quit-modal-btn">&times;</span>
+        <form id="event-form" class="">
+          <h1>Create Event</h1>
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" maxlength="60" />
+          <label for="initial"
+            >Initial date
+            <input type="date" name="initial" id="initial-date" />
+            <input type="time" name="initial" id="initial-time" />
+          </label>
+          <label for="end-date-check">
+            <input type="checkbox" name="end-date-check" id="end-date-check" />
+            End date
+          </label>
+          <label for="end" class="hide"
+            >End date
+            <input type="date" name="end" id="end-date" />
+            <input type="time" name="end" id="end-time" />
+          </label>
+          <label for="reminder-check">
+            <input type="checkbox" name="reminder-check" id="reminder-check" />
+            Remind me when this event expires
+          </label>
+          <label for="reminder-select" class="hide"
+            >Remind Interval
+            <select name="reminder-select" id="reminder-select">
+              <option value="5">5 minutes</option>
+              <option value="10">10 minutes</option>
+              <option value="15">15 minutes</option>
+              <option value="30">30 minutes</option>
+              <option value="60">1 hour</option>
+            </select>
+          </label>
+          <label for="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="10"
+            maxlength="500"
+          ></textarea>
+          <label for="type"
+            >Type
+            <select name="type" id="type">
+              <option value="meeting">Meeting</option>
+              <option value="personal">Personal</option>
+              <option value="study">Study</option>
+            </select>
+          </label>
+
+          <div class="form-btns">
+            <button id="cancel-btn">Cancel</button>
+            <button type="submit">Create</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-content hide">
+        <span class="quit-modal-btn">&times;</span>
+        <div class="event-info">
+          <h1 id="event-title">New Event</h1>
+          <span id="event-description"></span>
+          <h4>Initial Date</h4>
+          <span id="event-initial-date"></span>
+          <h4>End Date</h4>
+          <span id="event-end-date"></span>
+          <h4>Type</h4>
+          <span id="event-type"></span>
+          <button id="remove-event-btn">Remove</button>
+        </div>
+      </div>
+
+      <div class="modal-content hide">
+        <span class="quit-modal-btn">&times;</span>
+        <ul class="events-done"></ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <header>
+        <h1>Calendar</h1>
+        <button id="new-event-btn" class="new-event-btn">
+          <i class="far fa-calendar-plus"></i>
+        </button>
+      </header>
+
+      <main>
+        <div class="calendar-header">
+          <button id="left-arrow" class="left-arrow">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <h2 id="month-title"></h2>
+          <button id="right-arrow"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="day-names">
+          <h3>SUN</h3>
+          <h3>MON</h3>
+          <h3>TUE</h3>
+          <h3>WED</h3>
+          <h3>THU</h3>
+          <h3>FRI</h3>
+          <h3>SAT</h3>
+        </div>
+        <div class="calendar"></div>
+      </main>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
