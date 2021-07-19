@@ -16,7 +16,7 @@
 }
 
 .calendar__cell--day {
-  height: 10vh;
+  height: 12vh;
 }
 
 .cell__weekday-name {
@@ -26,6 +26,7 @@
 
 .cell__day-number {
   text-align: center;
+  font-size: 1rem;
 }
 
 .cell__day-number--today {
