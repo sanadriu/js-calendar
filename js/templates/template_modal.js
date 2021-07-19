@@ -1,5 +1,5 @@
 const template = `
-	<div id="user-modal">
+	<div id="modal">
 
 	<div>
 `;
