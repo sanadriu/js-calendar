@@ -4,3 +4,7 @@
 @import url("calendar.css");
 @import url("modal.css");
 @import url("forms.css");
+
+body {
+	font-family: sans-serif;
+}
