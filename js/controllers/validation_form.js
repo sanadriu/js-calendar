@@ -9,6 +9,8 @@ let description = document.querySelector("#desc");
 let typeEvent = document.querySelector("#type");
 
 /* Events */
+
+/*
 document
   .querySelector("#form_event")
   .addEventListener("submit", validationEventForm);
@@ -32,6 +34,8 @@ function validationEventForm(e) {
   }
 }
 
+*/
+/* 
 function startDate() {
   let date = new Date();
   let month = date.getMonth() + 1;
@@ -60,8 +64,8 @@ function finishDate() {
   if (minutes < 10) month = "0" + minutes;
   endDate.value = `${year}-${month}-${day}T00:${minutes}`;
 }
-finishDate();
-function validateCheckEndDate() {
+finishDate(); */
+/* function validateCheckEndDate() {
   if (endDateCheck.checked) {
     document.querySelector('[for="end-date"]').style.display = "block";
     endDate.style.display = "block";     
@@ -73,3 +77,4 @@ function validateCheckEndDate() {
 
 document.querySelector('[for="end-date"]').style.display = "none";
 endDate.style.display = "none";
+ */
