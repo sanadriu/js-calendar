@@ -11,6 +11,8 @@ function daysInMonth(month, year) {
 
 function fillingDays() {
   let today = fechaHoy.getDate(); //Gives back the number of the day of today
+  let monthNow = fechaHoy.getMonth();
+  let yearNow = fechaHoy.getFullYear();
   if (numberOfDay === 0) {
     //We reassign the value of .getDay() of sundays to 7
     numberOfDay = 7;
