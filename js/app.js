@@ -8,4 +8,4 @@ let year = 2021;
 insertCalendarCells(year, month);
 setOffsetCalendarCells(year, month);
 
-displayModal();
+//displayModal();
