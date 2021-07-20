@@ -45,3 +45,14 @@
   border: none;
   display: inline-block;
 }
+
+/*-----------------------------------HEADER------------------------------------------*/
+
+.header__date {
+  font-size: 25px;
+  padding: 5px 15px;
+  background-color: lightgray;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+}

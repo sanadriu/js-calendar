@@ -1,5 +1,5 @@
 let calendar = document.querySelectorAll(".calendar__cell");
-let fecha = new Date(2021, 3, 1);
+let fecha = new Date(2021, 6, 1);
 let fechaHoy = new Date();
 let numberOfDay = fecha.getDay();
 let dayMonth = daysInMonth(fecha.getMonth(), fecha.getFullYear());
@@ -21,7 +21,7 @@ function fillingDays() {
     //We iterate over the calendar array and fill the div with the numbers
     calendar[numberOfDay - 1].insertAdjacentHTML(
       "afterbegin",
-      `<span>${i + 1}</span>`
+      `<span class="day__number">${i + 1}</span>`
     );
     numberOfDay++;
     if (numberOfDay > calendar.length) {
@@ -49,3 +49,46 @@ function clearEmptyDays() {
 }
 
 //Necesitamos una función de ranking que se base en la hora de cada evento (id="span-hour")
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+function showDate() {
+  let nameMonth = monthNames[fecha.getMonth()]; //Gets the month from the date we have and searches the same position in the array
+  document.getElementById("month").textContent = nameMonth;
+  document.getElementById("year").textContent = fecha.getFullYear(); //This is for the year
+}
+showDate();
+
+//Function to mark the day of today in blue
+
+function markToday() {
+  let numbers = document.getElementsByClassName("day__number"); //select the numbers of the spans made in the fillingDays function
+  let today = new Date();
+  for (let i in numbers) {
+    //Iterate over the numbers
+    if (
+      today.getMonth() === fecha.getMonth() && //check that the month, year and day of today matches with all those of the given date
+      today.getFullYear() === fecha.getFullYear() &&
+      numbers[i].innerHTML == today.getDate()
+    ) {
+      numbers[i].style.backgroundColor = "blue";
+      numbers[i].style.color = "white";
+      numbers[i].style.borderRadius = "50%";
+      numbers[i].style.padding = "2px";
+    }
+  }
+}
+markToday();
