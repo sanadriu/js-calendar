@@ -1,5 +1,69 @@
 .modal__background {
+	position: absolute;
+	top: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	backdrop-filter: blur(4px);
+	height: 100vh;
+	width: 100vw;
 }
 
 .modal__form {
+	background-color: white;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 8px rgb(0 0 0 / 20%);
+	padding: 2rem;
+	width: 30rem;
+}
+
+.modal__grid {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-auto-rows: auto;
+	gap: 0.5rem;
+}
+
+.modal__double-cell {
+	grid-column: span 2;
+}
+
+.modal__flex-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding-top: 2rem;
+	gap: 1rem;
+}
+
+.modal__header {
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+.modal__input,
+.modal__select {
+	padding: 0.3rem;
+}
+
+.modal__textarea {
+	padding: 0.3rem;
+	resize: none;
+	height: 6rem;
+}
+
+.modal__button {
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 0.25rem;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+.modal__button:active {
+	background-color: grey;
+	color: white;
 }

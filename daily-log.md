@@ -13,3 +13,9 @@ In this document will be registered the activities developed by the team every d
 
 - We have been thinking the file structure of the files and we still discussing which logical approach take.
 - We have decided to start for the visual content (CSS HTML).
+
+### 13:30 - 17:30
+
+- Andres has been doing the Modal Design Part.
+- The other 3 members have been defining the calendar logic, adaptable for multiple months. Tomorrow will be discussed the parts that will be preserved for the development.
+
