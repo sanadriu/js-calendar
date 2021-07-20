@@ -1,5 +1,5 @@
 let calendar = document.querySelectorAll(".calendar__cell");
-let fecha = new Date(2021, 6, 1);
+let fecha = new Date(2021, 11, 1);
 let fechaHoy = new Date();
 let numberOfDay = fecha.getDay();
 let dayMonth = daysInMonth(fecha.getMonth(), fecha.getFullYear());
@@ -10,9 +10,6 @@ function daysInMonth(month, year) {
 }
 
 function fillingDays() {
-  let today = fechaHoy.getDate(); //Gives back the number of the day of today
-  let monthNow = fechaHoy.getMonth();
-  let yearNow = fechaHoy.getFullYear();
   if (numberOfDay === 0) {
     //We reassign the value of .getDay() of sundays to 7
     numberOfDay = 7;
@@ -72,7 +69,7 @@ function showDate() {
 }
 showDate();
 
-//Function to mark the day of today in blue
+// Function to mark the day of today in blue
 
 function markToday() {
   let numbers = document.getElementsByClassName("day__number"); //select the numbers of the spans made in the fillingDays function
@@ -92,3 +89,5 @@ function markToday() {
   }
 }
 markToday();
+
+//TODO Function to compare events and order them depending on time - We need the object first!

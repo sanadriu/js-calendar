@@ -19,15 +19,16 @@
 
 /*-----------------------------------SAMPLE 1-----------------------------------------*/
 
-#sample1 {
-  height: 18px;
-  font-size: 14px;
+.cell__event {
+  height: 1rem;
+  font-size: 0.9rem;
   background-color: lightblue;
   border: none;
   border-left: 4px solid blue;
   text-align: left;
-  padding: 5px;
+  padding: 0.1rem;
   overflow: hidden;
+  margin-top: 0.1rem;
 }
 
 /*-----------------------------------SAMPLE 2------------------------------------------*/
