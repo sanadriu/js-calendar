@@ -11,6 +11,7 @@ export default function insertCalendarCells(yearNum, monthNum) {
 
 		calendarCell.querySelector(".cell__day-number").textContent = i + 1;
 		calendarCell.querySelector(".calendar__cell").dataset.day = i + 1;
+		calendarCell.querySelector(".calendar__cell").dataset.action = "display-modal";
 
 		calendarGrid.appendChild(calendarCell);
 	}

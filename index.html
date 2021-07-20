@@ -8,7 +8,18 @@
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<header></header>
+		<header class="header">
+			<h1 class="header__title">JS Calendar</h1>
+			<button data-action="display-modal" class="header__btn">
+				<span data-action="display-modal" class="material-icons">event</span>
+				<span data-action="display-modal">Add Event</span>
+			</button>
+		</header>
+		<aside id="calendar-ctrls" class="calendar__ctrls">
+			<span class="material-icons calendar__btn" data-action="change-month-plus">chevron_left</span>
+			<h2 class="calendar__month" id="calendar_month"></h2>
+			<span class="material-icons calendar__btn">chevron_right</span>
+		</aside>
 		<section id="calendar-grid" class="calendar__grid">
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Monday</span></div>
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Tuesday</span></div>
@@ -18,8 +29,6 @@
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Saturday</span></div>
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Sunday</span></div>
 		</section>
-
-		<button data-action="display-modal">Add Event</button>
 
 		<template id="template-calendar-cell">
 			<div class="calendar__cell calendar__cell--day">
