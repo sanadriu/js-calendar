@@ -1,0 +1,58 @@
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 50px;
+}
+
+.calendar__cell {
+  height: 150px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.calendar__day {
+  height: 25px;
+  text-align: center;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+/*-----------------------------------SAMPLE 1-----------------------------------------*/
+
+#sample1 {
+  height: 18px;
+  font-size: 14px;
+  background-color: lightblue;
+  border: none;
+  border-left: 4px solid blue;
+  text-align: left;
+  padding: 5px;
+  overflow: hidden;
+}
+
+/*-----------------------------------SAMPLE 2------------------------------------------*/
+
+#sample2 {
+  text-align: left;
+  padding: 5px;
+}
+
+.circulito {
+  background-color: darkgreen;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: none;
+  display: inline-block;
+}
+
+/*-----------------------------------HEADER------------------------------------------*/
+
+.header__date {
+  font-size: 25px;
+  padding: 5px 15px;
+  background-color: lightgray;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+}

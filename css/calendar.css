@@ -1,49 +1,52 @@
 .calendar__grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: auto;
-  padding: 2rem;
-  gap: 0.25rem;
-  background-color: #f2f2f2;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-auto-rows: auto;
+	padding: 2rem;
+	gap: 0.25rem;
+	background-color: #f2f2f2;
 }
 
 .calendar__cell {
-  background-color: white;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+	background-color: white;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .calendar__cell--weekday-name {
-  height: 2rem;
-  line-height: 2rem;
+	height: 2rem;
+	line-height: 2rem;
 }
 
 .calendar__cell--day {
-  height: 12vh;
+	height: 12vh;
 }
 
 .cell__weekday-name {
-  display: block;
-  text-align: center;
+	display: block;
+	text-align: center;
 }
 
 .cell__day-number {
-  text-align: center;
-  font-size: 1rem;
+	text-align: center;
+	font-size: 1rem;
+	margin: 0;
+	padding: 0.5rem;
 }
 
 .cell__day-number--today {
-  background-color: black;
-  color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border-radius: 0.25rem;
 }
 
 .cell__event {
-  margin: 0.25rem;
+	margin: 0.25rem;
 }
 
 .cell__hour {
-  font-weight: 500;
+	font-weight: 500;
 }
 
 .cell__event-name {
-  font-weight: bold;
+	font-weight: bold;
 }
