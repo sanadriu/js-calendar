@@ -1,4 +1,4 @@
-.modal__background {
+.modal {
 	position: absolute;
 	top: 0;
 
@@ -68,3 +68,9 @@
 	color: white;
 }
 
+.modal__warning {
+	padding: 0.5rem;
+	background-color: red;
+	color: white;
+	grid-column: 2;
+}

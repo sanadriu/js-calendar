@@ -18,10 +18,11 @@ endDateCheck.addEventListener("change", validateCheckEndDate);
 function validationEventForm(e) {
   e.preventDefault();
   let pattern = /^[A-Za-z]+[0-9]*[)(.-]*$/;
-
+   let errorTitle = document.querySelector('[data-warning="title"]');
+   console.log(errorTitle);
   if (pattern.test(title.value) && title.value.length < 60)
-    console.log("title" + true);
-  else console.log("title" + false);
+    errorTitle.classList.remove('is-hidden');
+  else errorTitle.classList.add('is-hidden');
 
   if (description.value.length >= 1 && description.value.length <= 500) {
     if (pattern.test(description.value)) console.log("desc" + true);
