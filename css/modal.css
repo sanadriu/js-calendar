@@ -27,6 +27,12 @@
 
 .modal__double-cell {
 	grid-column: span 2;
+	height: 2rem;
+	line-height: 2rem;
+}
+
+.modal__align-center {
+	place-self: center stretch;
 }
 
 .modal__flex-buttons {
