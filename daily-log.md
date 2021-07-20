@@ -27,3 +27,11 @@ In this document will be registered the activities developed by the team every d
 - Andres and Adrian have finished the design for the modal.
 - Alberto has started to create the validator for the form.
 - Gonzalo has achieved a way to indicate the current day in the calendar.
+
+### 12:15 - 17:30
+
+- Andres has created the close button for the event form modal
+- Gonzalo's code to indicate the "today" day has been merged and refactorized with the main branch.
+- Alberto's header has been added to the main branch.
+- Adrián has added buttons to switch the month. Ther are not operative yet, but they are already designed.
+- Alberto is still doing the validation for the event input. He has configured the form in a way that some inputs are hidden when the corresponding checkbox is checked.
