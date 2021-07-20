@@ -13,8 +13,9 @@ closeModalEvent();
 
 const date = new Date();
 
-let month = date.getMonth + 1;
 let year = date.getFullYear();
+let month = date.getMonth() + 1;
+console.log(year, month);
 
 insertCalendarCells(year, month);
 setOffsetCalendarCells(year, month);
