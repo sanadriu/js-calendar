@@ -19,3 +19,11 @@ In this document will be registered the activities developed by the team every d
 - Andres has been doing the Modal Design Part.
 - The other 3 members have been defining the calendar logic, adaptable for multiple months. Tomorrow will be discussed the parts that will be preserved for the development.
 
+
+## Tuesday, 20th of July 2021
+
+### 9:15 - 11:30
+
+- Andres and Adrian have finished the design for the modal.
+- Alberto has started to create the validator for the form.
+- Gonzalo has achieved a way to indicate the current day in the calendar.
