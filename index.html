@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Calendar</title>
-		<link rel="stylesheet" href="css/style.css" />
-	</head>
-	<body>
-		<header></header>
-		<section id="calendar-grid" class="calendar__grid">
-			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Monday</span></div>
-			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Tuesday</span></div>
-			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Wednesday</span></div>
-			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Thursday</span></div>
-			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Friday</span></div>
-			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Saturday</span></div>
-			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Sunday</span></div>
-		</section>
 
-		<button data-action="display-modal">Add Event</button>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
 
-		<template id="template-calendar-cell">
+<body>
+    <header></header>
+    <section id="calendar-grid" class="calendar__grid">
+        <div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Monday</span></div>
+        <div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Tuesday</span></div>
+        <div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Wednesday</span></div>
+        <div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Thursday</span></div>
+        <div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Friday</span></div>
+        <div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Saturday</span></div>
+        <div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Sunday</span></div>
+    </section>
+
+    <button data-action="display-modal">Add Event</button>
+
+    <template id="template-calendar-cell">
 			<div class="calendar__cell calendar__cell--day">
 				<h2 class="cell__day-number"></h2>
 			</div>
 		</template>
 
-		<template id="template-calendar-event">
+    <template id="template-calendar-event">
 			<div class="cell__event">
 				<span class="cell__hour"></span>
 				<span class="cell__event-name"></span>
 			</div>
 		</template>
 
-		<template id="template-modal">
+    <template id="template-modal">
 			<section id="modal" class="modal" data-action="close-modal">
+                
 				<form class="modal__form">
-					<div class="modal__grid">
-						<h2 class="modal__header modal__double-cell">NEW EVENT</h2>
+                    <img class="modal__icon" data-action="close-modal"src="./css/icons/close_modal.png" alt="exit">
+                    <div class="modal__grid">
+                        <h2 class="modal__header modal__double-cell">NEW EVENT</h2>
 						<label for="title">Title</label>
 						<input type="text" name="title" class="modal__input" />
 						<label for="initial-date">Initial date</label>
@@ -80,6 +84,7 @@
 			</section>
 		</template>
 
-		<script src="js/app.js" type="module"></script>
-	</body>
+    <script src="js/app.js" type="module"></script>
+</body>
+
 </html>
