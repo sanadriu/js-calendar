@@ -1,6 +1,6 @@
 import { createModal } from "../templates/templates.js";
 /* VALIDATION FORM */
-let pattern = /^[A-Za-z]+[0-9]*[)(.-]*$/;
+/* let pattern = /^[A-Za-z]+[0-9]*[)(.-]*$/;
 
 function validationEventForm(e) {
   e.preventDefault();
@@ -75,7 +75,7 @@ function validateCheckEndDate() {
     document.querySelector('[for="end-date"]').style.display = "none";
     endDate.style.display = "none";
   }
-}
+} */
 
 /* FIN VALIDATION FORM*/
 
@@ -97,7 +97,7 @@ function startDate() {
 function finishDate() {
   let endDate = document.querySelector("#end-date");
   let date = new Date();
-  let month = date.getMonth();
+  let month = date.getMonth() + 1;
   let day = date.getDate() + 1;
   let year = date.getFullYear();
   let hours = date.getHours();
@@ -123,6 +123,7 @@ export default function displayModal() {
     .querySelector("#form_event")
     .addEventListener("submit", validationEventForm);
   endDateCheck.addEventListener("change", validateCheckEndDate);
+  document.querySelector('#time-chk').addEventListener("change",validateCheckRemind);
 
   /* INICIALIZATE DATES */
   startDate();

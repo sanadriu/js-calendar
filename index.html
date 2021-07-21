@@ -88,20 +88,20 @@
 						<div data-warning="title" class="modal__warning is-hidden">Error: Is required and less than 60 characters</div>
 						<label for="initial-date">Initial date</label>
 						<input type="datetime-local" class="modal__input" id="initial-date" name="initial_date" />
-						<div data-warning="initial-date" class="modal__warning is-hidden">Error: The year has to be in 2021 and 2022</div>
+						<div data-warning="initial-date" class="modal__warning is-hidden">Error: The year has to be 2021 or 2022 <br> The second date has to be after the first date</div>
 						<div class="modal__double-cell">
 							<input type="checkbox" class="modal__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
 						<label for="end-date">End Date</label>
-						<input type="datetime-local" class="modal__input" id="end-date" name="end_date" />
+						<input type="datetime-local" class="modal__input" id="end-date" name="end_date" disabled/>
 						<div data-warning="end-date" class="modal__warning is-hidden">Error: The year has to be in 2021 and 2022</div>
 						<div class="modal__double-cell">
 							<input type="checkbox" class="modal__input-chk" id="time-chk" name="time_chk" />
 							<label for="time-chk">Remind me when this event expires.</label>
 						</div>
-						<label for="remind">Time</label>
-						<select id="remind" name="remind" class="modal__select">
+						<label for="remind" class="is-hidden">Time</label>
+						<select id="remind" name="remind" class="modal__select is-hidden" disabled>
 							<option value="5">5 min</option>
 							<option value="10">10 min</option>
 							<option value="15">15 min</option>
