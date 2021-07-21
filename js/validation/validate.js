@@ -26,22 +26,6 @@ const event = {
 	type: e.target.type.value,
 };
 
-function setDefaultInitialDate() {
-	const initialDateInput = document.querySelector("#initial-date");
-
-	const date = new Date();
-	initialDate.value = date.toISOString();
-}
-
-function setDefaultEndDate() {
-	const endDateInput = document.querySelector("#initial-date");
-
-	const date = new Date();
-	date.setDate(date.getDate() + 1);
-
-	initialDate.value = date.toISOString();
-}
-
 /********************************************************/
 
 function prepareForm() {
