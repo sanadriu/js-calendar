@@ -6,4 +6,10 @@ export default function closeModalEvent() {
 
 		if (e.target.matches("[data-action='close-modal']") && document.querySelector("#modal") !== null) closeModal();
 	});
+
+	document.addEventListener("submit", (e) => {
+		e.stopPropagation();
+
+		if (e.target.matches("[data-action='close-modal']") && document.querySelector("#modal") !== null) closeModal();
+	});
 }

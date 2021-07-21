@@ -1,4 +1,3 @@
-import mod from "../helpers/mod.js";
 import updateCalendar from "../views/updateCalendar.js";
 
 export default function updateCalendarEvent() {
