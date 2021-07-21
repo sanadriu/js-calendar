@@ -1,3 +1,4 @@
+const arrayEvents = [];
 const event = {
   title: "",
   initialDate: "",
@@ -8,3 +9,5 @@ const event = {
   description: "",
   type: "",
 };
+
+export { arrayEvents, event };

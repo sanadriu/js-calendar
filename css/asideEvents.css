@@ -19,3 +19,8 @@
   margin-left: 0.5rem;
   border-radius: 0.25rem;
 }
+
+.aside__hint {
+  color: grey;
+  padding: 0.75rem;
+}
