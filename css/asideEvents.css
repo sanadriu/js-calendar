@@ -5,22 +5,28 @@
 .container__dataEvent {
   flex-basis: 15%;
   background-color: white;
-  margin: auto;
+  margin: 0.5rem;
   display: none;
-  text-align: center;
+  align-items: center;
+  position: relative;
 }
 
 .dataEvent__date {
   background-color: blue;
   color: white;
   padding: 0.7rem;
-  position: relative;
-  bottom: 17rem;
-  margin-left: 0.5rem;
   border-radius: 0.25rem;
+  position: absolute;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .aside__hint {
   color: grey;
-  padding: 0.75rem;
+  position: absolute;
+  top: 5rem;
+  align-self: center;
 }

@@ -27,9 +27,14 @@ export function asideEvents(day) {
     );
   date.textContent = `${thisMonth} ${day}, ${thisYear}`;
   //Gives a hint to create new events
-  let hint = document.createElement("span");
-  hint.textContent =
-    "There are no events for this day. You can create a new one";
-  hint.className = "aside__hint";
-  aside.appendChild(hint);
+  console.log(aside.children);
+  console.log(aside.children.length);
+
+  if (aside.children.length < 2) {
+    let hint = document.createElement("span");
+    hint.textContent =
+      "📭 There are no events for this day. You can create a new one";
+    hint.className = "aside__hint";
+    aside.insertAdjacentElement("beforeend", hint);
+  }
 }
