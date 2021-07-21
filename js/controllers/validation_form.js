@@ -1,7 +1,9 @@
+import { saveEvent } from '../events/saveEvent.js';
+
 /* VALIDATION FORM */
 let pattern = /^[A-Za-z]+[0-9]*[)(.-]*$/;
 
-function validationEventForm(e) {
+export function validationEventForm(e) {
   e.preventDefault();
   let correctEndDate;
   let initialDate = document.querySelector("#initial-date");
@@ -17,12 +19,8 @@ function validationEventForm(e) {
   } else {
     correctEndDate = true;
   }
-  if (
-    correctTitle &&
-    correctDescription &&
-    correctInitialDate &&
-    correctEndDate
-  ) {
+  if (correctTitle && correctDescription && correctInitialDate && correctEndDate) {
+    
     let title = document.querySelector('[name="title"]').value;
     let initialDate = document.querySelector('[name="initial_date"]').value;
     let checkEndDate = document.querySelector('[name="end_date_chk"]').checked;
@@ -30,20 +28,12 @@ function validationEventForm(e) {
     let remind = document.querySelector('[name="remind"]').value;
     let description = document.querySelector('[name="desc"]').value;
     let type = document.querySelector('[name="type"]').value;
-    console.log(
-      title,
-      initialDate,
-      checkEndDate,
-      (checkEndDate) ? endDate.value : null,
-      checkRemind,
-      (checkRemind) ? remind :  null,
-      description,
-      type
-    );
+    saveEvent(title, initialDate, checkEndDate, checkEndDate ? endDate.value : null, checkRemind, checkRemind ? remind : null, description, type);
+    
   }
 }
 
-function validateInitialDate(date, error) {
+export function validateInitialDate(date, error) {
   let now = new Date();
   let month = now.getMonth() + 1;
 
@@ -51,14 +41,9 @@ function validateInitialDate(date, error) {
   let year = parseInt(date.value.substring(0, 4));
 
   //Para sacar la fecha actual (sin segundos) y poner el formato correcto para comparar las dos fechas
-  let stringNow = `${now.getFullYear()}-${month < 10 ? "0" + month : month}-${
-    now.getDate() < 10 ? "0" + now.getDate() : now.getDate()
-  }`;
+  let stringNow = `${now.getFullYear()}-${month < 10 ? "0" + month : month}-${now.getDate() < 10 ? "0" + now.getDate() : now.getDate()}`;
 
-  if (
-    (year === 2021 || year === 2022) &&
-    new Date(stringNow) <= new Date(date.value)
-  ) {
+  if ((year === 2021 || year === 2022) && new Date(stringNow) <= new Date(date.value)) {
     errorDate.classList.add("is-hidden");
     return true;
   } else {
@@ -67,11 +52,11 @@ function validateInitialDate(date, error) {
   }
 }
 
-function validateFinishDate(endDate, error, initialDate) {
+export function validateFinishDate(endDate, error, initialDate) {
   let errorDate = document.querySelector(`[data-warning="${error}-date"]`);
   let year = parseInt(endDate.value.substring(0, 4));
 
-  if ( (year === 2021 || year === 2022) && (new Date(endDate.value) >= new Date(initialDate.value))) {
+  if ((year === 2021 || year === 2022) && new Date(endDate.value) >= new Date(initialDate.value)) {
     errorDate.classList.add("is-hidden");
     return true;
   } else {
@@ -80,7 +65,7 @@ function validateFinishDate(endDate, error, initialDate) {
   }
 }
 
-function validateTitle() {
+export function validateTitle() {
   let title = document.querySelector("#title");
   let errorTitle = document.querySelector('[data-warning="title"]');
   if (pattern.test(title.value) && title.value.length < 60) {
@@ -92,7 +77,7 @@ function validateTitle() {
   }
 }
 
-function validateDescription() {
+export function validateDescription() {
   let description = document.querySelector("#desc");
   let errorDescription = document.querySelector('[data-warning="description"]');
   if (description.value.length >= 1 && description.value.length <= 500) {
@@ -109,7 +94,7 @@ function validateDescription() {
   }
 }
 
-function validateCheckEndDate() {
+export function validateCheckEndDate() {
   let endDate = document.querySelector("#end-date");
   let endDateCheck = document.querySelector("#end-date-chk");
 
@@ -124,7 +109,7 @@ function validateCheckEndDate() {
   }
 }
 
-function validateCheckRemind() {
+export function validateCheckRemind() {
   let checkRemind = document.querySelector("#time-chk");
   let endRemind = document.querySelector("#remind");
 
@@ -138,36 +123,3 @@ function validateCheckRemind() {
     endRemind.disabled = true;
   }
 }
-
-/* FIN VALIDATION FORM*/
-
-/* function startDate() {
-  let initialDate = document.querySelector("#initial-date");
-  let date = new Date();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
-  let year = date.getFullYear();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  if (day < 10) day = "0" + day;
-  if (month < 10) month = "0" + month;
-  if (hours < 10) hours = "0" + hours;
-  if (minutes < 10) minutes = "0" + minutes;
-  initialDate.value = `${year}-${month}-${day}T${hours}:${minutes}`;
-}
-
-function finishDate() {
-  let endDate = document.querySelector("#end-date");
-  let date = new Date();
-  let month = date.getMonth();
-  let day = date.getDate() + 1;
-  let year = date.getFullYear();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  if (day < 10) day = "0" + day;
-  if (month < 10) month = "0" + month;
-  if (hours < 10) hours = "0" + hours;
-  if (minutes < 10) minutes = "0" + minutes;
-  endDate.value = `${year}-${month}-${day}T${hours}:${minutes}`;
-}
- */
