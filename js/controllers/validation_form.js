@@ -141,7 +141,7 @@ function validateCheckRemind() {
 
 /* FIN VALIDATION FORM*/
 
-function startDate() {
+/* function startDate() {
   let initialDate = document.querySelector("#initial-date");
   let date = new Date();
   let month = date.getMonth() + 1;
@@ -170,3 +170,4 @@ function finishDate() {
   if (minutes < 10) minutes = "0" + minutes;
   endDate.value = `${year}-${month}-${day}T${hours}:${minutes}`;
 }
+ */

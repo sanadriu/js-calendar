@@ -46,50 +46,29 @@
 
 		<template id="template-modal">
 			<section id="modal" class="modal" data-action="close-modal">
-<<<<<<< HEAD
 				<form class="modal__form" id="form_event">
-					<div class="modal__grid">
-						<h2 class="modal__header modal__double-cell">NEW EVENT</h2>
-						<label for="title">Title</label>
-						<input type="text" name="title" class="modal__input" id="title"/>
-						<div data-warning="title" class="modal__warning is-hidden">Error: Is required and less than 60 characters</div>
-						<label for="initial-date">Initial date</label>
-						<input type="datetime-local" class="modal__input" id="initial-date" name="initial_date" />
-						<div data-warning="initial-date" class="modal__warning is-hidden">- The year has to be 2021 or 2022 <br>- The date must be the same or later than the current one </div>
-=======
-				<form class="modal__form">
 					<span data-action="close-modal" class="material-icons modal__icon">cancel</span>
 					<div class="modal__grid">
-						<h2 class="modal__title modal__double-cell">NEW EVENT</h2>
+						<h2 class="modal__header modal__double-cell">NEW EVENT</h2>
 						<label for="title" class="modal__align-center">Title</label>
-						<input type="text" name="title" class="modal__input" />
+						<input type="text" name="title" class="modal__input" id="title"/>
+						<div data-warning="title" class="modal__warning is-hidden">Error: Is required and less than 60 characters</div>
 						<label for="initial-date" class="modal__align-center">Initial date</label>
-						<input type="date" class="modal__input" id="initial-date" name="initial_date" />
->>>>>>> main
+						<input type="datetime-local" class="modal__input" id="initial-date" name="initial_date" />
+						<div data-warning="initial-date" class="modal__warning is-hidden">- The year has to be 2021 or 2022 <br>- The date must be the same or later than the current one </div>
 						<div class="modal__double-cell">
 							<input type="checkbox" class="modal__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
-<<<<<<< HEAD
-						<label for="end-date">End Date</label>
+						<label for="end-date" class="modal__align-center">End Date</label>
 						<input type="datetime-local" class="modal__input" id="end-date" name="end_date" disabled/>
 						<div data-warning="end-date" class="modal__warning is-hidden">- The year has to be 2021 or 2022 <br>- The second date has to be after the first date</div>
-=======
-						<label for="end-date" class="modal__align-center">End Date</label>
-						<input type="date" class="modal__input" id="end-date" name="end_date" />
-						<div data-warning="end-date" class="modal__warning is-hidden">Error Example</div>
->>>>>>> main
 						<div class="modal__double-cell">
 							<input type="checkbox" class="modal__input-chk" id="time-chk" name="time_chk" />
 							<label for="time-chk">Remind me when this event expires.</label>
 						</div>
-<<<<<<< HEAD
-						<label for="remind" class="is-hidden">Time</label>
+						<label for="remind" class="modal__align-center is-hidden">Time</label>
 						<select id="remind" name="remind" class="modal__select is-hidden" disabled>
-=======
-						<label for="remind" class="modal__align-center">Time</label>
-						<select id="remind" name="remind" class="modal__select">
->>>>>>> main
 							<option value="5">5 min</option>
 							<option value="10">10 min</option>
 							<option value="15">15 min</option>
@@ -98,12 +77,8 @@
 						</select>
 						<label for="desc" class="modal__align-center">Description</label>
 						<textarea class="modal__textarea" id="desc" name="desc" placeholder="Insert a description here..."></textarea>
-<<<<<<< HEAD
 						<div data-warning="description" class="modal__warning is-hidden">Error: max 500 characters</div>
-						<label for="type">Type</label>
-=======
 						<label for="type" class="modal__align-center">Type</label>
->>>>>>> main
 						<select id="type" name="type" class="modal__select">
 							<option value="Meeting">Meeting</option>
 							<option value="Task">Task</option>
