@@ -9,13 +9,9 @@ updateCalendarEvent();
 
 /* Inicialización testing */
 
-const currentDate = new Date();
+sessionStorage.calendarDateISO = new Date().toISOString();
 
-sessionStorage.currentYear = currentDate.getFullYear();
-sessionStorage.currentMonth = currentDate.getMonth() + 1;
-sessionStorage.currentDay = currentDate.getDate();
+console.log(new Date(sessionStorage.calendarDateISO).getFullYear());
+console.log(new Date(sessionStorage.calendarDateISO).getMonth());
 
-sessionStorage.calendarYear = currentDate.getFullYear();
-sessionStorage.calendarMonth = currentDate.getMonth() + 1;
-
-updateCalendar(sessionStorage.calendarYear, sessionStorage.calendarMonth);
+updateCalendar(new Date(sessionStorage.calendarDateISO).getFullYear(), new Date(sessionStorage.calendarDateISO).getMonth() + 1);

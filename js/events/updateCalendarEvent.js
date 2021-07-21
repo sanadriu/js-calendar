@@ -3,25 +3,14 @@ import updateCalendar from "../views/updateCalendar.js";
 export default function updateCalendarEvent() {
 	document.addEventListener("click", (e) => {
 		if (e.target.matches("[data-action~='update-calendar']")) {
-			if (e.target.matches("[data-action~='add-month']")) {
-				sessionStorage.calendarMonth++;
+			const calendarDate = new Date(sessionStorage.calendarDateISO);
 
-				if (sessionStorage.calendarMonth > 12) {
-					sessionStorage.calendarMonth = 1;
-					sessionStorage.calendarYear++;
-				}
-			}
+			if (e.target.matches("[data-action~='add-month']")) calendarDate.setMonth(calendarDate.getMonth() + 1);
+			if (e.target.matches("[data-action~='sub-month']")) calendarDate.setMonth(calendarDate.getMonth() - 1);
 
-			if (e.target.matches("[data-action~='sub-month']")) {
-				sessionStorage.calendarMonth--;
+			sessionStorage.calendarDateISO = calendarDate.toISOString();
 
-				if (sessionStorage.calendarMonth < 1) {
-					sessionStorage.calendarMonth = 12;
-					sessionStorage.calendarYear--;
-				}
-			}
-
-			updateCalendar(sessionStorage.calendarYear, sessionStorage.calendarMonth);
+			updateCalendar(new Date(sessionStorage.calendarDateISO).getFullYear(), new Date(sessionStorage.calendarDateISO).getMonth() + 1);
 		}
 	});
 }

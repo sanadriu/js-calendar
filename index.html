@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Calendar</title>
 		<link rel="stylesheet" href="css/style.css" />
-		<script src="./js/controllers/validation_form.js" defer></script>
 	</head>
 	<body>
 		<header class="header">
@@ -46,7 +45,7 @@
 
 		<template id="template-modal">
 			<section id="modal" class="modal" data-action="close-modal">
-				<form class="modal__form" id="form_event">
+				<form class="modal__form" id="event-form">
 					<span data-action="close-modal" class="material-icons modal__icon">cancel</span>
 					<div class="modal__grid">
 						<h2 class="modal__title modal__double-cell">NEW EVENT</h2>
@@ -79,19 +78,19 @@
 							</ul>
 						</div>
 						<div class="modal__double-cell">
-							<input type="checkbox" class="modal__input-chk" id="time-chk" name="time_chk" />
-							<label for="time-chk">Remind me when this event expires.</label>
+							<input type="checkbox" class="modal__input-chk" id="reminder-chk" name="reminder_chk" />
+							<label for="reminder-chk">Remind me when this event expires.</label>
 						</div>
-						<label for="remind" class="modal__align-center is-hidden">Time</label>
-						<select id="remind" name="remind" class="modal__select is-hidden" disabled>
+						<label for="reminder" class="modal__align-center is-hidden">Time</label>
+						<select id="reminder" name="reminder" class="modal__select is-hidden" disabled>
 							<option value="5">5 min</option>
 							<option value="10">10 min</option>
 							<option value="15">15 min</option>
 							<option value="30">30 min</option>
 							<option value="60">1 h</option>
 						</select>
-						<label for="desc" class="modal__align-center">Description</label>
-						<textarea class="modal__textarea" id="desc" name="desc" placeholder="Insert a description here..."></textarea>
+						<label for="description" class="modal__align-center">Description</label>
+						<textarea class="modal__textarea" id="description" name="description" placeholder="Insert a description here..."></textarea>
 						<div data-warning="description" class="modal__warning is-hidden">Maximum characters allowed is 500.</div>
 						<label for="type" class="modal__align-center">Type</label>
 						<select id="type" name="type" class="modal__select">
