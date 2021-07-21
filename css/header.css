@@ -1,11 +1,56 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+
+	padding: 2rem;
+}
+
 .header__title {
+	margin: 0;
+	padding-left: 12%;
+	width: 90%;
+
+	font-size: 2.5rem;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
-.header__date {
+.header__btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+
+	padding: 0.5rem;
+	min-width: 10rem;
+	width: 10%;
+
+	border: 0;
+	border-radius: 0.25rem;
+
+	background: blue;
+	color: white;
+	font-weight: bold;
+	font-size: 1rem;
+
+	opacity: 0.7;
+	cursor: pointer;
 }
 
-.header__change-month-btn {
+.header__btn:hover {
+	opacity: 1;
 }
 
-.header__add-event-btn {
+.header__calendar__month {
+	font-weight: bold;
+}
+.material-icons {
+	font-family: "Material Icons";
+	font-size: 24px;
+}
+.header__calendar__month {
+	text-align: center;
 }

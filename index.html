@@ -9,7 +9,18 @@
 		<script src="./js/controllers/validation_form.js" defer></script>
 	</head>
 	<body>
-		<header></header>
+		<header class="header">
+			<h1 class="header__title">JS Calendar</h1>
+			<button data-action="display-modal" class="header__btn">
+				<span data-action="display-modal" class="material-icons">event</span>
+				<span data-action="display-modal">Add Event</span>
+			</button>
+		</header>
+		<aside id="calendar-ctrls" class="calendar__ctrls">
+			<span class="material-icons calendar__btn" data-action="change-month-plus">chevron_left</span>
+			<h2 class="calendar__month" id="calendar_month"></h2>
+			<span class="material-icons calendar__btn">chevron_right</span>
+		</aside>
 		<section id="calendar-grid" class="calendar__grid">
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Monday</span></div>
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Tuesday</span></div>
@@ -19,51 +30,6 @@
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Saturday</span></div>
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Sunday</span></div>
 		</section>
-		<!-- <section class="modal__background">
-			<form class="modal__form" id="form_event">
-				<div class="modal__grid">
-					<h2 class="modal__header modal__double-cell">NEW EVENT</h2>
-					<label for="title">Title</label>
-					<input type="text" name="title" class="modal__input" id="title"/>
-					
-					<label for="initial-date">Initial date</label>
-					<input type="datetime-local" class="modal__input" id="initial-date" name="initial_date" />
-					<div class="modal__double-cell">
-						<input type="checkbox" class="modal__input-chk" id="end-date-chk" name="end_date_chk" />
-						<label for="end-date-chk">Set end date.</label>
-					</div>
-					<label for="end-date">End Date</label>
-					<input type="datetime-local" class="modal__input" id="end-date" name="end_date" />
-					<div class="modal__double-cell">
-						<input type="checkbox" class="modal__input-chk" id="time-chk" name="time_chk" />
-						<label for="time-chk">Remind me when this event expires.</label>
-					</div>
-					<label for="remind">Time</label>
-					<select id="remind" name="remind" class="modal__select">
-						<option value="5">5 min</option>
-						<option value="10">10 min</option>
-						<option value="15">15 min</option>
-						<option value="30">30 min</option>
-						<option value="60">1 h</option>
-					</select>
-					<label for="desc">Description</label>
-					<textarea class="modal__textarea" id="desc" name="desc" placeholder="Insert a description here..."></textarea>
-					<label for="type">Type</label>
-					<select id="type" name="type" class="modal__select">
-						<option value="Meeting">Meeting</option>
-						<option value="Task">Task</option>
-						<option value="Task">Personal</option>
-						<option value="Task">Study</option>
-					</select>
-				</div>
-				<div class="modal__flex-buttons">
-					<button type="button" class="modal__button">Cancel</button>
-					<button type="submit" class="modal__button">Create</button>
-				</div>
-			</form>
-		</section>
- -->
-		<button data-action="display-modal">Add Event</button>
 
 		<template id="template-calendar-cell">
 			<div class="calendar__cell calendar__cell--day">
@@ -80,6 +46,7 @@
 
 		<template id="template-modal">
 			<section id="modal" class="modal" data-action="close-modal">
+<<<<<<< HEAD
 				<form class="modal__form" id="form_event">
 					<div class="modal__grid">
 						<h2 class="modal__header modal__double-cell">NEW EVENT</h2>
@@ -89,29 +56,54 @@
 						<label for="initial-date">Initial date</label>
 						<input type="datetime-local" class="modal__input" id="initial-date" name="initial_date" />
 						<div data-warning="initial-date" class="modal__warning is-hidden">- The year has to be 2021 or 2022 <br>- The date must be the same or later than the current one </div>
+=======
+				<form class="modal__form">
+					<span data-action="close-modal" class="material-icons modal__icon">cancel</span>
+					<div class="modal__grid">
+						<h2 class="modal__title modal__double-cell">NEW EVENT</h2>
+						<label for="title" class="modal__align-center">Title</label>
+						<input type="text" name="title" class="modal__input" />
+						<label for="initial-date" class="modal__align-center">Initial date</label>
+						<input type="date" class="modal__input" id="initial-date" name="initial_date" />
+>>>>>>> main
 						<div class="modal__double-cell">
 							<input type="checkbox" class="modal__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
+<<<<<<< HEAD
 						<label for="end-date">End Date</label>
 						<input type="datetime-local" class="modal__input" id="end-date" name="end_date" disabled/>
 						<div data-warning="end-date" class="modal__warning is-hidden">- The year has to be 2021 or 2022 <br>- The second date has to be after the first date</div>
+=======
+						<label for="end-date" class="modal__align-center">End Date</label>
+						<input type="date" class="modal__input" id="end-date" name="end_date" />
+						<div data-warning="end-date" class="modal__warning is-hidden">Error Example</div>
+>>>>>>> main
 						<div class="modal__double-cell">
 							<input type="checkbox" class="modal__input-chk" id="time-chk" name="time_chk" />
 							<label for="time-chk">Remind me when this event expires.</label>
 						</div>
+<<<<<<< HEAD
 						<label for="remind" class="is-hidden">Time</label>
 						<select id="remind" name="remind" class="modal__select is-hidden" disabled>
+=======
+						<label for="remind" class="modal__align-center">Time</label>
+						<select id="remind" name="remind" class="modal__select">
+>>>>>>> main
 							<option value="5">5 min</option>
 							<option value="10">10 min</option>
 							<option value="15">15 min</option>
 							<option value="30">30 min</option>
 							<option value="60">1 h</option>
 						</select>
-						<label for="desc">Description</label>
+						<label for="desc" class="modal__align-center">Description</label>
 						<textarea class="modal__textarea" id="desc" name="desc" placeholder="Insert a description here..."></textarea>
+<<<<<<< HEAD
 						<div data-warning="description" class="modal__warning is-hidden">Error: max 500 characters</div>
 						<label for="type">Type</label>
+=======
+						<label for="type" class="modal__align-center">Type</label>
+>>>>>>> main
 						<select id="type" name="type" class="modal__select">
 							<option value="Meeting">Meeting</option>
 							<option value="Task">Task</option>
