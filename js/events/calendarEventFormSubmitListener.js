@@ -1,5 +1,5 @@
-import validateCalendarEventForm from "../validation/calendarEventFormValidation";
-import closeCalendarEventForm from "../views/closeCalendarEventForm";
+import validateCalendarEventForm from "../validation/calendarEventFormValidation.js";
+import closeCalendarEventForm from "../views/closeCalendarEventForm.js";
 
 export default function calendarEventFormSubmitListener() {
 	const form = document.querySelector("#calendar-event-form");

@@ -1,7 +1,7 @@
 import validateInitialDate from "./validateInitialDate.js";
 import validateEndDate from "./validateEndDate.js";
-import validateDescription from "./validateDescription";
-import validateTitle from "./validateTitle";
+import validateDescription from "./validateDescription.js";
+import validateTitle from "./validateTitle.js";
 
 export default function calendarEventFormValidation() {
 	let validity = true;

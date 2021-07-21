@@ -44,7 +44,7 @@
 		</template>
 
 		<template id="template-modal">
-			<section id="modal" class="modal" data-action="close-calendar-event-form">
+			<section id="modal-calendar-event-form" class="modal" data-action="close-calendar-event-form">
 				<form class="modal__form" id="calendar-event-form">
 					<span data-action="close-calendar-event-form" class="material-icons modal__icon">cancel</span>
 					<div class="modal__grid">
@@ -69,8 +69,8 @@
 							<input type="checkbox" class="modal__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
-						<label for="end-date" class="modal__align-center">End Date</label>
-						<input type="datetime-local" class="modal__input" id="end-date" name="end_date" disabled />
+						<label for="end-date" class="modal__align-center is-hidden">End Date</label>
+						<input type="datetime-local" class="modal__input is-hidden" id="end-date" name="end_date" disabled />
 						<div data-warning="end-date" class="modal__warning is-hidden">
 							<ul>
 								<li>The year has to be 2021 or 2022.</li>

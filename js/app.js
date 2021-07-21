@@ -1,10 +1,11 @@
-import displayCalendarEventFormListener from "./events/displayCalendarEventFormListener.js";
-import closeCalendarEventFormListener from "./events/closeCalendarEventFormListener.js";
+import calendarEventFormDisplayListener from "./events/calendarEventFormDisplayListener.js";
+import calendarEventFormCloseListener from "./events/calendarEventFormCloseListener.js";
 import updateCalendarEvent from "./events/updateCalendarEvent.js";
+
 import updateCalendar from "./views/updateCalendar.js";
 
-displayCalendarEventFormListener();
-closeCalendarEventFormListener();
+calendarEventFormDisplayListener();
+calendarEventFormCloseListener();
 updateCalendarEvent();
 
 /* Inicialización testing */
