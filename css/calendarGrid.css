@@ -36,7 +36,7 @@
 }
 
 .cell__day-number--today {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: teal;
 	color: white;
 	border-radius: 0.25rem;
 }

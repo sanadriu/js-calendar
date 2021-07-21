@@ -1,23 +1,20 @@
-import insertCalendarCells from "./views/insertCalendarCells.js";
-import setOffsetCalendarCells from "./views/setOffsetCalendarCells.js";
-import markCurrentDate from "./views/markCurrentDate.js";
-import displayMonth from "./views/displayMonth.js";
-
 import displayModalEvent from "./events/displayModalEvent.js";
 import closeModalEvent from "./events/closeModalEvent.js";
+import updateCalendarEvent from "./events/updateCalendarEvent.js";
+import updateCalendar from "./views/updateCalendar.js";
 
 displayModalEvent();
 closeModalEvent();
+updateCalendarEvent();
 
 /* Inicialización testing */
 
-const date = new Date();
+const currentDate = new Date();
 
-let year = date.getFullYear();
-let month = date.getMonth() + 1;
-console.log(year, month);
+sessionStorage.currentYear = currentDate.getFullYear();
+sessionStorage.currentMonth = currentDate.getMonth();
+sessionStorage.currentDay = currentDate.getDate();
+sessionStorage.calendarYear = currentDate.getFullYear();
+sessionStorage.calendarMonth = currentDate.getMonth() + 1;
 
-insertCalendarCells(year, month);
-setOffsetCalendarCells(year, month);
-markCurrentDate(year, month);
-displayMonth(year, month);
+updateCalendar(sessionStorage.calendarYear, sessionStorage.calendarMonth);
