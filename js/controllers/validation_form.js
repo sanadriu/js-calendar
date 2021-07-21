@@ -3,12 +3,20 @@ let pattern = /^[A-Za-z]+[0-9]*[)(.-]*$/;
 
 function validationEventForm(e) {
   e.preventDefault();
+  let correctEndDate;
   let initialDate = document.querySelector("#initial-date");
   let endDate = document.querySelector("#end-date");
   let correctTitle = validateTitle();
   let correctDescription = validateDescription();
-  let correctInitialDate = validateDate(initialDate, "initial", endDate);
-  let correctEndDate = validateDate(endDate, "end", endDate);
+  let correctInitialDate = validateInitialDate(initialDate, "initial");
+  let checkEndDate = document.querySelector('[name="end_date_chk"]').checked;
+
+  //It's checked
+  if (checkEndDate) {
+    correctEndDate = validateFinishDate(endDate, "end", initialDate);
+  } else {
+    correctEndDate = true;
+  }
   if (
     correctTitle &&
     correctDescription &&
@@ -18,7 +26,6 @@ function validationEventForm(e) {
     let title = document.querySelector('[name="title"]').value;
     let initialDate = document.querySelector('[name="initial_date"]').value;
     let checkEndDate = document.querySelector('[name="end_date_chk"]').checked;
-    let endDate = document.querySelector('[name="end_date"]').value;
     let checkRemind = document.querySelector('[name="time_chk"]').checked;
     let remind = document.querySelector('[name="remind"]').value;
     let description = document.querySelector('[name="desc"]').value;
@@ -27,28 +34,44 @@ function validationEventForm(e) {
       title,
       initialDate,
       checkEndDate,
-      endDate,
+      (checkEndDate) ? endDate.value : null,
       checkRemind,
-      remind,
+      (checkRemind) ? remind :  null,
       description,
       type
     );
   }
 }
 
-function validateDate(date, error, date2) {
-  let errorDate = document.querySelector(`[data-warning="${error}-date"]`);
-  let year = parseInt(date.value.substring(0, 4));
+function validateInitialDate(date, error) {
   let now = new Date();
   let month = now.getMonth() + 1;
-  let stringNow = `${now.getFullYear()}-${(month < 10) ? "0" + month : month}-${(now.getDate() < 10) ? "0" + now.getDate(): now.getDate()}T${(now.getHours() < 10) ? "0" + now.getHours(): now.getHours()}:${(now.getMinutes() < 10) ? "0" + now.getMinutes(): now.getMinutes()}`;
-  console.log("Fecha Actual" + new Date(stringNow));
-  console.log("Fecha Posterior " + new Date(date.value));
+
+  let errorDate = document.querySelector(`[data-warning="${error}-date"]`);
+  let year = parseInt(date.value.substring(0, 4));
+
+  //Para sacar la fecha actual (sin segundos) y poner el formato correcto para comparar las dos fechas
+  let stringNow = `${now.getFullYear()}-${month < 10 ? "0" + month : month}-${
+    now.getDate() < 10 ? "0" + now.getDate() : now.getDate()
+  }`;
+
   if (
     (year === 2021 || year === 2022) &&
-    new Date(date.value) <= new Date(date2.value) &&
     new Date(stringNow) <= new Date(date.value)
   ) {
+    errorDate.classList.add("is-hidden");
+    return true;
+  } else {
+    errorDate.classList.remove("is-hidden");
+    return false;
+  }
+}
+
+function validateFinishDate(endDate, error, initialDate) {
+  let errorDate = document.querySelector(`[data-warning="${error}-date"]`);
+  let year = parseInt(endDate.value.substring(0, 4));
+
+  if ( (year === 2021 || year === 2022) && (new Date(endDate.value) >= new Date(initialDate.value))) {
     errorDate.classList.add("is-hidden");
     return true;
   } else {
