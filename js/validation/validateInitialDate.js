@@ -4,7 +4,7 @@ export default function validateInitialDate() {
 	const warningBox = document.querySelector("[data-warning='initial-date']");
 
 	const initialDate = new Date(document.querySelector("input[name='initial_date']").value);
-	const formDate = new Date(document.querySelector("#event-form").dataset.date);
+	const formDate = new Date(document.querySelector("#calendar-event-form").dataset.date);
 
 	if (initialDate < formDate) {
 		validity = false;

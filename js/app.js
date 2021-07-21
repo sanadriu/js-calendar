@@ -1,10 +1,10 @@
-import displayModalEvent from "./events/displayModalEvent.js";
-import closeModalEvent from "./events/closeModalEvent.js";
+import displayCalendarEventFormListener from "./events/displayCalendarEventFormListener.js";
+import closeCalendarEventFormListener from "./events/closeCalendarEventFormListener.js";
 import updateCalendarEvent from "./events/updateCalendarEvent.js";
 import updateCalendar from "./views/updateCalendar.js";
 
-displayModalEvent();
-closeModalEvent();
+displayCalendarEventFormListener();
+closeCalendarEventFormListener();
 updateCalendarEvent();
 
 /* Inicialización testing */

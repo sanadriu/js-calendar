@@ -10,9 +10,9 @@
 	<body>
 		<header class="header">
 			<h1 class="header__title">JS Calendar</h1>
-			<button data-action="display-modal" class="header__btn">
-				<span data-action="display-modal" class="material-icons">event</span>
-				<span data-action="display-modal">Add Event</span>
+			<button data-action="display-calendar-event-form" class="header__btn">
+				<span data-action="display-calendar-event-form" class="material-icons">event</span>
+				<span data-action="display-calendar-event-form">Add Event</span>
 			</button>
 		</header>
 		<aside id="calendar-ctrls" class="calendar__ctrls">
@@ -44,9 +44,9 @@
 		</template>
 
 		<template id="template-modal">
-			<section id="modal" class="modal" data-action="close-modal">
-				<form class="modal__form" id="event-form">
-					<span data-action="close-modal" class="material-icons modal__icon">cancel</span>
+			<section id="modal" class="modal" data-action="close-calendar-event-form">
+				<form class="modal__form" id="calendar-event-form">
+					<span data-action="close-calendar-event-form" class="material-icons modal__icon">cancel</span>
 					<div class="modal__grid">
 						<h2 class="modal__title modal__double-cell">NEW EVENT</h2>
 						<label for="title" class="modal__align-center">Title</label>
@@ -101,7 +101,7 @@
 						</select>
 					</div>
 					<div class="modal__flex-buttons">
-						<button type="button" class="modal__button" data-action="close-modal">Cancel</button>
+						<button type="button" class="modal__button" data-action="close-calendar-event-form">Cancel</button>
 						<button type="submit" class="modal__button">Create</button>
 					</div>
 				</form>

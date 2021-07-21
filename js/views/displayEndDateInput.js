@@ -1,4 +1,4 @@
-export default function displayEndDate() {
+export default function displayEndDateInput() {
 	const endDateCheck = document.querySelector("input[name='end_date_chk']");
 	const endDateInput = document.querySelector("input[name='end_date']");
 	const endDateLabel = document.querySelector("label[for='end-date']");
@@ -13,9 +13,3 @@ export default function displayEndDate() {
 		endDateInput.disabled = true;
 	}
 }
-
-document.addEventListener("change", (e) => {
-	if (e.target.matches("#end-date-chk")) {
-		displayEndDate();
-	}
-});

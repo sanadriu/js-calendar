@@ -1,4 +1,4 @@
-export default function validateCheckReminder() {
+export default function displayReminderInput() {
 	const reminderCheck = document.querySelector("input[name='reminder_chk']");
 	const reminderInput = document.querySelector("input[name='reminder']");
 	const reminderLabel = document.querySelector("label[for='reminder']");
