@@ -12,8 +12,9 @@ updateCalendarEvent();
 const currentDate = new Date();
 
 sessionStorage.currentYear = currentDate.getFullYear();
-sessionStorage.currentMonth = currentDate.getMonth();
+sessionStorage.currentMonth = currentDate.getMonth() + 1;
 sessionStorage.currentDay = currentDate.getDate();
+
 sessionStorage.calendarYear = currentDate.getFullYear();
 sessionStorage.calendarMonth = currentDate.getMonth() + 1;
 
