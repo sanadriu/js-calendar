@@ -5,6 +5,7 @@ import displayMonth from "./views/displayMonth.js";
 
 import displayModalEvent from "./events/displayModalEvent.js";
 import closeModalEvent from "./events/closeModalEvent.js";
+import openEvents from "./views/asideEvents.js";
 
 displayModalEvent();
 closeModalEvent();
@@ -21,3 +22,4 @@ insertCalendarCells(year, month);
 setOffsetCalendarCells(year, month);
 markCurrentDate(year, month);
 displayMonth(year, month);
+openEvents();

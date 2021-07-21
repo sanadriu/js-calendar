@@ -1,0 +1,21 @@
+.main__container {
+  display: flex;
+}
+
+.container__dataEvent {
+  flex-basis: 15%;
+  background-color: white;
+  margin: auto;
+  display: none;
+  text-align: center;
+}
+
+.dataEvent__date {
+  background-color: blue;
+  color: white;
+  padding: 0.7rem;
+  position: relative;
+  bottom: 17rem;
+  margin-left: 0.5rem;
+  border-radius: 0.25rem;
+}
