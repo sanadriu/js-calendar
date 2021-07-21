@@ -66,42 +66,59 @@
 
     <template id="template-modal">
       <section id="modal" class="modal" data-action="close-modal">
-        <form class="modal__form">
+        <form class="modal__form" id="form_event">
           <span data-action="close-modal" class="material-icons modal__icon"
             >cancel</span
           >
           <div class="modal__grid">
             <h2 class="modal__title modal__double-cell">NEW EVENT</h2>
             <label for="title" class="modal__align-center">Title</label>
-            <input type="text" name="title" class="modal__input" />
+            <input type="text" name="title" class="modal__input" id="title" />
+            <div data-warning="title" class="modal__warning is-hidden">
+              <ul>
+                <li>Maximum characters allowed is 60.</li>
+                <li>Title is required.</li>
+              </ul>
+            </div>
             <label for="initial-date" class="modal__align-center"
               >Initial date</label
             >
             <input
-              type="date"
+              type="datetime-local"
               class="modal__input"
               id="initial-date"
               name="initial_date"
             />
+            <div data-warning="initial-date" class="modal__warning is-hidden">
+              <ul>
+                <li>The year has to be 2021 or 2022.</li>
+                <li>
+                  The date must be the same or later than the current one.
+                </li>
+              </ul>
+            </div>
             <div class="modal__double-cell">
               <input
                 type="checkbox"
                 class="modal__input-chk"
                 id="end-date-chk"
                 name="end_date_chk"
-                checked
               />
               <label for="end-date-chk">Set end date.</label>
             </div>
             <label for="end-date" class="modal__align-center">End Date</label>
             <input
-              type="date"
+              type="datetime-local"
               class="modal__input"
               id="end-date"
               name="end_date"
+              disabled
             />
             <div data-warning="end-date" class="modal__warning is-hidden">
-              Error Example
+              <ul>
+                <li>The year has to be 2021 or 2022.</li>
+                <li>The end-date date has to be after the initial-date.</li>
+              </ul>
             </div>
             <div class="modal__double-cell">
               <input
@@ -109,12 +126,18 @@
                 class="modal__input-chk"
                 id="time-chk"
                 name="time_chk"
-                checked
               />
               <label for="time-chk">Remind me when this event expires.</label>
             </div>
-            <label for="remind" class="modal__align-center">Time</label>
-            <select id="remind" name="remind" class="modal__select">
+            <label for="remind" class="modal__align-center is-hidden"
+              >Time</label
+            >
+            <select
+              id="remind"
+              name="remind"
+              class="modal__select is-hidden"
+              disabled
+            >
               <option value="5">5 min</option>
               <option value="10">10 min</option>
               <option value="15">15 min</option>
@@ -128,6 +151,9 @@
               name="desc"
               placeholder="Insert a description here..."
             ></textarea>
+            <div data-warning="description" class="modal__warning is-hidden">
+              Maximum characters allowed is 500.
+            </div>
             <label for="type" class="modal__align-center">Type</label>
             <select id="type" name="type" class="modal__select">
               <option value="Meeting">Meeting</option>

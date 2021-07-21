@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="./js/controllers/validation_form.js" defer></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+      * {
+        font-family: "Roboto";
+      }
+      .mr-1 {
+        margin-right: 1em;
+      }
+      .header__calendar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4em 0em;
+        border: 1px solid black;
+      }
+      .button_event {
+        padding: 1em;
+        border: 0;
+        border-radius: 5%;
+        background: blue;
+        color: white;
+        opacity: 0.7;
+        cursor: pointer;
+      }
+      .button_event:hover {
+        opacity: 1;
+      }
+      .button_span_event {
+        vertical-align: middle;
+        padding-right: 0.5em;
+        border: 0;
+      }
+
+      .header__calendar__div:nth-child(1) {
+        flex-grow: 2;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      .header__calendar__div:nth-child(2) {
+        flex-grow: 1;
+        text-align: center;
+      }
+      .header__calendar__month {
+        font-weight: bold;
+      }
+      .material-icons {
+        font-family: "Material Icons";
+        font-size: 24px;
+      }
+      .header__calendar__month {
+        text-align: center;
+      }
+      .header__month {
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+      }
+      .arrow-padding {
+        padding: 1em;
+        cursor: pointer;
+      }
+      .header__month__name {
+        font-weight: bold;
+        font-size: 1.5em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header__calendar">
+        <div class="header__calendar__div">
+          <span class="header__calendar__month">JS Calendar</span>
+        </div>
+        <div class="header_calendar__div mr-1">
+          <button class="button_event"  id="add-event">
+            <span class="material-icons button_span_event"> event </span
+            ><strong>Add Event</strong>
+          </button>
+        </div>
+      </div>
+      <div class="header__month">
+        <div>
+          <span class="material-icons arrow-padding"> arrow_back_ios </span>
+        </div>
+        <div class="header__month__name">July 2021</div>
+        <div>
+          <span class="material-icons arrow-padding"> arrow_forward_ios </span>
+        </div>
+      </div>
+    </header>
+    <form action="" id="form__event">
+      <input type="text" id="title" name="title" /><br>
+      <input type="datetime-local" id="initial_date" name="initial_date"><br>
+      <input type="datetime-local" id="end_date" name="end_date"><br>
+      <textarea id="desc" name="desc"></textarea>
+      <button type="submit">enviar</button>  
+    </form>
+  </body>
+</html>

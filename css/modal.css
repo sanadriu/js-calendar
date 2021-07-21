@@ -73,10 +73,25 @@
 }
 
 .modal__warning {
-	padding: 0.5rem;
-	background-color: red;
+	padding: 0.75rem;
+	background-color: #da2d2d;
+	border-radius: 0.25rem;
 	color: white;
 	grid-column: 2;
+	font-size: 0.8rem;
+}
+
+.modal__warning ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.modal__warning li:before {
+	content: "· ";
 }
 
 .modal__icon {
