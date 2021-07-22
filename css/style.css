@@ -14,6 +14,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+*::-webkit-scrollbar {
+	display: none;
+}
+
 .is-hidden {
   display: none;
 }

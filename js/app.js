@@ -1,23 +1,22 @@
-import displayModalEvent from "./events/displayModalEvent.js";
-import closeModalEvent from "./events/closeModalEvent.js";
-import openEvents from "./views/asideEvents.js";
+import calendarEventFormDisplayListener from "./events/calendarEventFormDisplayListener.js";
+import calendarEventFormCloseListener from "./events/calendarEventFormCloseListener.js";
 import updateCalendarEvent from "./events/updateCalendarEvent.js";
+
 import updateCalendar from "./views/updateCalendar.js";
 
-displayModalEvent();
-closeModalEvent();
+calendarEventFormDisplayListener();
+calendarEventFormCloseListener();
 updateCalendarEvent();
 
 /* Inicialización testing */
 
-const currentDate = new Date();
+sessionStorage.calendarDateISO = new Date().toISOString();
 
-sessionStorage.currentYear = currentDate.getFullYear();
-sessionStorage.currentMonth = currentDate.getMonth() + 1;
-sessionStorage.currentDay = currentDate.getDate();
+console.log(new Date(sessionStorage.calendarDateISO).getFullYear());
+console.log(new Date(sessionStorage.calendarDateISO).getMonth() + 1);
 
-sessionStorage.calendarYear = currentDate.getFullYear();
-sessionStorage.calendarMonth = currentDate.getMonth() + 1;
-
-updateCalendar(sessionStorage.calendarYear, sessionStorage.calendarMonth);
 openEvents();
+updateCalendar(
+  new Date(sessionStorage.calendarDateISO).getFullYear(),
+  new Date(sessionStorage.calendarDateISO).getMonth() + 1
+);
