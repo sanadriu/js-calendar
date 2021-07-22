@@ -1,4 +1,4 @@
-import closeModal from '../views/closeModal.js';
+//import closeCalendarEventForm from '../views/closeCalendarEventForm.js';
 import updateCalendar from '../views/updateCalendar.js';
 import { contIds } from '../app.js'
 
@@ -40,6 +40,10 @@ export function saveEvent(title, initialDate, checkEndDate, endDate, checkRemind
   localStorage.setItem("calendarEvents", JSON.stringify(calendarEvents));
   contIds.cont++;
   localStorage.setItem('counter',contIds.cont);
-  closeModal();
-  updateCalendar(sessionStorage.calendarYear, sessionStorage.calendarMonth);
+  //closeCalendarEventForm();
+
+  const calendarYear = new Date(sessionStorage.calendarDateISO).getFullYear();
+  const calendarMonth = new Date(sessionStorage.calendarDateISO).getMonth() + 1;
+
+  updateCalendar(calendarYear, calendarMonth);
 }

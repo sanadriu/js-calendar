@@ -24,3 +24,12 @@ export function createModal() {
 
   return fragment;
 }
+
+export function createModalInfo(){
+  const fragment = document.createDocumentFragment();
+  const template = document.querySelector("#modal__infoevent").content.cloneNode(true);
+
+  fragment.appendChild(template);
+
+  return fragment;
+}

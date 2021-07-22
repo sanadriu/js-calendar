@@ -117,12 +117,12 @@
 		</template>
 
 		<template id="modal__infoevent">
-			<div class="modal">
-				<section class="main__modal-info" id="info-event">
+			<section class="modal" id="modal-info-event">
+				<div class="main__modal-info" id="info-event">
 					<div class="modal__type">
 						<p class="event__date" id="date-event">22 de julio de 2021</p>
-						<img src="./assets/img/delete.svg" class="event__icon-top delete" alt="Remove Event" title="Remove Event" />
-						<img src="./assets/img/close.svg" class="event__icon-top" alt="Close Information" title="Close Information" />
+						<img src="./assets/img/delete.svg" class="event__icon-top delete" alt="Remove Event" title="Remove Event"  data-action="remove-event"/>
+						<img src="./assets/img/close.svg" class="event__icon-top" alt="Close Information" title="Close Information" data-action="close-info-modal" />
 					</div>
 					<div class="modal__flex">
 						<img src="./assets/img/calendar.svg" class="event__icon-left" alt="Title" />
@@ -132,8 +132,8 @@
 						<img src="./assets/img/writing.svg" class="event__icon-left" alt="Calendar" />
 						<p class="info__description" id="description-event">Vamos a escuchar otra genial anécdota de CSS sobre cómo el método B.E.M. es el mejor del mundo</p>
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
 		</template>
 
 		<script src="js/app.js" type="module"></script>

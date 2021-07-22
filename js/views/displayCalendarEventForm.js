@@ -8,6 +8,7 @@ export default function displayCalendarEventForm() {
 	const modal = createModal();
 
 	const defaultDateISO = new Date().toISOString().substring(0, 16);
+
 	const form = modal.querySelector("#calendar-event-form");
 	const inputs = form.elements;
 

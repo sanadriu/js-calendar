@@ -1,17 +1,18 @@
-import { contIds } from '../app.js'
+import modalInfoEvent from "./modalInfoEvent.js";
 
-export function showEventsCalendar(calendarEvents, month, year) {
+export function showCalendarEvents(calendarEvents, month, year) {
   let json = JSON.parse(calendarEvents);
   json.sort(orderArrayEvents);
 
-  if (month < 10) month = "0" + month;
-    let cont = 0;
+  let cont = 0;
   for (const object of json) {
-    if (object.initialDate.year === year && object.initialDate.month === month) {
+    if (parseInt(object.initialDate.year) === year && parseInt(object.initialDate.month) === month) {
       iterateDays(object,cont);
     }
     cont++;
   }
+
+  modalInfoEvent();
 }
 
 function orderArrayEvents(a, b) {
@@ -47,7 +48,7 @@ function iterateDays(event,cont) {
           break;
       }
       div.dataset.event = event.id;
-      div.innerHTML = `<strong>${event.initialDate.time}</strong> ${event.title}`;
+      div.innerHTML = `<b>${event.initialDate.time}</b> ${event.title}`;
       div_days[index].appendChild(div);
     }
   }
