@@ -4,12 +4,12 @@ export default function displayEndDateInput() {
 	const endDateLabel = document.querySelector("[for='end-date']");
 
 	if (endDateCheck.checked) {
-		endDateLabel.classList.remove("is-hidden");
-		endDateInput.classList.remove("is-hidden");
+		endDateLabel.classList.remove("no-display");
+		endDateInput.classList.remove("no-display");
 		endDateInput.disabled = false;
 	} else {
-		endDateLabel.classList.add("is-hidden");
-		endDateInput.classList.add("is-hidden");
+		endDateLabel.classList.add("no-display");
+		endDateInput.classList.add("no-display");
 		endDateInput.disabled = true;
 	}
 }

@@ -1,32 +1,30 @@
-.main__container {
-  display: flex;
+.calendar-wrapper {
+	display: flex;
+	gap: 0.5rem;
 }
 
-.container__dataEvent {
-  flex-basis: 15%;
-  background-color: white;
-  margin: 0.5rem;
-  display: none;
-  align-items: center;
-  position: relative;
+.calendar__aside-events {
+	background-color: white;
+	align-items: center;
+	flex-basis: 25%;
 }
 
-.dataEvent__date {
-  background-color: blue;
-  color: white;
-  padding: 0.7rem;
-  border-radius: 0.25rem;
-  position: absolute;
-  margin-bottom: 0.5rem;
-  margin-top: 0;
-  width: 100%;
-  top: 0;
-  left: 0;
+.calendar__aside-events--hidden {
+	flex-basis: 0;
+	display: none;
 }
 
-.aside__hint {
-  color: grey;
-  position: absolute;
-  top: 5rem;
-  align-self: center;
+.calendar__aside-date {
+	background-color: teal;
+	color: white;
+	padding: 0.7rem;
+	border-radius: 0.25rem;
+	margin-bottom: 0.5rem;
+	margin-top: 0;
+	width: 100%;
+}
+
+.calendar__aside-hint {
+	color: grey;
+	align-self: center;
 }

@@ -10,9 +10,9 @@ export default function validateTitle() {
 	}
 
 	if (validity) {
-		warningBox.classList.add("is-hidden");
+		warningBox.classList.add("no-display");
 	} else {
-		warningBox.classList.remove("is-hidden");
+		warningBox.classList.remove("no-display");
 	}
 
 	return validity;

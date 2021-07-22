@@ -4,12 +4,12 @@ export default function displayReminderInput() {
 	const reminderLabel = document.querySelector("[for='reminder']");
 
 	if (reminderCheck.checked) {
-		reminderLabel.classList.remove("is-hidden");
-		reminderInput.classList.remove("is-hidden");
+		reminderLabel.classList.remove("no-display");
+		reminderInput.classList.remove("no-display");
 		reminderInput.disabled = false;
 	} else {
-		reminderLabel.classList.add("is-hidden");
-		reminderInput.classList.add("is-hidden");
+		reminderLabel.classList.add("no-display");
+		reminderInput.classList.add("no-display");
 		reminderInput.disabled = true;
 	}
 }

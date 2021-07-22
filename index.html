@@ -15,25 +15,28 @@
 				<span data-action="display-modal">Add Event</span>
 			</button>
 		</header>
-		<aside id="calendar-ctrls" class="calendar__ctrls">
-			<span class="material-icons calendar__btn" data-action="change-month-plus">chevron_left</span>
-			<h2 class="calendar__month" id="calendar_month"></h2>
-			<span class="material-icons calendar__btn">chevron_right</span>
-		</aside>
-		<div class="main__container">
-			<aside class="container__dataEvent">
-				<h2 class="dataEvent__date" id="date-event">Date</h2>
-			</aside>
-			<section id="calendar-grid" class="calendar__grid">
-				<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Monday</span></div>
-				<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Tuesday</span></div>
-				<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Wednesday</span></div>
-				<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Thursday</span></div>
-				<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Friday</span></div>
-				<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Saturday</span></div>
-				<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Sunday</span></div>
+		<main>
+			<section id="calendar-ctrls" class="calendar__ctrls grid-double-cell">
+				<span class="material-icons calendar__btn" data-action="change-month-plus">chevron_left</span>
+				<h2 class="calendar__month" id="calendar_month"></h2>
+				<span class="material-icons calendar__btn">chevron_right</span>
 			</section>
-		</div>
+			<div class="calendar-wrapper">
+				<aside id="calendar-aside-events" class="calendar__aside-events calendar__aside-events--hidden">
+					<h2 id="calendar-aside-date" class="calendar__aside-date"></h2>
+					<p id="calendar-aside-hint" class="calendar__aside-hint no-display">📭 There are no events for this day. You can create a new one</p>
+				</aside>
+				<section id="calendar-grid" class="calendar__grid">
+					<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Monday</span></div>
+					<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Tuesday</span></div>
+					<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Wednesday</span></div>
+					<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Thursday</span></div>
+					<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Friday</span></div>
+					<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Saturday</span></div>
+					<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Sunday</span></div>
+				</section>
+			</div>
+		</main>
 
 		<template id="template-calendar-cell">
 			<div class="calendar__cell calendar__cell--day">
@@ -56,7 +59,7 @@
 						<h2 class="modal__title modal__double-cell">NEW EVENT</h2>
 						<label for="title" class="modal__align-center">Title</label>
 						<input type="text" name="title" class="modal__input" id="title" />
-						<div data-warning="title" class="modal__warning is-hidden">
+						<div data-warning="title" class="modal__warning no-display">
 							<ul>
 								<li>Maximum characters allowed is 60.</li>
 								<li>Title is required.</li>
@@ -64,7 +67,7 @@
 						</div>
 						<label for="initial-date" class="modal__align-center">Initial date</label>
 						<input type="datetime-local" class="modal__input" id="initial-date" name="initial_date" />
-						<div data-warning="initial-date" class="modal__warning is-hidden">
+						<div data-warning="initial-date" class="modal__warning no-display">
 							<ul>
 								<li>The year has to be 2021 or 2022.</li>
 								<li>The date must be the same or later than the current one.</li>
@@ -74,9 +77,9 @@
 							<input type="checkbox" class="modal__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
-						<label for="end-date" class="modal__align-center is-hidden">End Date</label>
-						<input type="datetime-local" class="modal__input is-hidden" id="end-date" name="end_date" disabled />
-						<div data-warning="end-date" class="modal__warning is-hidden">
+						<label for="end-date" class="modal__align-center no-display">End Date</label>
+						<input type="datetime-local" class="modal__input no-display" id="end-date" name="end_date" disabled />
+						<div data-warning="end-date" class="modal__warning no-display">
 							<ul>
 								<li>The year has to be 2021 or 2022.</li>
 								<li>The end-date date has to be after the initial-date.</li>
@@ -86,8 +89,8 @@
 							<input type="checkbox" class="modal__input-chk" id="reminder-chk" name="reminder_chk" />
 							<label for="reminder-chk">Remind me when this event expires.</label>
 						</div>
-						<label for="reminder" class="modal__align-center is-hidden">Time</label>
-						<select id="reminder" name="reminder" class="modal__select is-hidden" disabled>
+						<label for="reminder" class="modal__align-center no-display">Time</label>
+						<select id="reminder" name="reminder" class="modal__select no-display" disabled>
 							<option value="5">5 min</option>
 							<option value="10">10 min</option>
 							<option value="15">15 min</option>
@@ -96,7 +99,7 @@
 						</select>
 						<label for="description" class="modal__align-center">Description</label>
 						<textarea class="modal__textarea" id="description" name="description" placeholder="Insert a description here..."></textarea>
-						<div data-warning="description" class="modal__warning is-hidden">Maximum characters allowed is 500.</div>
+						<div data-warning="description" class="modal__warning no-display">Maximum characters allowed is 500.</div>
 						<label for="type" class="modal__align-center">Type</label>
 						<select id="type" name="type" class="modal__select">
 							<option value="Meeting">Meeting</option>
