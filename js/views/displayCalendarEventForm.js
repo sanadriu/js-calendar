@@ -12,7 +12,9 @@ export default function displayCalendarEventForm() {
 	const inputs = form.elements;
 
 	form.dataset.date = defaultDateISO;
+	inputs.initial_date.min = defaultDateISO;
 	inputs.initial_date.value = defaultDateISO;
+	inputs.end_date.min = defaultDateISO;
 	inputs.end_date.value = defaultDateISO;
 
 	body.appendChild(modal);

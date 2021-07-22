@@ -1,7 +1,7 @@
 export default function displayEndDateInput() {
-	const endDateCheck = document.querySelector("input[name='end_date_chk']");
-	const endDateInput = document.querySelector("input[name='end_date']");
-	const endDateLabel = document.querySelector("label[for='end-date']");
+	const endDateCheck = document.querySelector("[name='end_date_chk']");
+	const endDateInput = document.querySelector("[name='end_date']");
+	const endDateLabel = document.querySelector("[for='end-date']");
 
 	if (endDateCheck.checked) {
 		endDateLabel.classList.remove("is-hidden");

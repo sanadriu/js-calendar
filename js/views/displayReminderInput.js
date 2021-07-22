@@ -1,7 +1,7 @@
 export default function displayReminderInput() {
-	const reminderCheck = document.querySelector("input[name='reminder_chk']");
-	const reminderInput = document.querySelector("select[name='reminder']");
-	const reminderLabel = document.querySelector("label[for='reminder']");
+	const reminderCheck = document.querySelector("[name='reminder_chk']");
+	const reminderInput = document.querySelector("[name='reminder']");
+	const reminderLabel = document.querySelector("[for='reminder']");
 
 	if (reminderCheck.checked) {
 		reminderLabel.classList.remove("is-hidden");

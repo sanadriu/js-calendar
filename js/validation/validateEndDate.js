@@ -3,21 +3,22 @@ export default function validateEndDate() {
 
 	const warningBox = document.querySelector("[data-warning='end-date']");
 
-	const endDateCheck = document.querySelector("input[name='end_date_chk']");
+	const endDateCheck = document.querySelector("[name='end_date_chk']");
 
 	if (endDateCheck.checked) {
-		const endDate = new Date(document.querySelector("input[name='end_date']").value);
-		const initialDate = new Date(document.querySelector("input[name='initial_date']").value);
+		const endDate = new Date(document.querySelector("[name='end_date']").value);
+		const initialDate = new Date(document.querySelector("[name='initial_date']").value);
+		const allowedYears = [2021, 2022];
 
-		if (endDate < initialDate) {
+		if (endDate < initialDate || !allowedYears.includes(initialDate.getFullYear())) {
 			validity = false;
 		}
 	}
 
 	if (validity) {
-		warningBox.classList.remove("is-hidden");
-	} else {
 		warningBox.classList.add("is-hidden");
+	} else {
+		warningBox.classList.remove("is-hidden");
 	}
 
 	return validity;

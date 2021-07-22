@@ -5,11 +5,11 @@ export default function calendarEventFormChangeListener() {
 	const form = document.querySelector("#calendar-event-form");
 
 	form.addEventListener("change", (e) => {
-		if (e.target.matches("input[name='end_date_chk']")) {
+		if (e.target.matches("[name='end_date_chk']")) {
 			displayEndDateInput();
 		}
 
-		if (e.target.matches("input[name='reminder_chk']")) {
+		if (e.target.matches("[name='reminder_chk']")) {
 			displayReminderInput();
 		}
 	});
