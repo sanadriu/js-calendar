@@ -34,13 +34,21 @@ In this document will be registered the activities developed by the team every d
 - Alberto continues with the validation.
 - Andres helped me with displaying the date in the Calendar Controls aside container.
 
-## Wednesday, 21th of July 2021
+## Wednesday, 21st of July 2021
 
 ### 9:15 - 12:00
-- Gonzalo started the development of an aside container where the tasks of a sected day are going to be displayed with more information.
+- Gonzalo started the development of an aside event log where the tasks of a sected day are going to be displayed with more information.
 - Alberto finished the validation.
 
 ### 13:00 - 17:45
 
 - Adrián started to integrate the Alberto's validation into the main branch and refactorize it.
 - The rest of the team is researching how to store the event in the local storage.
+
+## Thursday, 22nd of July 2021
+
+### 9:15 - 13:00
+
+- Adrián has finished the validation and the aside event log integration in the main branch.
+- Alberto, Andrés and Gonzalo have developed cards for the events, which are going to be inserted in the corresponding cell when the user when the date matches.
+- Gonzalo has started the development of a modal to show the info of the event.
