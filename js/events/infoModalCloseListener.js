@@ -1,4 +1,4 @@
-import closeInfoModal from "../views/closeInfoModal.js";
+import closeInfoModal from "../views/closeCalendarEventInfo.js";
 
 export default function infoModalCloseListener() {
 	document.addEventListener("click", (e) => {
