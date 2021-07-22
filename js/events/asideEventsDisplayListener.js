@@ -1,4 +1,4 @@
-import displayAsideEvents from "../views/displayAsideEvents.js";
+import displayAsideEvents from "../view_modifiers/displayAsideEvents.js";
 
 export default function asideEventsDisplayListener() {
 	document.addEventListener("click", (e) => {

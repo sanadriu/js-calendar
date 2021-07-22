@@ -1,5 +1,5 @@
 import { displayCalendarEventTags } from "./displayCalendarEventTags.js";
-import updateCalendar from "../views/updateCalendar.js";
+import updateCalendar from "../view_modifiers/updateCalendar.js";
 
 export default function removeEventCalendarListener() {
 	document.addEventListener("click", (e) => {

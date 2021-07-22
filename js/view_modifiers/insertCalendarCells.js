@@ -1,4 +1,4 @@
-import getDaysInMonth from "../helpers/getDaysInMonth.js";
+import getDaysInMonth from "../utils/getDaysInMonth.js";
 import { createCalendarCell } from "../templates/templates.js";
 
 export default function insertCalendarCells(yearNum, monthNum) {

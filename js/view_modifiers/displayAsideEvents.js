@@ -1,4 +1,4 @@
-import getMonthName from "../helpers/getMonthName.js";
+import getMonthName from "../utils/getMonthName.js";
 
 export default function displayAsideEvents(day) {
 	const asideEventsElement = document.querySelector("#calendar-aside-events");

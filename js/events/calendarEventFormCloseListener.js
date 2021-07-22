@@ -1,4 +1,4 @@
-import closeCalendarEventForm from "../views/closeCalendarEventForm.js";
+import closeCalendarEventForm from "../view_modifiers/closeCalendarEventForm.js";
 
 export default function calendarEventFormCloseListener() {
 	document.addEventListener("click", (e) => {

@@ -1,5 +1,5 @@
-import displayEndDateInput from "../views/displayEndDateInput.js";
-import displayReminderInput from "../views/displayReminderInput.js";
+import displayEndDateInput from "../view_modifiers/displayEndDateInput.js.js";
+import displayReminderInput from "../view_modifiers/displayReminderInput.js.js";
 
 export default function calendarEventFormChangeListener() {
 	const form = document.querySelector("#event-form");

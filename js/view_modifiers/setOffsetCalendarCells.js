@@ -1,4 +1,4 @@
-import getFirstDayOfMonth from "../helpers/getFirstDayOfMonth.js";
+import getFirstDayOfMonth from "../utils/getFirstDayOfMonth.js";
 
 export default function setOffsetCalendarCells(yearNum, monthNum) {
 	const firstCalendarCell = document.querySelector(".calendar__cell--day");

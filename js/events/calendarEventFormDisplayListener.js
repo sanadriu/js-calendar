@@ -1,4 +1,4 @@
-import displayCalendarEventForm from "../views/displayCalendarEventForm.js";
+import displayCalendarEventForm from "../view_modifiers/displayCalendarEventForm.js";
 
 export default function calendarEventFormDisplayListener() {
 	document.addEventListener("click", (e) => {

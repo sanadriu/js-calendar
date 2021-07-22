@@ -1,4 +1,4 @@
-import updateCalendar from "../views/updateCalendar.js";
+import updateCalendar from "../view_modifiers/updateCalendar.js";
 
 export default function updateCalendarListener() {
 	document.addEventListener("click", (e) => {

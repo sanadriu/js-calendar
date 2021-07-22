@@ -1,6 +1,6 @@
-import validateCalendarEventForm from "../validation/calendarEventFormValidation.js";
-import closeCalendarEventForm from "../views/closeCalendarEventForm.js";
-import { saveEvent } from "./saveEvent.js";
+import validateCalendarEventForm from "../validations/calendarEventFormValidation.js";
+import closeCalendarEventForm from "../view_modifiers/closeCalendarEventForm.js.js";
+import { saveCalendarEvent } from "./saveCalendarEvent.js";
 
 export default function calendarEventFormSubmitListener() {
 	const form = document.querySelector("#event-form");
@@ -10,28 +10,17 @@ export default function calendarEventFormSubmitListener() {
 
 		if (validateCalendarEventForm()) {
 			const calendarEvent = {
+				id: new Date.getTime(),
 				title: form.title.value,
-				initialDate: form.initial_date.value,
-				endDate: form.end_date_chk.checked ? form.end_date.value : null,
-				endDateCheck: form.end_date_chk.checked,
-				reminder: form.reminder_chk.checked ? form.reminder.value : null,
-				reminderCheck: form.reminder_chk.checked,
 				description: form.description.value,
 				type: form.type.value,
+				initialDate: form.initial_date.value,
+				endDate: form.end_date_chk.checked ? form.end_date.value : null,
+				reminder: form.reminder_chk.checked ? form.reminder.value : null,
 			};
 
-			saveEvent(
-				calendarEvent.title,
-				calendarEvent.initialDate,
-				calendarEvent.endDateCheck,
-				calendarEvent.endDate,
-				calendarEvent.reminderCheck,
-				calendarEvent.reminder,
-				calendarEvent.description,
-				calendarEvent.type
-			);
+			saveCalendarEvent(calendarEvent);
 
-			console.log(calendarEvent);
 			closeCalendarEventForm();
 		}
 	});

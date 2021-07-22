@@ -2,9 +2,9 @@ import calendarEventFormDisplayListener from "./events/calendarEventFormDisplayL
 import calendarEventFormCloseListener from "./events/calendarEventFormCloseListener.js";
 import updateCalendarListener from "./events/updateCalendarListener.js";
 import asideEventsDisplayListener from "./events/asideEventsDisplayListener.js";
-import infoModalCloseListener from "./events/infoModalCloseListener.js";
+import calendarEventInfoCloseListener from "./events/calendarEventInfoCloseListener.js";
 
-import updateCalendar from "./views/updateCalendar.js";
+import updateCalendar from "./view_modifiers/updateCalendar.js";
 import calendarEventInfoDisplayListener from "./events/calendarEventInfoDisplayListener.js";
 import removeEventCalendarListener from "./events/removeEvent.js";
 
@@ -14,7 +14,7 @@ calendarEventFormCloseListener();
 updateCalendarListener();
 
 // Alberto
-infoModalCloseListener();
+calendarEventInfoCloseListener();
 calendarEventInfoDisplayListener();
 removeEventCalendarListener();
 
