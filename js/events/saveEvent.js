@@ -1,3 +1,7 @@
+import closeModal from '../views/closeModal.js';
+import updateCalendar from '../views/updateCalendar.js';
+import { contIds } from '../app.js'
+
 export function saveEvent(title, initialDate, checkEndDate, endDate, checkRemind, remind, description, type) {
   const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));
   const calendarEvent = {};
@@ -17,7 +21,7 @@ export function saveEvent(title, initialDate, checkEndDate, endDate, checkRemind
     calendarEvent.endDate.day = elements_date2[2];
     calendarEvent.endDate.time = array_dates2[1];
   }
-
+  calendarEvent.id = contIds.cont;
   calendarEvent.title = title;
 
   calendarEvent.initialDate = {};
@@ -31,19 +35,11 @@ export function saveEvent(title, initialDate, checkEndDate, endDate, checkRemind
   calendarEvent.remind = remind;
   calendarEvent.description = description;
   calendarEvent.type = type;
-/* 
-  console.log(calendarEvents); */
-  calendarEvents.push(calendarEvent);
-/*   calendarEvents.sort(orderArrayEvents); */
-  localStorage.setItem("calendarEvents", JSON.stringify(calendarEvents));
-}
 
-function orderArrayEvents(a, b) {
-  if (a.initialDate < b.initialDate) {
-    return -1;
-  }
-  if (b.initialDate > a.initialDate) {
-    return 1;
-  }
-  return 0;
+  calendarEvents.push(calendarEvent);
+  localStorage.setItem("calendarEvents", JSON.stringify(calendarEvents));
+  contIds.cont++;
+  localStorage.setItem('counter',contIds.cont);
+  closeModal();
+  updateCalendar(sessionStorage.calendarYear, sessionStorage.calendarMonth);
 }

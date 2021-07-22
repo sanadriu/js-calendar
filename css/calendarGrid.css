@@ -63,3 +63,23 @@
     margin: 0.2em 0;
 	white-space: nowrap;
 }
+
+.day__event-red{
+	background-color: red;
+	border-left: 5px solid darkred ;
+}
+
+.day__event-blue{
+	background-color: blue;
+	border-left: 5px solid darkblue ;
+}
+
+.day__event-orange{
+	background-color: orange;
+	border-left: 5px solid darkorange ;
+}
+
+.day__event-green{
+	background-color: green;
+	border-left: 5px solid darkgreen ;
+}
