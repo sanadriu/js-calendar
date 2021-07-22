@@ -11,9 +11,9 @@
 	<body>
 		<header class="header">
 			<h1 class="header__title">JS Calendar</h1>
-			<button data-action="display-calendar-event-form" class="header__btn">
-				<span data-action="display-calendar-event-form" class="material-icons">event</span>
-				<span data-action="display-calendar-event-form">Add Event</span>
+			<button data-action="display-event-form" class="header__btn">
+				<span data-action="display-event-form" class="material-icons">event</span>
+				<span data-action="display-event-form">Add Event</span>
 			</button>
 		</header>
 		<main>
@@ -55,7 +55,7 @@
 
 		<template id="template-calendar-cell">
 			<div class="calendar__cell calendar__cell--day" data-action="display-event-list">
-				<img class="cell__add-icon" src="assets/img/add.svg" alt="add-event" data-action="display-calendar-event-form" />
+				<img class="cell__add-icon" src="assets/img/add.svg" alt="add-event" data-action="display-event-form" />
 				<h2 class="cell__day-number"></h2>
 			</div>
 		</template>
@@ -67,89 +67,89 @@
 			</div>
 		</template>
 
-		<template id="template-modal">
-			<section id="modal-calendar-event-form" class="modal" data-action="close-calendar-event-form">
-				<form class="modal__form" id="calendar-event-form">
-					<span data-action="close-calendar-event-form" class="material-icons modal__icon">cancel</span>
-					<div class="modal__grid">
-						<h2 class="modal__title modal__double-cell">NEW EVENT</h2>
-						<label for="title" class="modal__align-center">Title</label>
-						<input type="text" name="title" class="modal__input" id="title" />
-						<div data-warning="title" class="modal__warning no-display">
+		<template id="template-event-form">
+			<section id="modal-event-form" class="modal" data-action="close-event-form">
+				<form class="event-form" id="event-form">
+					<span data-action="close-event-form" class="material-icons event-form__icon">cancel</span>
+					<div class="event-form__grid">
+						<h2 class="event-form__title event-form__double-cell">NEW EVENT</h2>
+						<label for="title" class="event-form__align-center">Title</label>
+						<input type="text" name="title" class="event-form__input" id="title" />
+						<div data-warning="title" class="event-form__warning no-display">
 							<ul>
 								<li>Maximum characters allowed is 60.</li>
 								<li>Title is required.</li>
 							</ul>
 						</div>
-						<label for="initial-date" class="modal__align-center">Initial date</label>
-						<input type="datetime-local" class="modal__input" id="initial-date" name="initial_date" />
-						<div data-warning="initial-date" class="modal__warning no-display">
+						<label for="initial-date" class="event-form__align-center">Initial date</label>
+						<input type="datetime-local" class="event-form__input" id="initial-date" name="initial_date" />
+						<div data-warning="initial-date" class="event-form__warning no-display">
 							<ul>
 								<li>The year has to be 2021 or 2022.</li>
 								<li>The date must be the same or later than the current one.</li>
 							</ul>
 						</div>
-						<div class="modal__double-cell">
-							<input type="checkbox" class="modal__input-chk" id="end-date-chk" name="end_date_chk" />
+						<div class="event-form__double-cell">
+							<input type="checkbox" class="event-form__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
-						<label for="end-date" class="modal__align-center no-display">End Date</label>
-						<input type="datetime-local" class="modal__input no-display" id="end-date" name="end_date" disabled />
-						<div data-warning="end-date" class="modal__warning no-display">
+						<label for="end-date" class="event-form__align-center no-display">End Date</label>
+						<input type="datetime-local" class="event-form__input no-display" id="end-date" name="end_date" disabled />
+						<div data-warning="end-date" class="event-form__warning no-display">
 							<ul>
 								<li>The year has to be 2021 or 2022.</li>
 								<li>The end-date date must be after the initial-date and the current one.</li>
 							</ul>
 						</div>
-						<div class="modal__double-cell">
-							<input type="checkbox" class="modal__input-chk" id="reminder-chk" name="reminder_chk" />
+						<div class="event-form__double-cell">
+							<input type="checkbox" class="event-form__input-chk" id="reminder-chk" name="reminder_chk" />
 							<label for="reminder-chk">Remind me when this event expires.</label>
 						</div>
-						<label for="reminder" class="modal__align-center no-display">Time</label>
-						<select id="reminder" name="reminder" class="modal__select no-display" disabled>
+						<label for="reminder" class="event-form__align-center no-display">Time</label>
+						<select id="reminder" name="reminder" class="event-form__select no-display" disabled>
 							<option value="5">5 min</option>
 							<option value="10">10 min</option>
 							<option value="15">15 min</option>
 							<option value="30">30 min</option>
 							<option value="60">1 h</option>
 						</select>
-						<label for="description" class="modal__align-center">Description</label>
-						<textarea class="modal__textarea" id="description" name="description" placeholder="Insert a description here..."></textarea>
-						<div data-warning="description" class="modal__warning no-display">Maximum characters allowed is 500.</div>
-						<label for="type" class="modal__align-center">Type</label>
-						<select id="type" name="type" class="modal__select">
+						<label for="description" class="event-form__align-center">Description</label>
+						<textarea class="event-form__textarea" id="description" name="description" placeholder="Insert a description here..."></textarea>
+						<div data-warning="description" class="event-form__warning no-display">Maximum characters allowed is 500.</div>
+						<label for="type" class="event-form__align-center">Type</label>
+						<select id="type" name="type" class="event-form__select">
 							<option value="Meeting">Meeting</option>
 							<option value="Task">Task</option>
 							<option value="Personal">Personal</option>
 							<option value="Study">Study</option>
 						</select>
 					</div>
-					<div class="modal__flex-buttons">
-						<button type="button" class="modal__button" data-action="close-calendar-event-form">Cancel</button>
-						<button type="submit" class="modal__button" formnovalidate="formnovalidate">Create</button>
+					<div class="event-form__flex-buttons">
+						<button type="button" class="event-form__button" data-action="close-event-form">Cancel</button>
+						<button type="submit" class="event-form__button" formnovalidate="formnovalidate">Create</button>
 					</div>
 				</form>
 			</section>
 		</template>
 
-		<template id="modal__infoevent">
-			<div class="modal">
-				<section class="main__modal-info" id="info-event">
-					<div class="modal__type">
-						<p class="event__date" id="date-event">22 de julio de 2021</p>
-						<img src="./assets/img/delete.svg" class="event__icon-top delete" alt="Remove Event" title="Remove Event" />
-						<img src="./assets/img/close.svg" class="event__icon-top" alt="Close Information" title="Close Information" />
-					</div>
-					<div class="modal__flex">
+		<template id="template-event-info">
+			<section class="modal" id="modal-event-info">
+				<div class="main__modal-info" id="event-info">
+					<header class="modal__type">
+						<p id="event-info-date" class="event-info__date"></p>
+						<img src="./assets/img/delete.svg" class="event__icon-top" alt="Remove Event" title="Remove Event" data-action="remove-event" />
+						<img src="./assets/img/close.svg" class="event__icon-top" alt="Close Event Information" title="Close Event Information" data-action="close-event-info" />
+					</header>
+					<section class="event-info__section">
 						<img src="./assets/img/calendar.svg" class="event__icon-left" alt="Title" />
-						<h1 class="info__title" id="title-event">Coffee with...</h1>
-					</div>
-					<div class="modal__flex">
+						<h2 id="event-info-title" class="event-info__title"></h2>
+					</section>
+					<section class="event-info__section">
 						<img src="./assets/img/writing.svg" class="event__icon-left" alt="Calendar" />
-						<p class="info__description" id="description-event">Vamos a escuchar otra genial anécdota de CSS sobre cómo el método B.E.M. es el mejor del mundo</p>
-					</div>
-				</section>
-			</div>
+						<p id="event-info-description" class="event-info__description"></p>
+					</section>
+				</div>
+			</section>
 		</template>
 
 		<script src="js/app.js" type="module"></script>

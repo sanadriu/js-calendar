@@ -4,6 +4,6 @@ export default function calendarEventFormCloseListener() {
 	document.addEventListener("click", (e) => {
 		e.stopPropagation();
 
-		if (e.target.matches("[data-action='close-calendar-event-form']") && document.querySelector("#modal-calendar-event-form") !== null) closeCalendarEventForm();
+		if (e.target.matches("[data-action='close-event-form']") && document.querySelector("#modal-event-form") !== null) closeCalendarEventForm();
 	});
 }

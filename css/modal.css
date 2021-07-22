@@ -9,7 +9,7 @@
 	width: 100vw;
 }
 
-.modal__form {
+.event-form {
 	background-color: white;
 	border-radius: 0.5rem;
 	box-shadow: 0 0 8px rgb(0 0 0 / 20%);
@@ -35,7 +35,7 @@
 	place-self: center stretch;
 }
 
-.modal__flex-buttons {
+.event-info__section-buttons {
 	display: flex;
 	align-items: center;
 	justify-content: center;

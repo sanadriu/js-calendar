@@ -25,6 +25,7 @@
 }
 
 .calendar__cell--day {
+<<<<<<< HEAD
 	height: 12vh;
 	overflow-y: scroll;
 
@@ -48,6 +49,10 @@
 
 .cell__add-icon:hover {
 	opacity: 1;
+=======
+	height: 15vh;
+    overflow: hidden;
+>>>>>>> ed037e5fb621a51ad40bc6041107dc07d32e589a
 }
 
 .cell__weekday-name {
@@ -79,4 +84,35 @@
 
 .cell__event-name {
 	font-weight: bold;
+}
+
+.day__event{
+	font-size: 0.8em;
+    background: red;
+    color: wheat;
+    padding: 0.2em;
+    border-radius: 0.2rem;
+    margin: 0.2em 0;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.day__event-red{
+	background-color: red;
+	border-left: 5px solid darkred ;
+}
+
+.day__event-blue{
+	background-color: blue;
+	border-left: 5px solid darkblue ;
+}
+
+.day__event-orange{
+	background-color: orange;
+	border-left: 5px solid darkorange ;
+}
+
+.day__event-green{
+	background-color: green;
+	border-left: 5px solid darkgreen ;
 }

@@ -1,12 +1,12 @@
 import calendarEventFormChangeListener from "../events/calendarEventFormChangeListener.js";
 import calendarEventFormSubmitListener from "../events/calendarEventFormSubmitListener.js";
 import getDateISO from "../helpers/getDateISO.js";
-import { createModal } from "../templates/templates.js";
+import { createCalendarEventForm } from "../templates/templates.js";
 
 export default function displayCalendarEventForm(year, month, day) {
 	const body = document.querySelector("body");
-	const modal = createModal();
-	const form = modal.querySelector("#calendar-event-form");
+	const modal = createCalendarEventForm();
+	const form = modal.querySelector("#event-form");
 
 	const defaultDateISO = year && month && day ? getDateISO(year, month, day) : getDateISO();
 	sessionStorage.lastFormDateISO = getDateISO();
