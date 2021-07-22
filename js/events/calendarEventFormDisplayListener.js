@@ -5,8 +5,8 @@ export default function calendarEventFormDisplayListener() {
 		e.stopPropagation();
 
 		if (e.target.matches("[data-action='display-calendar-event-form']") && document.querySelector("#modal-calendar-event-form") === null) {
-			if (e.target.matches("[data-day]")) {
-				displayCalendarEventForm(sessionStorage.calendarYear, sessionStorage.calendarMonth, parseInt(e.target.dataset.day));
+			if (e.target.matches(".cell__add-icon")) {
+				displayCalendarEventForm(sessionStorage.calendarYear, sessionStorage.calendarMonth, parseInt(e.target.parentElement.dataset.day));
 			} else {
 				displayCalendarEventForm();
 			}
