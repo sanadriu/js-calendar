@@ -1,4 +1,5 @@
 import { showCalendarEvents } from "./showCalendarEvents.js"
+import updateCalendar from '../views/updateCalendar.js';
 
 export default function removeEventCalendarListener() {
 	document.addEventListener("click", (e) => {
@@ -17,8 +18,8 @@ export default function removeEventCalendarListener() {
 
            const modal = document.querySelector("#modal-info-event");
            modal.remove();
-
-           showCalendarEvents(localStorage.getItem('calendarEvents'), new Date(sessionStorage.calendarDateISO).getMonth() + 1, new Date(sessionStorage.calendarDateISO).getFullYear())
+           updateCalendar(new Date(sessionStorage.calendarDateISO).getFullYear(), new Date(sessionStorage.calendarDateISO).getMonth() + 1);
+           //showCalendarEvents(localStorage.getItem('calendarEvents'), new Date(sessionStorage.calendarDateISO).getMonth() + 1, new Date(sessionStorage.calendarDateISO).getFullYear())
         }
 	});
 }
