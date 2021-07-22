@@ -8,9 +8,10 @@ export default function validateEndDate() {
 	if (endDateCheck.checked) {
 		const endDate = new Date(document.querySelector("[name='end_date']").value);
 		const initialDate = new Date(document.querySelector("[name='initial_date']").value);
+		const minimumDate = new Date(sessionStorage.lastFormDateISO);
 		const allowedYears = [2021, 2022];
 
-		if (endDate < initialDate || !allowedYears.includes(initialDate.getFullYear())) {
+		if (endDate < initialDate || endDate < minimumDate || !allowedYears.includes(initialDate.getFullYear())) {
 			validity = false;
 		}
 	}
