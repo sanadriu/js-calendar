@@ -16,9 +16,9 @@
 			</button>
 		</header>
 		<aside id="calendar-ctrls" class="calendar__ctrls">
-			<span class="material-icons calendar__btn" data-action="change-month-plus">chevron_left</span>
+			<span class="material-icons calendar__btn" data-action="update-calendar sub-month">chevron_left</span>
 			<h2 class="calendar__month" id="calendar_month"></h2>
-			<span class="material-icons calendar__btn">chevron_right</span>
+			<span class="material-icons calendar__btn" data-action="update-calendar add-month">chevron_right</span>
 		</aside>
 		<section id="calendar-grid" class="calendar__grid">
 			<div class="calendar__cell calendar__cell--weekday-name"><span class="cell__weekday-name">Monday</span></div>
@@ -48,20 +48,35 @@
 				<form class="modal__form" id="form_event">
 					<span data-action="close-modal" class="material-icons modal__icon">cancel</span>
 					<div class="modal__grid">
-						<h2 class="modal__header modal__double-cell">NEW EVENT</h2>
+						<h2 class="modal__title modal__double-cell">NEW EVENT</h2>
 						<label for="title" class="modal__align-center">Title</label>
-						<input type="text" name="title" class="modal__input" id="title"/>
-						<div data-warning="title" class="modal__warning is-hidden">Error: Is required and less than 60 characters</div>
+						<input type="text" name="title" class="modal__input" id="title" />
+						<div data-warning="title" class="modal__warning is-hidden">
+							<ul>
+								<li>Maximum characters allowed is 60.</li>
+								<li>Title is required.</li>
+							</ul>
+						</div>
 						<label for="initial-date" class="modal__align-center">Initial date</label>
 						<input type="datetime-local" class="modal__input" id="initial-date" name="initial_date" />
-						<div data-warning="initial-date" class="modal__warning is-hidden">- The year has to be 2021 or 2022 <br>- The date must be the same or later than the current one </div>
+						<div data-warning="initial-date" class="modal__warning is-hidden">
+							<ul>
+								<li>The year has to be 2021 or 2022.</li>
+								<li>The date must be the same or later than the current one.</li>
+							</ul>
+						</div>
 						<div class="modal__double-cell">
 							<input type="checkbox" class="modal__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
 						<label for="end-date" class="modal__align-center">End Date</label>
-						<input type="datetime-local" class="modal__input" id="end-date" name="end_date" disabled/>
-						<div data-warning="end-date" class="modal__warning is-hidden">- The year has to be 2021 or 2022 <br>- The second date has to be after the first date</div>
+						<input type="datetime-local" class="modal__input" id="end-date" name="end_date" disabled />
+						<div data-warning="end-date" class="modal__warning is-hidden">
+							<ul>
+								<li>The year has to be 2021 or 2022.</li>
+								<li>The end-date date has to be after the initial-date.</li>
+							</ul>
+						</div>
 						<div class="modal__double-cell">
 							<input type="checkbox" class="modal__input-chk" id="time-chk" name="time_chk" />
 							<label for="time-chk">Remind me when this event expires.</label>
@@ -76,7 +91,7 @@
 						</select>
 						<label for="desc" class="modal__align-center">Description</label>
 						<textarea class="modal__textarea" id="desc" name="desc" placeholder="Insert a description here..."></textarea>
-						<div data-warning="description" class="modal__warning is-hidden">Error: max 500 characters</div>
+						<div data-warning="description" class="modal__warning is-hidden">Maximum characters allowed is 500.</div>
 						<label for="type" class="modal__align-center">Type</label>
 						<select id="type" name="type" class="modal__select">
 							<option value="Meeting">Meeting</option>
