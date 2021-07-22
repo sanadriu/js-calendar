@@ -13,6 +13,6 @@ updateCalendarEvent();
 sessionStorage.calendarDateISO = new Date().toISOString();
 
 console.log(new Date(sessionStorage.calendarDateISO).getFullYear());
-console.log(new Date(sessionStorage.calendarDateISO).getMonth());
+console.log(new Date(sessionStorage.calendarDateISO).getMonth() + 1);
 
 updateCalendar(new Date(sessionStorage.calendarDateISO).getFullYear(), new Date(sessionStorage.calendarDateISO).getMonth() + 1);
