@@ -1,6 +1,6 @@
 import updateCalendar from "../views/updateCalendar.js";
 
-export default function updateCalendarEvent() {
+export default function updateCalendarListener() {
 	document.addEventListener("click", (e) => {
 		if (e.target.matches("[data-action~='update-calendar']")) {
 			const calendarDate = new Date(sessionStorage.calendarYear, sessionStorage.calendarMonth - 1);
