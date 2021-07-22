@@ -6,12 +6,17 @@
 	gap: 0.25rem;
 	background-color: #f2f2f2;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-	margin: 0.5rem;
+	flex-basis: 100%;
 }
 
 .calendar__cell {
 	background-color: white;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+	padding: 0.25rem;
+}
+
+.calendar__cell:hover {
+	box-shadow: 0 0 4px teal;
 }
 
 .calendar__cell--weekday-name {
@@ -31,15 +36,16 @@
 
 .cell__day-number {
 	text-align: center;
-	font-size: 1rem;
-	margin: 0;
+	font-size: 0.9rem;
 	padding: 0.5rem;
+	width: 4ch;
+	margin: 0 auto;
+	border-radius: 50%;
 }
 
 .cell__day-number--today {
 	background-color: teal;
 	color: white;
-	border-radius: 0.25rem;
 }
 
 .cell__event {

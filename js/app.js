@@ -1,26 +1,26 @@
-import displayModalEvent from "./events/displayModalEvent.js";
-import closeModalEvent from "./events/closeModalEvent.js";
+import calendarEventFormDisplayListener from "./events/calendarEventFormDisplayListener.js";
+import calendarEventFormCloseListener from "./events/calendarEventFormCloseListener.js";
 import updateCalendarEvent from "./events/updateCalendarEvent.js";
+import asideEventsDisplayListener from "./events/asideEventsDisplayListener.js";
+
 import updateCalendar from "./views/updateCalendar.js";
 import modalInfoEvent from './events/modalInfoEvent.js'
 
-displayModalEvent();
-closeModalEvent();
+asideEventsDisplayListener();
+calendarEventFormDisplayListener();
+calendarEventFormCloseListener();
 updateCalendarEvent();
 modalInfoEvent();
+
 /* Inicialización testing */
 if(!localStorage.getItem('calendarEvents')){
     localStorage.calendarEvents = JSON.stringify([]);
 }
 
-const currentDate = new Date();
+sessionStorage.calendarDateISO = new Date().toISOString();
 
-sessionStorage.currentYear = currentDate.getFullYear();
-sessionStorage.currentMonth = currentDate.getMonth() + 1;
-sessionStorage.currentDay = currentDate.getDate();
-
-sessionStorage.calendarYear = currentDate.getFullYear();
-sessionStorage.calendarMonth = currentDate.getMonth() + 1;
+console.log(new Date(sessionStorage.calendarDateISO).getFullYear());
+console.log(new Date(sessionStorage.calendarDateISO).getMonth() + 1);
 
 let month = sessionStorage.calendarMonth;
 let year = sessionStorage.calendarYear
@@ -32,4 +32,4 @@ if(!localStorage.getItem('counter')){
 
 export let contIds = { cont: parseInt(localStorage.getItem('counter')) };
 
-updateCalendar(sessionStorage.calendarYear, sessionStorage.calendarMonth);
+updateCalendar(new Date(sessionStorage.calendarDateISO).getFullYear(), new Date(sessionStorage.calendarDateISO).getMonth() + 1);

@@ -5,7 +5,6 @@
 
 	padding: 0rem 2rem;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-	margin: 0.5rem;
 }
 
 .calendar__btn {
@@ -14,6 +13,7 @@
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 	cursor: pointer;
 	transition: 0.1s ease-in-out;
+	user-select: none;
 }
 
 .calendar__btn:hover {

@@ -1,0 +1,30 @@
+.calendar-wrapper {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.calendar__aside-events {
+	background-color: white;
+	align-items: center;
+	flex-basis: 25%;
+}
+
+.calendar__aside-events--hidden {
+	flex-basis: 0;
+	display: none;
+}
+
+.calendar__aside-date {
+	background-color: teal;
+	color: white;
+	padding: 0.7rem;
+	border-radius: 0.25rem;
+	margin-bottom: 0.5rem;
+	margin-top: 0;
+	width: 100%;
+}
+
+.calendar__aside-hint {
+	color: grey;
+	align-self: center;
+}
