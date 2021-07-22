@@ -27,3 +27,20 @@ In this document will be registered the activities developed by the team every d
 - Andres and Adrian have finished the design for the modal.
 - Alberto has started to create the validator for the form.
 - Gonzalo has achieved a way to indicate the current day in the calendar.
+
+### 11:30 - 17:30
+
+- Gonzalo's code has been integrated to the main branch and has been refactorized.
+- Alberto continues with the validation.
+- Andres helped me with displaying the date in the Calendar Controls aside container.
+
+## Wednesday, 21th of July 2021
+
+### 9:15 - 12:00
+- Gonzalo started the development of an aside container where the tasks of a sected day are going to be displayed with more information.
+- Alberto finished the validation.
+
+### 13:00 - 17:45
+
+- Adrián started to integrate the Alberto's validation into the main branch and refactorize it.
+- The rest of the team is researching how to store the event in the local storage.
