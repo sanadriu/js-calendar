@@ -3,7 +3,7 @@ import updateCalendar from "../views/updateCalendar.js";
 export default function updateCalendarEvent() {
 	document.addEventListener("click", (e) => {
 		if (e.target.matches("[data-action~='update-calendar']")) {
-			const calendarDate = new Date(sessionStorage.calendarYear, sessionStorage.calendarMonth);
+			const calendarDate = new Date(sessionStorage.calendarYear, sessionStorage.calendarMonth - 1);
 
 			if (e.target.matches("[data-action~='add-month']")) calendarDate.setMonth(calendarDate.getMonth() + 1);
 			if (e.target.matches("[data-action~='sub-month']")) calendarDate.setMonth(calendarDate.getMonth() - 1);
