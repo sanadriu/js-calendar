@@ -10,16 +10,16 @@
 	<body>
 		<header class="header">
 			<h1 class="header__title">JS Calendar</h1>
-			<button data-action="display-modal" class="header__btn">
-				<span data-action="display-modal" class="material-icons">event</span>
-				<span data-action="display-modal">Add Event</span>
+			<button data-action="display-calendar-event-form" class="header__btn">
+				<span data-action="display-calendar-event-form" class="material-icons">event</span>
+				<span data-action="display-calendar-event-form">Add Event</span>
 			</button>
 		</header>
 		<main>
 			<section id="calendar-ctrls" class="calendar__ctrls grid-double-cell">
-				<span class="material-icons calendar__btn" data-action="change-month-plus">chevron_left</span>
-				<h2 class="calendar__month" id="calendar_month"></h2>
-				<span class="material-icons calendar__btn">chevron_right</span>
+				<span class="material-icons calendar__btn" data-action="update-calendar add-month">chevron_left</span>
+				<h2 class="calendar__month" id="calendar-date"></h2>
+				<span class="material-icons calendar__btn" data-action="update-calendar sub-month">chevron_right</span>
 			</section>
 			<div class="calendar-wrapper">
 				<aside id="calendar-aside-events" class="calendar__aside-events calendar__aside-events--hidden">
