@@ -54,17 +54,17 @@
 		</main>
 
 		<template id="template-calendar-cell">
-			<div class="calendar__cell calendar__cell--day" data-action="display-event-list">
+			<article class="calendar__cell calendar__cell--day" data-action="display-event-list">
 				<img class="cell__add-icon" src="assets/img/add.svg" alt="add-event" data-action="display-event-form" />
 				<h2 class="cell__day-number"></h2>
-			</div>
+			</article>
 		</template>
 
-		<template id="template-calendar-event">
-			<div class="cell__event">
-				<span class="cell__hour"></span>
-				<span class="cell__event-name"></span>
-			</div>
+		<template id="template-event-tag">
+			<article class="event-tag">
+				<span class="event-tag__hour"></span>
+				<span class="event-tag__title"></span>
+			</article>
 		</template>
 
 		<template id="template-event-form">

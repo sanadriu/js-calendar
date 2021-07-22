@@ -1,4 +1,4 @@
-import { showCalendarEvents } from "./showCalendarEvents.js";
+import { displayCalendarEventTags } from "./displayCalendarEventTags.js";
 import updateCalendar from "../views/updateCalendar.js";
 
 export default function removeEventCalendarListener() {
@@ -18,7 +18,7 @@ export default function removeEventCalendarListener() {
 			const modal = document.querySelector("#modal-event-info");
 			modal.remove();
 			updateCalendar(new Date(sessionStorage.calendarDateISO).getFullYear(), new Date(sessionStorage.calendarDateISO).getMonth() + 1);
-			//showCalendarEvents(localStorage.getItem('calendarEvents'), new Date(sessionStorage.calendarDateISO).getMonth() + 1, new Date(sessionStorage.calendarDateISO).getFullYear())
+			//displayCalendarEventTags(localStorage.getItem('calendarEvents'), new Date(sessionStorage.calendarDateISO).getMonth() + 1, new Date(sessionStorage.calendarDateISO).getFullYear())
 		}
 	});
 }

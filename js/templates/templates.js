@@ -1,35 +1,24 @@
+function createFromTemplate(templateSelector) {
+	const fragment = document.createDocumentFragment();
+	const template = document.querySelector(templateSelector).content.cloneNode(true);
+
+	fragment.appendChild(template);
+
+	return fragment;
+}
+
 export function createCalendarCell() {
-	const fragment = document.createDocumentFragment();
-	const template = document.querySelector("#template-calendar-cell").content.cloneNode(true);
-
-	fragment.appendChild(template);
-
-	return fragment;
+	return createFromTemplate("#template-calendar-cell");
 }
 
-export function createCalendarCellEvent() {
-	const fragment = document.createDocumentFragment();
-	const template = document.querySelector("#template-calendar-event").content.cloneNode(true);
-
-	fragment.appendChild(template);
-
-	return fragment;
+export function createEventTag() {
+	return createFromTemplate("#template-event-tag");
 }
 
-export function createCalendarEventForm() {
-	const fragment = document.createDocumentFragment();
-	const template = document.querySelector("#template-event-form").content.cloneNode(true);
-
-	fragment.appendChild(template);
-
-	return fragment;
+export function createEventForm() {
+	return createFromTemplate("#template-event-form");
 }
 
-export function createModalInfo() {
-	const fragment = document.createDocumentFragment();
-	const template = document.querySelector("#template-event-info").content.cloneNode(true);
-
-	fragment.appendChild(template);
-
-	return fragment;
+export function createEventInfo() {
+	return createFromTemplate("#template-event-info");
 }

@@ -5,7 +5,7 @@ import asideEventsDisplayListener from "./events/asideEventsDisplayListener.js";
 import infoModalCloseListener from "./events/infoModalCloseListener.js";
 
 import updateCalendar from "./views/updateCalendar.js";
-import modalInfoEvent from "./events/modalInfoEvent.js";
+import calendarEventInfoDisplayListener from "./events/calendarEventInfoDisplayListener.js";
 import removeEventCalendarListener from "./events/removeEvent.js";
 
 asideEventsDisplayListener();
@@ -15,7 +15,7 @@ updateCalendarListener();
 
 // Alberto
 infoModalCloseListener();
-modalInfoEvent();
+calendarEventInfoDisplayListener();
 removeEventCalendarListener();
 
 /* Inicialización testing */

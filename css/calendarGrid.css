@@ -71,45 +71,47 @@
 	color: white;
 }
 
-.cell__event {
+.event-tag {
 	margin: 0.25rem;
 }
 
-.cell__hour {
+.event-tag__hour {
 	font-weight: 500;
 }
 
-.cell__event-name {
+.event-tag__title {
 	font-weight: bold;
 }
 
-.day__event {
-	font-size: 0.8em;
-	background: red;
-	color: wheat;
-	padding: 0.2em;
-	border-radius: 0.2rem;
-	margin: 0.2em 0;
+.event-tag {
+	font-size: 0.8rem;
+
+	padding: 0.25rem;
+	margin: 0.25rem;
+	border-radius: 0.25rem;
+
+	background: black;
+	color: white;
 	white-space: nowrap;
 	cursor: pointer;
 }
 
-.day__event-red {
+.event-tag--red {
 	background-color: red;
 	border-left: 5px solid darkred;
 }
 
-.day__event-blue {
+.event-tag--blue {
 	background-color: blue;
 	border-left: 5px solid darkblue;
 }
 
-.day__event-orange {
+.event-tag--orange {
 	background-color: orange;
 	border-left: 5px solid darkorange;
 }
 
-.day__event-green {
+.event-tag--green {
 	background-color: green;
 	border-left: 5px solid darkgreen;
 }

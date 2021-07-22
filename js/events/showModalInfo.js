@@ -1,10 +1,10 @@
-import { createModalInfo } from "../templates/templates.js";
+import { createEventInfo } from "../templates/templates.js";
 import getMonthName from "../helpers/getMonthName.js";
 
 export default function showModalInfo(idEvent) {
 	let events = JSON.parse(localStorage.getItem("calendarEvents"));
 	const body = document.querySelector("body");
-	let modal = createModalInfo();
+	let modal = createEventInfo();
 	body.appendChild(modal);
 	let type = document.querySelector(".modal__type");
 
