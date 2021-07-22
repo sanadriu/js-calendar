@@ -1,6 +1,6 @@
 import closeCalendarEventForm from "../views/closeCalendarEventForm.js";
 
-export default function closeCalendarEventFormListener() {
+export default function calendarEventFormCloseListener() {
 	document.addEventListener("click", (e) => {
 		e.stopPropagation();
 

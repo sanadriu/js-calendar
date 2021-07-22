@@ -26,6 +26,28 @@
 
 .calendar__cell--day {
 	height: 12vh;
+	overflow-y: scroll;
+
+	position: relative;
+}
+
+.calendar__cell--day:hover > .cell__add-icon {
+	display: block;
+}
+
+.cell__add-icon {
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	top: 0.25rem;
+	right: 0.25rem;
+
+	display: none;
+	opacity: 0.5;
+}
+
+.cell__add-icon:hover {
+	opacity: 1;
 }
 
 .cell__weekday-name {
