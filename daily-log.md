@@ -51,4 +51,10 @@ In this document will be registered the activities developed by the team every d
 
 - Adrián has finished the validation and the aside event log integration in the main branch.
 - Alberto, Andrés and Gonzalo have developed cards for the events, which are going to be inserted in the corresponding cell when the user when the date matches.
-- Gonzalo has started the development of a modal to show the info of the event.
+- Gonzalo has started the development of a modal to show the event information.
+
+### 14:00 - 17:45
+
+- Gonzalo has been developing the modal that shows the event information. It's displayed when an event is clicked, and closable from the modal.
+- Alberto and Andrés have been coding the way to add and remove events in every cell of the calendar.
+- Adrián has been adding an add-event button for when the cell is hovered. Loaded dates for the event form has been modified to display default correct dates, adapted to the user timezone.
