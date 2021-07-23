@@ -1,108 +1,144 @@
 .modal {
-	position: absolute;
-	top: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	backdrop-filter: blur(4px);
-	height: 100vh;
-	width: 100vw;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  height: 100vh;
+  width: 100vw;
 }
 
 .event-form {
-	background-color: white;
-	border-radius: 0.5rem;
-	box-shadow: 0 0 8px rgb(0 0 0 / 20%);
-	padding: 2rem;
-	width: 30rem;
-	position: relative;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px red;
+  padding: 2rem;
+  width: 30rem;
+  position: relative;
 }
 
 .event-form__grid {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	grid-auto-rows: auto;
-	gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: auto;
+  gap: 0.5rem;
 }
 
 .event-form__double-cell {
-	grid-column: span 2;
-	height: 2rem;
-	line-height: 2rem;
+  grid-column: span 2;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.event-form__right {
+  grid-column: 2;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.event-form__input-chk {
+  margin-right: 1rem;
+  box-shadow: 0 0 5px red;
+  border-radius: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid red;
+}
+.event-form__input-chk:checked {
+  background-color: red;
 }
 
 .event-form__align-center {
-	place-self: center stretch;
+  place-self: center stretch;
 }
 
 .event-form__buttons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 2rem;
-	gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  gap: 1rem;
 }
 
 .event-form__title {
-	text-align: center;
-	font-size: 1.25rem;
+  text-align: center;
+  font-size: 1.25rem;
+  /* border-bottom: 2px solid red; */
 }
 
 .event-form__input,
 .event-form__select {
-	padding: 0.3rem;
+  padding: 0.3rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid red;
+}
+
+.event-form__textarea:focus,
+.event-form__input:focus {
+  border: none;
 }
 
 .event-form__textarea {
-	padding: 0.3rem;
-	resize: none;
-	height: 6rem;
+  padding: 0.3rem;
+  resize: none;
+  height: 6rem;
+  border: 2px solid red;
+  border-radius: 0.5rem;
+  outline: none;
 }
 
 .event-form__button {
-	padding: 0.5rem 1rem;
-	border: none;
-	border-radius: 0.25rem;
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-	cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 4px teal;
+  cursor: pointer;
+  background-color: white;
+}
+
+.event-form__button:hover {
+  background-color: teal;
+  color: white;
 }
 
 .event-form__button:active {
-	background-color: grey;
-	color: white;
+  background-color: grey;
+  color: white;
 }
 
 .event-form__warning {
-	padding: 0.75rem;
-	background-color: #da2d2d;
-	border-radius: 0.25rem;
-	color: white;
-	grid-column: 2;
-	font-size: 0.8rem;
+  padding: 0.75rem;
+  background-color: #da2d2d;
+  border-radius: 0.25rem;
+  color: white;
+  grid-column: 2;
+  font-size: 0.8rem;
 }
 
 .event-form__warning ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .event-form__warning li:before {
-	content: "· ";
+  content: "· ";
 }
 
 .event-form__icon {
-	display: block;
-	position: absolute;
-	right: 1rem;
-	top: 1rem;
-	cursor: pointer;
-	transition: 0.1s ease-in-out;
+  display: block;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
 }
 
 .event-form__icon:hover {
-	color: teal;
+  color: teal;
 }
