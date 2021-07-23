@@ -72,7 +72,7 @@
 				<form class="event-form" id="event-form">
 					<span data-action="close-event-form" class="material-icons event-form__icon">cancel</span>
 					<div class="event-form__grid">
-						<h2 class="event-form__title event-form__double-cell">NEW EVENT</h2>
+						<h2 class="event-form__title event-form__double-cell">New event</h2>
 						<label for="title" class="event-form__align-center">Title</label>
 						<input type="text" name="title" class="event-form__input" id="title" />
 						<div data-warning="title" class="event-form__warning no-display">
@@ -89,7 +89,7 @@
 								<li>The date must be the same or later than the current one.</li>
 							</ul>
 						</div>
-						<div class="event-form__double-cell">
+						<div class="event-form__right">
 							<input type="checkbox" class="event-form__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
@@ -101,9 +101,9 @@
 								<li>The end-date date must be after the initial-date and the current one.</li>
 							</ul>
 						</div>
-						<div class="event-form__double-cell">
+						<div class="event-form__right">
 							<input type="checkbox" class="event-form__input-chk" id="reminder-chk" name="reminder_chk" />
-							<label for="reminder-chk">Remind me when this event expires.</label>
+							<label for="reminder-chk">Reminder.</label>
 						</div>
 						<label for="reminder" class="event-form__align-center no-display">Time</label>
 						<select id="reminder" name="reminder" class="event-form__select no-display" disabled>
@@ -117,7 +117,7 @@
 						<textarea class="event-form__textarea" id="description" name="description" placeholder="Insert a description here..."></textarea>
 						<div data-warning="description" class="event-form__warning no-display">Maximum characters allowed is 500.</div>
 						<label for="type" class="event-form__align-center">Type</label>
-						<select id="type" name="type" class="event-form__select">
+						<select data-action="select-type" id="type" name="type" class="event-form__select">
 							<option value="Meeting">Meeting</option>
 							<option value="Task">Task</option>
 							<option value="Personal">Personal</option>
