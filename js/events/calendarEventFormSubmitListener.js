@@ -1,7 +1,7 @@
 import validateCalendarEventForm from "../validations/calendarEventFormValidation.js";
 import closeCalendarEventForm from "../view_modifiers/closeCalendarEventForm.js";
 import { saveCalendarEvent } from "../utils/saveCalendarEvent.js";
-import displayCalendarEventTags from "../view_modifiers/displayCalendarEventTags.js";
+import updateCalendar from "../view_modifiers/updateCalendar.js";
 
 export default function calendarEventFormSubmitListener() {
 	document.addEventListener("submit", (e) => {
@@ -22,7 +22,7 @@ export default function calendarEventFormSubmitListener() {
 			saveCalendarEvent(calendarEvent);
 
 			closeCalendarEventForm();
-			displayCalendarEventTags(sessionStorage.calendarYear, sessionStorage.calendarMonth);
+			updateCalendar(parseInt(sessionStorage.calendarYear), parseInt(sessionStorage.calendarMonth));
 		}
 	});
 }
