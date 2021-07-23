@@ -1,5 +1,6 @@
 import { createEventInfo } from "../templates/templates.js";
 import getMonthName from "../utils/getMonthName.js";
+import getBreakdownDate from "../utils/getBreakdownDate.js";
 
 export default function displayCalendarEventInfo(idEvent) {
 	const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));
@@ -9,20 +10,6 @@ export default function displayCalendarEventInfo(idEvent) {
 		const body = document.querySelector("body");
 		const fragment = createEventInfo();
 		const eventInfo = fragment.querySelector("#event-info");
-
-		const calendarEventDate = new Date(calendarEvent.initialDate);
-		const calendarEventYear = calendarEventDate.getFullYear();
-		const calendarEventMonth = calendarEventDate.getMonth() + 1;
-		const calendarEventDay = calendarEventDate.getDate();
-
-		const date = `${getMonthName(calendarEventMonth)} ${calendarEventDay}, ${calendarEventYear}`;
-
-		eventInfo.querySelector("[data-action='remove-event']").dataset.event = calendarEvent.id;
-		eventInfo.querySelector("#event-info-title").textContent = calendarEvent.title;
-		eventInfo.querySelector("#event-info-description").textContent = calendarEvent.description;
-		eventInfo.querySelector("#event-info-date").textContent = date;
-
-		const eventHeader = eventInfo.querySelector(".event-info__header");
 
 		switch (calendarEvent.type) {
 			case "Meeting":
@@ -41,4 +28,43 @@ export default function displayCalendarEventInfo(idEvent) {
 
 		body.appendChild(fragment);
 	}
+}
+
+function setupCalendarEventInfo(calendarEvent) {
+	const calendarEventInitialDate = getBreakdownDate(new Date(calendarEvent.initialDate));
+	const calendarEventEndDate = getBreakdownDate(new Date(calendarEvent.endDate));
+
+	const dateStr = `${calendarEventInitialDate.day} of ${getMonthName(calendarEventInitialDate.month)}, ${calendarEventInitialDate.year}`;
+	const timeStr = `${calendarEventInitialDate.hours}:${calendarEventInitialDate.minutes}`;
+
+	eventInfo.querySelector("[data-action='remove-event']").dataset.event = calendarEvent.id;
+
+	eventInfo.querySelector("#event-info-title").textContent = calendarEvent.title;
+	eventInfo.querySelector("#event-info-description").textContent = calendarEvent.description || "There's no description for this event.";
+	eventInfo.querySelector("#event-info-initial-date").textContent = `${dateStr} - ${timeStr}`;
+	eventInfo.querySelector("#event-info-end-date").textContent = timeStr;
+
+	const eventTitle = eventInfo.querySelector("#event-info-title");
+	const eventDescription = eventInfo.querySelector("#event-info-description");
+	const eventHeader = eventInfo.querySelector("#event-info-header");
+	const eventInitialDate = eventInfo.querySelector("#event-info-initial-date");
+	const eventEndDate = eventInfo.querySelector("#event-info-end-date");
+}
+
+function displayInitialDate(calendarEvent, target) {
+	const calendarEventInitialDate = getBreakdownDate(new Date(calendarEvent.initialDate));
+
+	const dateStr = `${calendarEventInitialDate.day} of ${getMonthName(calendarEventInitialDate.month)}, ${calendarEventInitialDate.year}`;
+	const timeStr = `${calendarEventInitialDate.hours}:${calendarEventInitialDate.minutes}`;
+
+	target.textContent = `${dateStr} - ${timeStr}`;
+}
+
+function displayEndDate(calendarEvent, target) {
+	const calendarEventInitialDate = getBreakdownDate(new Date(calendarEvent.initialDate));
+
+	const dateStr = `${calendarEventInitialDate.day} of ${getMonthName(calendarEventInitialDate.month)}, ${calendarEventInitialDate.year}`;
+	const timeStr = `${calendarEventInitialDate.hours}:${calendarEventInitialDate.minutes}`;
+
+	target.textContent = `${dateStr} - ${timeStr}`;
 }

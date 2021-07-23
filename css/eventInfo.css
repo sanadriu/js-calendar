@@ -7,7 +7,6 @@
 }
 
 .event-info__header {
-	background-color: blue;
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;
 	display: flex;
@@ -32,23 +31,20 @@
 .event-info__section {
 	display: flex;
 	margin: 0.5rem;
+	padding: 0.5rem;
 	gap: 1rem;
 }
 
 .event__icon-left {
 	width: 1rem;
-	flex-basis: 7%;
 }
 
 .event-info__title {
-	font-size: 1.5rem;
-	flex-basis: 90%;
+	font-size: 1rem;
+	font-weight: 500;
+	margin: 0;
 }
 
-.event-info__description {
-	flex-basis: 90%;
+.event-info__deta {
+	font-size: 0.8rem;
 }
-
-/* .event__icon-top:hover {
-  width: 2rem;
-} */
