@@ -1,4 +1,4 @@
-import sortCalendarEvents from "../utils/sortCalendarEvents";
+import sortCalendarEvents from "./sortCalendarEvents.js";
 
 export function saveCalendarEvent(calendarEvent) {
 	const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));

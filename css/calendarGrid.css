@@ -96,22 +96,22 @@
 	cursor: pointer;
 }
 
-.event-tag--red {
+.bg-red {
 	background-color: red;
 	border-left: 5px solid darkred;
 }
 
-.event-tag--blue {
+.bg-blue {
 	background-color: blue;
 	border-left: 5px solid darkblue;
 }
 
-.event-tag--orange {
+.bg-orange {
 	background-color: orange;
 	border-left: 5px solid darkorange;
 }
 
-.event-tag--green {
+.bg-green {
 	background-color: green;
 	border-left: 5px solid darkgreen;
 }

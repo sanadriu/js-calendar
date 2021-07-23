@@ -1,11 +1,7 @@
-import showModalInfo from "./showModalInfo.js";
+import displayCalendarEventInfo from "../view_modifiers/displayCalendarEventInfo.js";
 
 export default function calendarEventInfoDisplayListener() {
-	const eventBoxes = document.querySelectorAll("[data-event]");
-
-	eventBoxes.forEach((eventBox) => {
-		eventBox.addEventListener("click", (e) => {
-			showModalInfo(eventBox.dataset.event);
-		});
+	document.addEventListener("click", (e) => {
+		if (e.target.matches("[data-event]") || e.target.matches("[data-event] *")) displayCalendarEventInfo(eventBox.dataset.event);
 	});
 }

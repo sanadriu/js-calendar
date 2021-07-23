@@ -1,4 +1,4 @@
-.main__modal-info {
+.event-info {
 	box-shadow: 20px 20px 20px grey;
 	border-radius: 0.5rem;
 	width: 25rem;
@@ -6,7 +6,7 @@
 	background-color: white;
 }
 
-.modal__type {
+.event-info__header {
 	background-color: blue;
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;

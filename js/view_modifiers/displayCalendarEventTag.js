@@ -6,24 +6,24 @@ export default function displayCalendarEventTag(calendarEvent) {
 
 	const calendarCell = document.querySelector(`[data-day='${initialDate.getDate()}']`);
 	const fragment = createEventTag();
-
 	const eventTag = fragment.querySelector("event-tag");
 
+	eventTag.dataset.event = calendarEvent.id;
 	eventTag.children[0].textContent = time;
 	eventTag.children[1].textContent = calendarEvent.title;
 
 	switch (calendarEvent.type) {
 		case "Meeting":
-			eventTag.className.add("event-tag--red");
+			eventTag.className.add("bg-red");
 			break;
 		case "Task":
-			eventTag.className.add("event-tag--green");
+			eventTag.className.add("bg-green");
 			break;
 		case "Personal":
-			eventTag.className.add("event-tag--orange");
+			eventTag.className.add("bg-orange");
 			break;
 		case "Study":
-			eventTag.className.add("event-tag--blue");
+			eventTag.className.add("bg-blue");
 			break;
 	}
 

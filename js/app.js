@@ -6,7 +6,7 @@ import calendarEventInfoCloseListener from "./events/calendarEventInfoCloseListe
 
 import updateCalendar from "./view_modifiers/updateCalendar.js";
 import calendarEventInfoDisplayListener from "./events/calendarEventInfoDisplayListener.js";
-import removeEventCalendarListener from "./events/removeEvent.js";
+import calendarEventRemoveListener from "./events/calendarEventRemoveListener.js";
 
 asideEventsDisplayListener();
 calendarEventFormDisplayListener();
@@ -16,7 +16,7 @@ updateCalendarListener();
 // Alberto
 calendarEventInfoCloseListener();
 calendarEventInfoDisplayListener();
-removeEventCalendarListener();
+calendarEventRemoveListener();
 
 /* Inicialización testing */
 if (!localStorage.getItem("calendarEvents")) {

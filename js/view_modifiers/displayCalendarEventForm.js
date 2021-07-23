@@ -7,7 +7,6 @@ import { createEventForm } from "../templates/templates.js";
 export default function displayCalendarEventForm(year, month, day) {
 	const body = document.querySelector("body");
 	const fragment = createEventForm();
-
 	const form = fragment.querySelector("#event-form");
 
 	const defaultDateISO = year && month && day ? getDateISO(year, month, day) : getDateISO();

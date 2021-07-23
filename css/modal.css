@@ -18,20 +18,20 @@
 	position: relative;
 }
 
-.modal__grid {
+.event-form__grid {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-auto-rows: auto;
 	gap: 0.5rem;
 }
 
-.modal__double-cell {
+.event-form__double-cell {
 	grid-column: span 2;
 	height: 2rem;
 	line-height: 2rem;
 }
 
-.modal__align-center {
+.event-form__align-center {
 	place-self: center stretch;
 }
 
@@ -43,23 +43,23 @@
 	gap: 1rem;
 }
 
-.modal__title {
+.event-form__title {
 	text-align: center;
 	font-size: 1.25rem;
 }
 
-.modal__input,
-.modal__select {
+.event-form__input,
+.event-form__select {
 	padding: 0.3rem;
 }
 
-.modal__textarea {
+.event-form__textarea {
 	padding: 0.3rem;
 	resize: none;
 	height: 6rem;
 }
 
-.modal__button {
+.event-form__button {
 	padding: 0.5rem 1rem;
 	border: none;
 	border-radius: 0.25rem;
@@ -67,12 +67,12 @@
 	cursor: pointer;
 }
 
-.modal__button:active {
+.event-form__button:active {
 	background-color: grey;
 	color: white;
 }
 
-.modal__warning {
+.event-form__warning {
 	padding: 0.75rem;
 	background-color: #da2d2d;
 	border-radius: 0.25rem;
@@ -81,7 +81,7 @@
 	font-size: 0.8rem;
 }
 
-.modal__warning ul {
+.event-form__warning ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -90,11 +90,11 @@
 	gap: 0.5rem;
 }
 
-.modal__warning li:before {
+.event-form__warning li:before {
 	content: "· ";
 }
 
-.modal__icon {
+.event-form__icon {
 	display: block;
 	position: absolute;
 	right: 1rem;
@@ -103,6 +103,6 @@
 	transition: 0.1s ease-in-out;
 }
 
-.modal__icon:hover {
+.event-form__icon:hover {
 	color: teal;
 }
