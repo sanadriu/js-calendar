@@ -61,7 +61,7 @@ showDate();
 //Function to mark the day of today in blue
 
 function markToday() {
-	let numbers = document.getElementsByClassName("day__number"); //select the numbers of the spans made in the fillingDays function
+	let numbers = document.getElementsByclassList("day__number"); //select the numbers of the spans made in the fillingDays function
 	let today = new Date();
 	for (let i in numbers) {
 		//Iterate over the numbers

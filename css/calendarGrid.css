@@ -48,8 +48,6 @@
 
 .cell__add-icon:hover {
 	opacity: 1;
-	height: 15vh;
-	overflow: hidden;
 }
 
 .cell__weekday-name {

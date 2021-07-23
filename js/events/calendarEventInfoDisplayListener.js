@@ -2,6 +2,6 @@ import displayCalendarEventInfo from "../view_modifiers/displayCalendarEventInfo
 
 export default function calendarEventInfoDisplayListener() {
 	document.addEventListener("click", (e) => {
-		if (e.target.matches("[data-event]") || e.target.matches("[data-event] *")) displayCalendarEventInfo(eventBox.dataset.event);
+		if (e.target.matches("[data-event]") || e.target.matches("[data-event] *")) displayCalendarEventInfo(e.target.dataset.event);
 	});
 }

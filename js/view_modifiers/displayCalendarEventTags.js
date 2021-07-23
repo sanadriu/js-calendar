@@ -1,4 +1,3 @@
-import calendarEventInfoDisplayListener from "../events/calendarEventInfoDisplayListener.js";
 import displayCalendarEventTag from "./displayCalendarEventTag.js";
 
 export default function displayCalendarEventTags(year, month) {
@@ -13,6 +12,4 @@ export default function displayCalendarEventTags(year, month) {
 	};
 
 	calendarEvents.filter(filterCalendarEvents).forEach(displayCalendarEventTag);
-
-	calendarEventInfoDisplayListener();
 }

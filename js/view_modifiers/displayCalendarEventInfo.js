@@ -10,7 +10,12 @@ export default function displayCalendarEventInfo(idEvent) {
 		const fragment = createEventInfo();
 		const eventInfo = fragment.querySelector("#event-info");
 
-		const date = `${getMonthName(calendarEvent.initialDate.month)} ${calendarEvent.initialDate.day} ${calendarEvent.initialDate.year}`;
+		const calendarEventDate = new Date(calendarEvent.initialDate);
+		const calendarEventYear = calendarEventDate.getFullYear();
+		const calendarEventMonth = calendarEventDate.getMonth() + 1;
+		const calendarEventDay = calendarEventDate.getDate();
+
+		const date = `${getMonthName(calendarEventMonth)} ${calendarEventDay}, ${calendarEventYear}`;
 
 		eventInfo.querySelector("[data-action='remove-event']").dataset.event = calendarEvent.id;
 		eventInfo.querySelector("#event-info-title").textContent = calendarEvent.title;
@@ -21,16 +26,16 @@ export default function displayCalendarEventInfo(idEvent) {
 
 		switch (calendarEvent.type) {
 			case "Meeting":
-				eventHeader.className.add("bg-red");
+				eventHeader.classList.add("bg-red");
 				break;
 			case "Task":
-				eventHeader.className.add("bg-green");
+				eventHeader.classList.add("bg-green");
 				break;
 			case "Personal":
-				eventHeader.className.add("bg-orange");
+				eventHeader.classList.add("bg-orange");
 				break;
 			case "Study":
-				eventHeader.className.add("bg-blue");
+				eventHeader.classList.add("bg-blue");
 				break;
 		}
 

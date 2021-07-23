@@ -11,7 +11,7 @@ export default function updateCalendarListener() {
 			sessionStorage.calendarYear = calendarDate.getFullYear();
 			sessionStorage.calendarMonth = calendarDate.getMonth() + 1;
 
-			updateCalendar(sessionStorage.calendarYear, sessionStorage.calendarMonth);
+			updateCalendar(parseInt(sessionStorage.calendarYear), parseInt(sessionStorage.calendarMonth));
 		}
 	});
 }

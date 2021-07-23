@@ -7,11 +7,7 @@ export default function calendarEventRemoveListener() {
 			const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));
 			const idEvent = parseInt(e.target.dataset.event);
 
-			calendarEvents = calendarEvents.filter((calendarEvent) => {
-				calendarEvent.id !== idEvent;
-			});
-
-			localStorage.setItem("calendarEvents", JSON.stringify(calendarEvents));
+			localStorage.setItem("calendarEvents", JSON.stringify(calendarEvents.filter((calendarEvent) => calendarEvent.id !== idEvent)));
 
 			closeCalendarEventInfo();
 			displayCalendarEventTags(calendarEvents, sessionStorage.calendarYear, sessionStorage.calendarMonth);

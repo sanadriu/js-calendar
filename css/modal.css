@@ -35,7 +35,7 @@
 	place-self: center stretch;
 }
 
-.event-info__section-buttons {
+.event-form__buttons {
 	display: flex;
 	align-items: center;
 	justify-content: center;
