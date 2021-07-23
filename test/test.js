@@ -1,15 +1,18 @@
 function checkReminder(calendarEvent) {
 	const currentTimestamp = new Date().getTime();
-	const reminderTimestamp = new Date(calendarEvent.InitialDate).getTime() - 60000 * reminderMinutes;
+	const initialTimestamp = new Date(calendarEvent.InitialDate).getTime();
+	const reminderTimestamp = initialTimestamp - 60000 * reminderMinutes;
 
 	const reminderMinutes = calendarEvent.reminder;
 
 	if (reminderTimestamp < currentTimestamp && calendarEvent.reminderChk) {
-		calendarEvent.reminderChk = false;
-		return true;
-	} else {
-		console.log(reminderTimestamp - currentTimestamp);
+		if (initialTimestamp > currentTimestamp) {
+			// notificar
+		}
+
 		return false;
+	} else {
+		return true;
 	}
 }
 
