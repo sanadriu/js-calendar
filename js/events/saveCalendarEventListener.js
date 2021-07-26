@@ -2,6 +2,7 @@ import validateCalendarEventForm from "../validations/calendarEventFormValidatio
 import closeEventForm from "../view_modifiers/closeEventForm.js";
 import saveCalendarEvent from "../utils/saveCalendarEvent.js";
 import displayEventTags from "../view_modifiers/displayEventTags.js";
+import displayEventCards from "../view_modifiers/displayEventCards.js";
 import clearEventTags from "../view_modifiers/clearEventTags.js";
 import clearEventCards from "../view_modifiers/clearEventCards.js";
 
@@ -28,6 +29,7 @@ export default function saveCalendarEventListener() {
 			closeEventForm();
 
 			const calendarEventDate = new Date(calendarEvent.initialDate);
+
 			const calendarEventYear = calendarEventDate.getFullYear();
 			const calendarEventMonth = calendarEventDate.getMonth() + 1;
 			const calendarEventDay = calendarEventDate.getDate();
@@ -35,8 +37,14 @@ export default function saveCalendarEventListener() {
 			clearEventTags(calendarEventYear, calendarEventMonth, calendarEventDay);
 			displayEventTags(calendarEventYear, calendarEventMonth, calendarEventDay);
 
-			clearEventCards();
-			displayEventCards(calendarEventYear, calendarEventMonth, calendarEventDay);
+			const calendarYear = parseInt(sessionStorage.calendarYear);
+			const calendarMonth = parseInt(sessionStorage.calendarMonth);
+			const calendarDay = parseInt(sessionStorage.calendarDay);
+
+			if (!document.querySelector("#day-info").classList.contains("day-info--hidden") && calendarEventYear === calendarYear && calendarEventMonth === calendarMonth && calendarEventDay === calendarDay) {
+				clearEventCards();
+				displayEventCards(calendarEventYear, calendarEventMonth, calendarEventDay);
+			}
 		}
 	});
 }
