@@ -8,6 +8,7 @@ import calendarEventFormSubmitListener from "./events/calendarEventFormSubmitLis
 import calendarEventRemoveListener from "./events/calendarEventRemoveListener.js";
 import updateCalendarListener from "./events/updateCalendarListener.js";
 import changeFormStyles from "./view_modifiers/changeFormStyles.js";
+import closeAsideBarListener from "./events/closeAsideBarListener.js";
 
 import updateCalendar from "./view_modifiers/updateCalendar.js";
 
@@ -21,6 +22,7 @@ calendarEventInfoDisplayListener();
 calendarEventRemoveListener();
 updateCalendarListener();
 changeFormStyles();
+closeAsideBarListener();
 
 /* Inicialización testing */
 
