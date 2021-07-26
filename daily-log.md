@@ -70,3 +70,7 @@ In this document will be registered the activities developed by the team every d
 - Some bugs produced due to the event integration have been fixed.
 - Alberto will investigate how will work the reminder, Andrés will implement a close option for the aside-events panel, Gonzalo will improve the form design.
 
+### 13:00 - 15:00
+
+- Adrián has improved the design for the event-info modal.
+- Gonzalo has improved the design for the form modal.
