@@ -1,0 +1,39 @@
+.event-filter {
+	height: 0;
+	padding: 0;
+
+	overflow: hidden;
+	position: absolute;
+
+	list-style-type: none;
+	width: 10rem;
+	margin: 0;
+
+	background-color: white;
+	box-shadow: 0 0 4px teal;
+	border: none;
+	border-radius: 0.25rem;
+
+	transition: max-height 0.5s ease-in-out;
+}
+
+.event-filter:hover,
+[data-action~="display-event-filter"]:hover + .event-filter {
+	height: auto;
+	max-height: 1000px;
+}
+
+.event-filter__label {
+	display: flex;
+	justify-content: space-between;
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+}
+
+.event-filter__label:hover {
+	background-color: rgb(240, 240, 240);
+}
+
+.dropdown {
+	position: relative;
+}

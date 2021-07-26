@@ -8,8 +8,8 @@ import calendarEventFormSubmitListener from "./events/calendarEventFormSubmitLis
 import calendarEventRemoveListener from "./events/calendarEventRemoveListener.js";
 import updateCalendarListener from "./events/updateCalendarListener.js";
 import changeFormStylesListener from "./events/changeFormStylesListener.js";
-
-import updateCalendar from "./view_modifiers/updateCalendar.js";
+import filterEventTagsByTypeListener from "./events/filterEventTagsByTypeListener.js";
+import init from "./events/init.js";
 
 asideEventsDisplayListener();
 calendarEventFormDisplayListener();
@@ -21,16 +21,5 @@ calendarEventInfoDisplayListener();
 calendarEventRemoveListener();
 updateCalendarListener();
 changeFormStylesListener();
-
-/* Inicialización testing */
-
-if (!localStorage.getItem("calendarEvents")) {
-	localStorage.calendarEvents = JSON.stringify([]);
-}
-
-const currentDate = new Date();
-
-sessionStorage.calendarYear = currentDate.getFullYear();
-sessionStorage.calendarMonth = currentDate.getMonth() + 1;
-
-updateCalendar(parseInt(sessionStorage.calendarYear), parseInt(sessionStorage.calendarMonth));
+filterEventTagsByTypeListener();
+init();

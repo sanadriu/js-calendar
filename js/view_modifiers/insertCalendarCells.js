@@ -19,7 +19,7 @@ export default function insertCalendarCells(year, month) {
 		cell.dataset.day = i;
 
 		if (cellDate < currentDate) {
-			cell.querySelector("[data-action='display-event-form']").remove();
+			cell.querySelector("[data-action~='display-event-form']").remove();
 			cell.classList.add("calendar__cell--outdated");
 		}
 

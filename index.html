@@ -10,10 +10,30 @@
 	</head>
 	<body>
 		<header class="header">
+			<div class="dropdwon">
+				<button data-action="display-event-filter" class="header__btn">
+					<span class="material-icons">filter_alt</span>
+					<span>Filter</span>
+				</button>
+				<ul class="event-filter">
+					<li>
+						<label class="event-filter__label bg-red" for="filter-meeting"><input class="event-form__input-chk" type="checkbox" id="filter-meeting" data-action="filter-event-tags" data-type="Meeting" checked />Meeting</label>
+					</li>
+					<li>
+						<label class="event-filter__label bg-green" for="filter-task"><input class="event-form__input-chk" type="checkbox" id="filter-task" data-action="filter-event-tags" data-type="Task" checked />Task</label>
+					</li>
+					<li>
+						<label class="event-filter__label bg-orange" for="filter-personal"><input class="event-form__input-chk" type="checkbox" id="filter-personal" data-action="filter-event-tags" data-type="Personal" checked />Personal</label>
+					</li>
+					<li>
+						<label class="event-filter__label bg-blue" for="filter-study"><input class="event-form__input-chk" type="checkbox" id="filter-study" data-action="filter-event-tags" data-type="Study" checked />Study</label>
+					</li>
+				</ul>
+			</div>
 			<h1 class="header__title">JS Calendar</h1>
 			<button data-action="display-event-form" class="header__btn">
-				<span data-action="display-event-form" class="material-icons">event</span>
-				<span data-action="display-event-form">Add Event</span>
+				<span class="material-icons">event</span>
+				<span>Add Event</span>
 			</button>
 		</header>
 		<main>
@@ -137,7 +157,7 @@
 				<div class="event-info" id="event-info">
 					<header id="event-info-header" class="event-info__header">
 						<p id="event-info-date" class="event-info__date"></p>
-						<img src="./assets/img/delete.svg" class="event__icon-top" alt="Remove Event" title="Remove Event" data-action="remove-event" />
+						<img src="./assets/img/delete.svg" class="event__icon-top" alt="Remove Event" title="Remove Event" data-action="remove-event close-event-info" />
 						<img src="./assets/img/close.svg" class="event__icon-top" alt="Close Event Information" title="Close Event Information" data-action="close-event-info" />
 					</header>
 					<section class="event-info__section">

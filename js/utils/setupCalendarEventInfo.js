@@ -1,11 +1,4 @@
-import {
-	setupCalendarEventTitle,
-	setupCalendarEventDescription,
-	setupCalendarEventInitialDate,
-	setupCalendarEventEndDate,
-	setupCalendarEventReminder,
-	setupCalendarEventTypeColor,
-} from "./setupCalendarEventFunctions.js";
+import { setupCalendarEventTitle, setupCalendarEventDescription, setupCalendarEventInitialDate, setupCalendarEventEndDate, setupCalendarEventReminder, setupCalendarEventTypeColor } from "./setupCalendarEventFunctions.js";
 
 export default function setupCalendarEventInfo(calendarEvent, fragment) {
 	const calendarEventInfoElement = fragment.querySelector("#event-info");
@@ -17,5 +10,5 @@ export default function setupCalendarEventInfo(calendarEvent, fragment) {
 	setupCalendarEventReminder(calendarEvent, calendarEventInfoElement.querySelector("#event-info-reminder"));
 	setupCalendarEventTypeColor(calendarEvent, calendarEventInfoElement.querySelector("#event-info-header"));
 
-	calendarEventInfoElement.querySelector("[data-action='remove-event']").dataset.event = calendarEvent.id;
+	calendarEventInfoElement.querySelector("[data-action~='remove-event']").dataset.event = calendarEvent.id;
 }
