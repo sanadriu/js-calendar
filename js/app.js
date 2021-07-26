@@ -1,4 +1,4 @@
-import displayEventListListener from "./events/displayEventListListener.js";
+import displayDayInfoListener from "./events/displayDayInfoListener.js";
 import closeEventInfoListener from "./events/closeEventInfoListener.js";
 import displayEventInfoListener from "./events/displayEventInfoListener.js";
 import closeEventFormListener from "./events/closeEventFormListener.js";
@@ -11,7 +11,7 @@ import changeFormStylesListener from "./events/changeFormStylesListener.js";
 import filterEventsByTypeListener from "./events/filterEventsByTypeListener.js";
 import init from "./events/init.js";
 
-displayEventListListener();
+displayDayInfoListener();
 displayEventFormListener();
 closeEventFormListener();
 inputEventFormListener();

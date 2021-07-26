@@ -22,3 +22,7 @@ export function createEventForm() {
 export function createEventInfo() {
 	return createFromTemplate("#template-event-info");
 }
+
+export function createEventCard() {
+	return createFromTemplate("#template-event-card");
+}

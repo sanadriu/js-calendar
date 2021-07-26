@@ -1,5 +1,6 @@
 import removeCalendarEvent from "../utils/removeCalendarEvent.js";
 import removeEventTag from "../view_modifiers/removeEventTag.js";
+import removeEventCard from "../view_modifiers/removeEventCard.js";
 
 export default function removeCalendarEventListener() {
 	document.addEventListener("click", (e) => {
@@ -8,6 +9,7 @@ export default function removeCalendarEventListener() {
 
 			removeCalendarEvent(idEvent);
 			removeEventTag(idEvent);
+			removeEventCard(idEvent);
 		}
 	});
 }
