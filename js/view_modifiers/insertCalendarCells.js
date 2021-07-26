@@ -1,11 +1,13 @@
 import getDaysInMonth from "../utils/getDaysInMonth.js";
+import getBreakdownDate from "../utils/getBreakdownDate.js";
 import { createCalendarCell } from "../templates/templates.js";
 
 export default function insertCalendarCells(year, month) {
 	const calendarGrid = document.querySelector("#calendar-grid");
 
 	const monthNumOfDays = getDaysInMonth(year, month);
-	const currentDate = new Date();
+	const currentDateObj = getBreakdownDate(new Date());
+	const currentDate = new Date(currentDateObj.year, currentDateObj.month - 1, currentDateObj.day);
 
 	for (let i = 1; i <= monthNumOfDays; i++) {
 		const fragment = createCalendarCell();
@@ -16,7 +18,7 @@ export default function insertCalendarCells(year, month) {
 		cell.querySelector(".cell__day-number").textContent = i;
 		cell.dataset.day = i;
 
-		if (currentDate > cellDate) {
+		if (cellDate < currentDate) {
 			cell.querySelector("[data-action='display-event-form']").remove();
 			cell.classList.add("calendar__cell--outdated");
 		}
