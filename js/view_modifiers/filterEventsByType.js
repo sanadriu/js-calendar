@@ -1,4 +1,4 @@
-export default function filterEventTagsByType(type, filter) {
+export default function filterEventsByType(type, filter) {
 	const calendarGrid = document.querySelector("#calendar-grid");
 
 	switch (type) {

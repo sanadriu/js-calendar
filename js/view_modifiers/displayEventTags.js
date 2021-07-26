@@ -1,9 +1,9 @@
-import displayCalendarEventTag from "./displayCalendarEventTag.js";
+import displayEventTag from "./displayEventTag.js";
 
-export default function displayCalendarEventTags(year, month) {
+export default function displayEventTags(year, month) {
 	const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));
 
-	const filterCalendarEvents = function (calendarEvent) {
+	const filterCalendarEvent = function (calendarEvent) {
 		const calendarEventDate = new Date(calendarEvent.initialDate);
 		const calendarEventYear = calendarEventDate.getFullYear();
 		const calendarEventMonth = calendarEventDate.getMonth() + 1;
@@ -11,5 +11,5 @@ export default function displayCalendarEventTags(year, month) {
 		return year === calendarEventYear && month === calendarEventMonth;
 	};
 
-	calendarEvents.filter(filterCalendarEvents).forEach(displayCalendarEventTag);
+	calendarEvents.filter(filterCalendarEvent).forEach(displayEventTag);
 }

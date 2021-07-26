@@ -74,14 +74,14 @@
 		</main>
 
 		<template id="template-calendar-cell">
-			<article class="calendar__cell calendar__cell--day" data-action="display-event-list">
-				<img class="cell__add-icon" src="assets/img/add.svg" alt="add-event" data-action="display-event-form" />
+			<article class="calendar__cell calendar__cell--day" data-action="display-event-list" data-day>
+				<img class="cell__add-icon" src="assets/img/add.svg" alt="add-event" data-action="display-event-form set-cell-date" data-day />
 				<h2 class="cell__day-number"></h2>
 			</article>
 		</template>
 
 		<template id="template-event-tag">
-			<article class="event-tag">
+			<article class="event-tag" data-action="display-event-info" data-event>
 				<span class="event-tag__hour"></span>
 				<span class="event-tag__title"></span>
 			</article>
@@ -157,7 +157,7 @@
 				<div class="event-info" id="event-info">
 					<header id="event-info-header" class="event-info__header">
 						<p id="event-info-date" class="event-info__date"></p>
-						<img src="./assets/img/delete.svg" class="event__icon-top" alt="Remove Event" title="Remove Event" data-action="remove-event close-event-info" />
+						<img src="./assets/img/delete.svg" class="event__icon-top" alt="Remove Event" title="Remove Event" data-action="remove-event close-event-info" data-event />
 						<img src="./assets/img/close.svg" class="event__icon-top" alt="Close Event Information" title="Close Event Information" data-action="close-event-info" />
 					</header>
 					<section class="event-info__section">

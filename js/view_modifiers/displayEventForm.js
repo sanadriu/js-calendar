@@ -3,7 +3,7 @@ import setupFormDates from "../utils/setupFormDates.js";
 import { createEventForm } from "../templates/templates.js";
 import changeFormStyles from "./changeFormStyles.js";
 
-export default function displayCalendarEventForm(year, month, day) {
+export default function displayEventForm(year, month, day) {
 	const body = document.querySelector("body");
 	const fragment = createEventForm();
 

@@ -1,7 +1,7 @@
 import { createEventInfo } from "../templates/templates.js";
-import setupCalendarEventInfo from "../utils/setupCalendarEventInfo.js";
+import setupEventInfo from "../utils/setupEventInfo.js";
 
-export default function displayCalendarEventInfo(idEvent) {
+export default function displayEventInfo(idEvent) {
 	const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));
 	const calendarEvent = calendarEvents.find((calendarEvent) => calendarEvent.id === parseInt(idEvent));
 
@@ -9,7 +9,7 @@ export default function displayCalendarEventInfo(idEvent) {
 		const body = document.querySelector("body");
 		const fragment = createEventInfo();
 
-		setupCalendarEventInfo(calendarEvent, fragment);
+		setupEventInfo(calendarEvent, fragment);
 
 		body.appendChild(fragment);
 	}

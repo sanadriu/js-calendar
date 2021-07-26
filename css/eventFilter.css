@@ -1,9 +1,7 @@
 .event-filter {
-	height: 0;
-	padding: 0;
-
 	overflow: hidden;
 	position: absolute;
+	padding: 0;
 
 	list-style-type: none;
 	width: 10rem;
@@ -14,13 +12,12 @@
 	border: none;
 	border-radius: 0.25rem;
 
-	transition: max-height 0.5s ease-in-out;
+	display: none;
 }
 
 .event-filter:hover,
 [data-action~="display-event-filter"]:hover + .event-filter {
-	height: auto;
-	max-height: 1000px;
+	display: block;
 }
 
 .event-filter__label {
@@ -32,6 +29,7 @@
 
 .event-filter__label:hover {
 	background-color: rgb(240, 240, 240);
+	color: black;
 }
 
 .dropdown {

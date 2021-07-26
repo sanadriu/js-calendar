@@ -1,6 +1,6 @@
 import { createEventTag } from "../templates/templates.js";
 
-export default function displayCalendarEventTag(calendarEvent) {
+export default function displayEventTag(calendarEvent) {
 	const initialDate = new Date(calendarEvent.initialDate);
 	const time = `${initialDate.getHours().toString().padStart(2, "0")}:${initialDate.getMinutes().toString().padStart(2, "0")}`;
 

@@ -15,12 +15,14 @@ export default function insertCalendarCells(year, month) {
 
 		const cellDate = new Date(year, month - 1, i);
 
-		cell.querySelector(".cell__day-number").textContent = i;
 		cell.dataset.day = i;
+		cell.querySelector(".cell__day-number").textContent = i;
 
 		if (cellDate < currentDate) {
 			cell.querySelector("[data-action~='display-event-form']").remove();
 			cell.classList.add("calendar__cell--outdated");
+		} else {
+			cell.querySelector("[data-action~='display-event-form']").dataset.day = i;
 		}
 
 		calendarGrid.appendChild(cell);

@@ -1,26 +1,26 @@
 import getDateTimeFormat from "./getDateTimeFormat.js";
 
-export function setupCalendarEventTitle(calendarEvent, target) {
+export function setupEventInfoTitle(calendarEvent, target) {
 	target.textContent = calendarEvent.title;
 }
 
-export function setupCalendarEventDescription(calendarEvent, target) {
+export function setupEventInfoDescription(calendarEvent, target) {
 	calendarEvent.description ? (target.textContent = calendarEvent.description) : target.parentElement.classList.add("no-display");
 }
 
-export function setupCalendarEventInitialDate(calendarEvent, target) {
+export function setupEventInfoInitialDate(calendarEvent, target) {
 	target.textContent = getDateTimeFormat("es-ES", calendarEvent.initialDate);
 }
 
-export function setupCalendarEventEndDate(calendarEvent, target) {
+export function setupEventInfoEndDate(calendarEvent, target) {
 	calendarEvent.endDateChk ? (target.textContent = getDateTimeFormat("es-ES", calendarEvent.endDate)) : target.parentElement.parentElement.classList.add("no-display");
 }
 
-export function setupCalendarEventReminder(calendarEvent, target) {
+export function setupEventInfoReminder(calendarEvent, target) {
 	calendarEvent.reminderChk ? (target.textContent = `${calendarEvent.reminder} minutes`) : target.parentElement.parentElement.classList.add("no-display");
 }
 
-export function setupCalendarEventTypeColor(calendarEvent, target) {
+export function setupEventInfoType(calendarEvent, target) {
 	switch (calendarEvent.type) {
 		case "Meeting":
 			target.classList.add("bg-red");
