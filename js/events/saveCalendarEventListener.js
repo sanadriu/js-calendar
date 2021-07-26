@@ -1,7 +1,8 @@
 import validateCalendarEventForm from "../validations/calendarEventFormValidation.js";
 import closeEventForm from "../view_modifiers/closeEventForm.js";
 import saveCalendarEvent from "../utils/saveCalendarEvent.js";
-import displayEventTag from "../view_modifiers/displayEventTag.js";
+import displayEventTags from "../view_modifiers/displayEventTags.js";
+import clearEventTags from "../view_modifiers/clearEventTags.js";
 
 export default function saveCalendarEventListener() {
 	document.addEventListener("submit", (e) => {
@@ -28,10 +29,10 @@ export default function saveCalendarEventListener() {
 			const calendarEventDate = new Date(calendarEvent.initialDate);
 			const calendarEventYear = calendarEventDate.getFullYear();
 			const calendarEventMonth = calendarEventDate.getMonth() + 1;
+			const calendarEventDay = calendarEventDate.getDate();
 
-			if (parseInt(sessionStorage.year) === calendarEventYear && parseInt(sessionStorage.month) === calendarEventMonth) {
-				displayEventTag(calendarEvent);
-			}
+			clearEventTags(calendarEventYear, calendarEventMonth, calendarEventDay);
+			displayEventTags(calendarEventYear, calendarEventMonth, calendarEventDay);
 		}
 	});
 }

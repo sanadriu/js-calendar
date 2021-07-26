@@ -2,7 +2,7 @@ import getMonthName from "../utils/getMonthName.js";
 
 export default function displayEventList(day) {
 	const asideEventsElement = document.querySelector("#calendar-aside-events");
-	asideEventsElement.classList.remove("calendar__aside-events--hidden");
+	asideEventsElement.classList.remove("event-list--hidden");
 
 	const asideDateElement = asideEventsElement.querySelector("#calendar-aside-date");
 	const asideHintElement = asideEventsElement.querySelector("#calendar-aside-hint");
