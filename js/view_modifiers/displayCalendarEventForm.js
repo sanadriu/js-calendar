@@ -1,6 +1,7 @@
 import getDateISO from "../utils/getDateISO.js";
 import setupFormDates from "../utils/setupFormDates.js";
 import { createEventForm } from "../templates/templates.js";
+import changeFormStyles from "./changeFormStyles.js";
 
 export default function displayCalendarEventForm(year, month, day) {
 	const body = document.querySelector("body");
@@ -14,4 +15,6 @@ export default function displayCalendarEventForm(year, month, day) {
 	setupFormDates(form, ["initial_date", "end_date"], defaultDateISO, sessionStorage.lastFormDateISO);
 
 	body.appendChild(fragment);
+
+	changeFormStyles();
 }
