@@ -43,9 +43,13 @@
 				<span class="material-icons calendar__btn" data-action="update-calendar add-month">chevron_right</span>
 			</section>
 			<div class="calendar-wrapper">
-				<aside id="calendar-aside-events" class="event-list event-list--hidden">
-					<h2 id="calendar-aside-date" class="event-list__date"></h2>
-					<p id="calendar-aside-hint" class="event-list__hint no-display">📭 There are no events for this day. You can create a new one.</p>
+				<aside id="day-info" class="day-info day-info--hidden">
+					<header class="day-info__header">
+						<h2 id="day-info-date" class="day-info__date">Easy Peasy Lemon Squeeze</h2>
+						<img class="event__icon-top" src="./assets/img/close.svg" alt="Close Event List" data-action="close-day-info" />
+					</header>
+					<p id="day-info-hint" class="day-info__hint no-display">📭 There are no events for this day. You can create a new one</p>
+					<div id="event-list" class="event-list"></div>
 				</aside>
 				<section id="calendar-grid" class="calendar__grid">
 					<div class="calendar__cell calendar__cell--weekday-name">
@@ -88,7 +92,7 @@
 		</template>
 
 		<template id="template-event-card">
-			<article class="event-card">
+			<article class="event-card" data-event>
 				<span class="event-card__text"></span>
 				<img class="event__icon-top" src="./assets/img/delete.svg" alt="Remove Event" data-action="remove-event" data-event data-day />
 			</article>
