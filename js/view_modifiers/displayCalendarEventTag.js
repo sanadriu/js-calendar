@@ -1,31 +1,38 @@
 import { createEventTag } from "../templates/templates.js";
 
 export default function displayCalendarEventTag(calendarEvent) {
-	const initialDate = new Date(calendarEvent.initialDate);
-	const time = `${initialDate.getHours().toString().padStart(2, "0")}:${initialDate.getMinutes().toString().padStart(2, "0")}`;
+  const initialDate = new Date(calendarEvent.initialDate);
+  const time = `${initialDate.getHours().toString().padStart(2, "0")}:${initialDate.getMinutes().toString().padStart(2, "0")}`;
 
-	const calendarCell = document.querySelector(`[data-day='${initialDate.getDate()}']`);
-	const fragment = createEventTag();
-	const eventTag = fragment.querySelector(".event-tag");
+  const calendarCell = document.querySelector(`[data-day='${initialDate.getDate()}']`);
+  const fragment = createEventTag();
+  const eventTag = fragment.querySelector(".event-tag");
 
-	eventTag.dataset.event = calendarEvent.id;
-	eventTag.children[0].textContent = time;
-	eventTag.children[1].textContent = calendarEvent.title;
+  eventTag.dataset.event = calendarEvent.id;
+  eventTag.children[0].textContent = time;
+  eventTag.children[1].textContent = calendarEvent.title;
 
-	switch (calendarEvent.type) {
-		case "Meeting":
-			eventTag.classList.add("bg-red");
-			break;
-		case "Task":
-			eventTag.classList.add("bg-green");
-			break;
-		case "Personal":
-			eventTag.classList.add("bg-orange");
-			break;
-		case "Study":
-			eventTag.classList.add("bg-blue");
-			break;
-	}
+  let date = new Date();
+  date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
 
-	calendarCell.appendChild(fragment);
+  if (calendarEvent.initialDate > date.toISOString().substring(0, 16)) {
+    switch (calendarEvent.type) {
+      case "Meeting":
+        eventTag.classList.add("bg-red");
+        break;
+      case "Task":
+        eventTag.classList.add("bg-green");
+        break;
+      case "Personal":
+        eventTag.classList.add("bg-orange");
+        break;
+      case "Study":
+        eventTag.classList.add("bg-blue");
+        break;
+    }
+  }else{
+	eventTag.classList.add("bg-grey");
+  }
+
+  calendarCell.appendChild(fragment);
 }

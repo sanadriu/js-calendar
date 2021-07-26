@@ -113,3 +113,9 @@
 	background-color: green;
 	border-left: 5px solid darkgreen;
 }
+
+.bg-grey{
+	background-color: grey !important;
+	border-left: 5px solid rgb(63, 62, 62) !important;
+	opacity: 0.5;
+}

@@ -22,3 +22,8 @@ export function createEventForm() {
 export function createEventInfo() {
 	return createFromTemplate("#template-event-info");
 }
+
+
+export function createEventNotification() {
+	return createFromTemplate("#template-notification-event");
+}

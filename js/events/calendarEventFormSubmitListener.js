@@ -16,7 +16,9 @@ export default function calendarEventFormSubmitListener() {
 				type: form.type.value,
 				initialDate: form.initial_date.value,
 				endDate: form.end_date_chk.checked ? form.end_date.value : null,
+				endDateChk: form.end_date_chk.checked,
 				reminder: form.reminder_chk.checked ? form.reminder.value : null,
+				reminderChk: form.reminder_chk.checked
 			};
 
 			saveCalendarEvent(calendarEvent);
