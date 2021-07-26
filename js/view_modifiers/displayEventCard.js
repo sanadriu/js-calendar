@@ -1,11 +1,12 @@
 import { createEventCard } from "../templates/templates.js";
 
-export default function displayEventCard(calendarEvent, eventList) {
+export default function displayEventCard(calendarEvent) {
 	const initialDate = new Date(calendarEvent.initialDate);
 	const time = `${initialDate.getHours().toString().padStart(2, "0")}:${initialDate.getMinutes().toString().padStart(2, "0")}`;
 	const title = calendarEvent.title;
 	const idEvent = calendarEvent.id;
 
+	const eventList = document.querySelector("#event-list");
 	const fragment = createEventCard();
 	const eventCard = fragment.querySelector(".event-card");
 

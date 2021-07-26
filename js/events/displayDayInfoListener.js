@@ -7,6 +7,8 @@ export default function displayDayInfoListener() {
 			const month = parseInt(sessionStorage.calendarMonth);
 			const day = parseInt(e.target.dataset.day);
 
+			sessionStorage.calendarDay = e.target.dataset.day;
+
 			displayDayInfo(year, month, day);
 		}
 	});

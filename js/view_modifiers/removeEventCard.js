@@ -1,5 +1,5 @@
 export default function removeEventCard(idEvent) {
-	const eventList = document.querySelector(`#event-list`);
+	const eventList = document.querySelector("#event-list");
 	const eventCard = eventList.querySelector(`.event-card[data-event='${idEvent}']`);
 
 	if (eventCard !== null) {

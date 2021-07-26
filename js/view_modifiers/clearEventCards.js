@@ -1,5 +1,8 @@
-export default function clearEventCards(eventList) {
-	eventList.querySelectorAll(".event-card").forEach((eventCard) => {
-		eventCard.remove();
-	});
+export default function clearEventCards() {
+	document
+		.querySelector("#event-list")
+		.querySelectorAll(".event-card")
+		.forEach((eventCard) => {
+			eventCard.remove();
+		});
 }

@@ -14,7 +14,7 @@ export default function displayDayInfo(year, month, day) {
 	const eventList = dayInfo.querySelector("#event-list");
 	const dayInfoHint = dayInfo.querySelector("#day-info-hint");
 
-	clearEventCards(eventList);
+	clearEventCards();
 	displayEventCards(year, month, day, eventList);
 
 	eventList.childElementCount > 0 ? dayInfoHint.classList.add("no-display") : dayInfoHint.classList.remove("no-display");

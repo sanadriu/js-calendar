@@ -1,6 +1,6 @@
 import displayEventCard from "./displayEventCard.js";
 
-export default function displayEventCards(year, month, day, eventList) {
+export default function displayEventCards(year, month, day) {
 	const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));
 
 	const filterCalendarEvent = function (calendarEvent) {
@@ -12,7 +12,5 @@ export default function displayEventCards(year, month, day, eventList) {
 		return year === calendarEventYear && month === calendarEventMonth && day == calendarEventDay;
 	};
 
-	calendarEvents.filter(filterCalendarEvent).forEach((calendarEvent) => {
-		displayEventCard(calendarEvent, eventList);
-	});
+	calendarEvents.filter(filterCalendarEvent).forEach(displayEventCard);
 }

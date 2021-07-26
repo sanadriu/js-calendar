@@ -3,6 +3,7 @@ import closeEventForm from "../view_modifiers/closeEventForm.js";
 import saveCalendarEvent from "../utils/saveCalendarEvent.js";
 import displayEventTags from "../view_modifiers/displayEventTags.js";
 import clearEventTags from "../view_modifiers/clearEventTags.js";
+import clearEventCards from "../view_modifiers/clearEventCards.js";
 
 export default function saveCalendarEventListener() {
 	document.addEventListener("submit", (e) => {
@@ -33,6 +34,9 @@ export default function saveCalendarEventListener() {
 
 			clearEventTags(calendarEventYear, calendarEventMonth, calendarEventDay);
 			displayEventTags(calendarEventYear, calendarEventMonth, calendarEventDay);
+
+			clearEventCards();
+			displayEventCards(calendarEventYear, calendarEventMonth, calendarEventDay);
 		}
 	});
 }
