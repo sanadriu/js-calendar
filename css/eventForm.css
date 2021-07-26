@@ -59,8 +59,8 @@
 
 .event-form__title {
 	text-align: center;
-	font-size: 1.75rem;
-	font-family: "Lobster Two", cursive;
+	font-size: 1.5rem;
+	letter-spacing: -0.1ch;
 }
 
 .event-form__input,
