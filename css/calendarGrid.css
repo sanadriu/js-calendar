@@ -30,6 +30,12 @@
 	position: relative;
 }
 
+.calendar__cell--outdated {
+	background-color: rgb(200, 200, 200);
+	color: black;
+	opacity: 0.5;
+}
+
 .calendar__cell--day:hover > .cell__add-icon {
 	display: block;
 }
