@@ -1,4 +1,5 @@
 import displayEventTag from "./displayEventTag.js";
+import toggleDayInfoHint from "./toggleDayInfoHint.js";
 
 export default function displayEventTags(year, month, day) {
 	const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));
@@ -13,4 +14,5 @@ export default function displayEventTags(year, month, day) {
 	};
 
 	calendarEvents.filter(filterCalendarEvent).forEach(displayEventTag);
+	toggleDayInfoHint();
 }

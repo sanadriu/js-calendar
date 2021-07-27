@@ -16,6 +16,4 @@ export default function displayDayInfo(year, month, day) {
 
 	clearEventCards();
 	displayEventCards(year, month, day, eventList);
-
-	eventList.childElementCount > 0 ? dayInfoHint.classList.add("no-display") : dayInfoHint.classList.remove("no-display");
 }
