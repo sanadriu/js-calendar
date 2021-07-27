@@ -2,6 +2,13 @@
 
 In this document will be registered the activities developed by the team every day.
 
+## Authors
+
+- @sanadriu
+- @badyalberto
+- @gonzalogarahuetes
+- @andarbech
+
 ## Monday, 19th of July 2021
 
 ### 10:30 - 12:00
