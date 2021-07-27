@@ -3,7 +3,7 @@ import insertCalendarCells from "./insertCalendarCells.js";
 import setOffsetCalendarCells from "./setOffsetCalendarCells.js";
 import markCurrentDate from "./markCurrentDate.js";
 import displayMonth from "./displayMonth.js";
-import displayCalendarEventTags from "./displayCalendarEventTags.js";
+import displayEventTags from "./displayEventTags.js";
 
 export default function updateCalendar(year, month) {
 	clearCalendarCells();
@@ -11,5 +11,5 @@ export default function updateCalendar(year, month) {
 	setOffsetCalendarCells(year, month);
 	markCurrentDate(year, month);
 	displayMonth(year, month);
-	displayCalendarEventTags(year, month);
+	displayEventTags(year, month);
 }

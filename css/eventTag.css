@@ -1,0 +1,55 @@
+.event-tag {
+	margin: 0.25rem;
+}
+
+.event-tag__hour {
+	font-weight: 500;
+}
+
+.event-tag__title {
+	font-weight: bold;
+}
+
+.event-tag {
+	font-size: 0.8rem;
+
+	padding: 0.25rem;
+	margin: 0.25rem;
+	border-radius: 0.25rem;
+
+	background: black;
+	color: white;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.bg-red {
+	color: white;
+	background-color: red;
+	border-left: 5px solid darkred;
+}
+
+.bg-blue {
+	color: white;
+	background-color: blue;
+	border-left: 5px solid darkblue;
+}
+
+.bg-orange {
+	color: white;
+	background-color: orange;
+	border-left: 5px solid darkorange;
+}
+
+.bg-green {
+	color: white;
+	background-color: green;
+	border-left: 5px solid darkgreen;
+}
+
+.no-display-red-events .event-tag.bg-red,
+.no-display-blue-events .event-tag.bg-blue,
+.no-display-orange-events .event-tag.bg-orange,
+.no-display-green-events .event-tag.bg-green {
+	display: none;
+}

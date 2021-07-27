@@ -1,4 +1,4 @@
-export default function setFormDates(form, inputNameList, defaultDateISO, minimumDateISO, maximumDateISO) {
+export default function setupFormDates(form, inputNameList, defaultDateISO, minimumDateISO, maximumDateISO) {
 	inputNameList.forEach((inputName) => {
 		form.elements[inputName].value = defaultDateISO;
 		if (minimumDateISO) form.elements[inputName].min = minimumDateISO;

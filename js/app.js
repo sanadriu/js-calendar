@@ -1,44 +1,42 @@
-import asideEventsDisplayListener from "./events/asideEventsDisplayListener.js";
-import calendarEventInfoCloseListener from "./events/calendarEventInfoCloseListener.js";
-import calendarEventInfoDisplayListener from "./events/calendarEventInfoDisplayListener.js";
-import calendarEventFormCloseListener from "./events/calendarEventFormCloseListener.js";
-import calendarEventFormDisplayListener from "./events/calendarEventFormDisplayListener.js";
-import calendarEventFormChangeListener from "./events/calendarEventFormChangeListener.js";
-import calendarEventFormSubmitListener from "./events/calendarEventFormSubmitListener.js";
-import calendarEventRemoveListener from "./events/calendarEventRemoveListener.js";
+import changeFormStylesListener from "./events/changeFormStylesListener.js";
+import closeDayInfoListener from "./events/closeDayInfoListener.js";
+import closeEventFormListener from "./events/closeEventFormListener.js";
+import closeEventInfoListener from "./events/closeEventInfoListener.js";
+import displayDayInfoListener from "./events/displayDayInfoListener.js";
+import displayEventFormListener from "./events/displayEventFormListener.js";
+import displayEventInfoListener from "./events/displayEventInfoListener.js";
+import filterEventsByTypeListener from "./events/filterEventsByTypeListener.js";
+import init from "./events/init.js";
+import inputEventFormListener from "./events/inputEventFormListener.js";
+import removeCalendarEventListener from "./events/removeCalendarEventListener.js";
+import saveCalendarEventListener from "./events/saveCalendarEventListener.js";
 import updateCalendarListener from "./events/updateCalendarListener.js";
-import updateCalendar from "./view_modifiers/updateCalendar.js";
+
+changeFormStylesListener();
+closeDayInfoListener();
+closeEventFormListener();
+closeEventInfoListener();
+displayDayInfoListener();
+displayEventFormListener();
+displayEventInfoListener();
+filterEventsByTypeListener();
+init();
+inputEventFormListener();
+removeCalendarEventListener();
+saveCalendarEventListener();
+updateCalendarListener();
+
 import checkReminder from "../js/events/reminder.js";
 import calendarEventNotificationCloseListener from "./events/calendarEventNotificationCloseListener.js";
 import verifyExpiredEvent from "./events/verifyExpiredEvent.js";
 import displayCalendarEventNotification from "./view_modifiers/displayCalendarEventNotification.js";
 
-asideEventsDisplayListener();
-calendarEventFormDisplayListener();
-calendarEventFormCloseListener();
-calendarEventFormChangeListener();
-calendarEventFormSubmitListener();
-calendarEventInfoCloseListener();
-calendarEventInfoDisplayListener();
-calendarEventRemoveListener();
-updateCalendarListener();
 calendarEventNotificationCloseListener();
 
 /* Local and session storage*/
 if (!sessionStorage.getItem("reportedEvents")) {
   sessionStorage.setItem("reportedEvents", JSON.stringify([]));
 }
-
-if (!localStorage.getItem("calendarEvents")) {
-  localStorage.calendarEvents = JSON.stringify([]);
-}
-
-const currentDate = new Date();
-
-sessionStorage.calendarYear = currentDate.getFullYear();
-sessionStorage.calendarMonth = currentDate.getMonth() + 1;
-
-updateCalendar(parseInt(sessionStorage.calendarYear), parseInt(sessionStorage.calendarMonth));
 
 function refreshNotifications() {
   const calendarEvents = JSON.parse(localStorage.getItem("calendarEvents"));
@@ -61,3 +59,5 @@ refreshNotifications();
 
 /* Reminder */
 setInterval(refreshNotifications, 10000);
+
+

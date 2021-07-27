@@ -58,3 +58,19 @@ In this document will be registered the activities developed by the team every d
 - Gonzalo has been developing the modal that shows the event information. It's displayed when an event is clicked, and closable from the modal.
 - Alberto and Andrés have been coding the way to add and remove events in every cell of the calendar.
 - Adrián has been adding an add-event button for when the cell is hovered. Loaded dates for the event form has been modified to display default correct dates, adapted to the user timezone.
+
+### 21:00 - 03:00
+
+- Adrián has integrated the event management developed by Alberto, in the main branch.
+
+## Friday, 23rd of July 2021
+
+### 9:15 - 10:00
+
+- Some bugs produced due to the event integration have been fixed.
+- Alberto will investigate how will work the reminder, Andrés will implement a close option for the aside-events panel, Gonzalo will improve the form design.
+
+### 13:00 - 15:00
+
+- Adrián has improved the design for the event-info modal.
+- Gonzalo has improved the design for the form modal.

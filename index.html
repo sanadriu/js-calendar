@@ -10,10 +10,30 @@
 	</head>
 	<body>
 		<header class="header">
+			<div class="dropdwon">
+				<button data-action="display-event-filter" class="header__btn">
+					<span class="material-icons">filter_alt</span>
+					<span>Filter</span>
+				</button>
+				<ul class="event-filter">
+					<li>
+						<label class="event-filter__label bg-red" for="filter-meeting"><input class="event-form__input-chk" type="checkbox" id="filter-meeting" data-action="filter-event-tags" data-type="Meeting" checked />Meeting</label>
+					</li>
+					<li>
+						<label class="event-filter__label bg-green" for="filter-task"><input class="event-form__input-chk" type="checkbox" id="filter-task" data-action="filter-event-tags" data-type="Task" checked />Task</label>
+					</li>
+					<li>
+						<label class="event-filter__label bg-orange" for="filter-personal"><input class="event-form__input-chk" type="checkbox" id="filter-personal" data-action="filter-event-tags" data-type="Personal" checked />Personal</label>
+					</li>
+					<li>
+						<label class="event-filter__label bg-blue" for="filter-study"><input class="event-form__input-chk" type="checkbox" id="filter-study" data-action="filter-event-tags" data-type="Study" checked />Study</label>
+					</li>
+				</ul>
+			</div>
 			<h1 class="header__title">JS Calendar</h1>
-			<button data-action="display-event-form" class="header__btn">
-				<span data-action="display-event-form" class="material-icons">event</span>
-				<span data-action="display-event-form">Add Event</span>
+			<button data-action="display-event-form set-current-date" class="header__btn">
+				<span class="material-icons">event</span>
+				<span>Add Event</span>
 			</button>
 		</header>
 		<main>
@@ -23,9 +43,13 @@
 				<span class="material-icons calendar__btn" data-action="update-calendar add-month">chevron_right</span>
 			</section>
 			<div class="calendar-wrapper">
-				<aside id="calendar-aside-events" class="calendar__aside-events calendar__aside-events--hidden">
-					<h2 id="calendar-aside-date" class="calendar__aside-date"></h2>
-					<p id="calendar-aside-hint" class="calendar__aside-hint no-display">📭 There are no events for this day. You can create a new one</p>
+				<aside id="day-info" class="day-info day-info--hidden">
+					<header class="day-info__header">
+						<h2 id="day-info-date" class="day-info__date">Easy Peasy Lemon Squeeze</h2>
+						<img class="event__icon-top" src="./assets/img/close.svg" alt="Close Event List" data-action="close-day-info" />
+					</header>
+					<p id="day-info-hint" class="day-info__hint no-display">📭 There are no events for this day. You can create a new one</p>
+					<div id="event-list" class="event-list"></div>
 				</aside>
 				<section id="calendar-grid" class="calendar__grid">
 					<div class="calendar__cell calendar__cell--weekday-name">
@@ -54,16 +78,23 @@
 		</main>
 
 		<template id="template-calendar-cell">
-			<article class="calendar__cell calendar__cell--day" data-action="display-event-list">
-				<img class="cell__add-icon" src="assets/img/add.svg" alt="add-event" data-action="display-event-form" />
+			<article class="calendar__cell calendar__cell--day" data-action="display-day-info" data-day>
+				<img class="cell__add-icon" src="assets/img/add.svg" alt="add-event" data-action="display-event-form set-cell-date" data-day />
 				<h2 class="cell__day-number"></h2>
 			</article>
 		</template>
 
 		<template id="template-event-tag">
-			<article class="event-tag">
+			<article class="event-tag" data-action="display-event-info" data-event>
 				<span class="event-tag__hour"></span>
 				<span class="event-tag__title"></span>
+			</article>
+		</template>
+
+		<template id="template-event-card">
+			<article class="event-card" data-event>
+				<span class="event-card__text"></span>
+				<img class="event__icon-top" src="./assets/img/delete.svg" alt="Remove Event" data-action="remove-event" data-event data-day />
 			</article>
 		</template>
 
@@ -72,7 +103,7 @@
 				<form class="event-form" id="event-form">
 					<span data-action="close-event-form" class="material-icons event-form__icon">cancel</span>
 					<div class="event-form__grid">
-						<h2 class="event-form__title event-form__double-cell">NEW EVENT</h2>
+						<h2 class="event-form__title event-form__double-cell">New event</h2>
 						<label for="title" class="event-form__align-center">Title</label>
 						<input type="text" name="title" class="event-form__input" id="title" />
 						<div data-warning="title" class="event-form__warning no-display">
@@ -89,7 +120,7 @@
 								<li>The date must be the same or later than the current one.</li>
 							</ul>
 						</div>
-						<div class="event-form__double-cell">
+						<div class="event-form__right">
 							<input type="checkbox" class="event-form__input-chk" id="end-date-chk" name="end_date_chk" />
 							<label for="end-date-chk">Set end date.</label>
 						</div>
@@ -101,9 +132,9 @@
 								<li>The end-date date must be after the initial-date and the current one.</li>
 							</ul>
 						</div>
-						<div class="event-form__double-cell">
+						<div class="event-form__right">
 							<input type="checkbox" class="event-form__input-chk" id="reminder-chk" name="reminder_chk" />
-							<label for="reminder-chk">Remind me when this event expires.</label>
+							<label for="reminder-chk">Reminder.</label>
 						</div>
 						<label for="reminder" class="event-form__align-center no-display">Time</label>
 						<select id="reminder" name="reminder" class="event-form__select no-display" disabled>
@@ -117,7 +148,7 @@
 						<textarea class="event-form__textarea" id="description" name="description" placeholder="Insert a description here..."></textarea>
 						<div data-warning="description" class="event-form__warning no-display">Maximum characters allowed is 500.</div>
 						<label for="type" class="event-form__align-center">Type</label>
-						<select id="type" name="type" class="event-form__select">
+						<select data-action="select-type" id="type" name="type" class="event-form__select">
 							<option value="Meeting">Meeting</option>
 							<option value="Task">Task</option>
 							<option value="Personal">Personal</option>
@@ -135,9 +166,9 @@
 		<template id="template-event-info">
 			<section class="modal" id="modal-event-info">
 				<div class="event-info" id="event-info">
-					<header class="event-info__header">
+					<header id="event-info-header" class="event-info__header">
 						<p id="event-info-date" class="event-info__date"></p>
-						<img src="./assets/img/delete.svg" class="event__icon-top" alt="Remove Event" title="Remove Event" data-action="remove-event" />
+						<img src="./assets/img/delete.svg" class="event__icon-top" alt="Remove Event" title="Remove Event" data-action="remove-event close-event-info" data-event />
 						<img src="./assets/img/close.svg" class="event__icon-top" alt="Close Event Information" title="Close Event Information" data-action="close-event-info" />
 					</header>
 					<section class="event-info__section">
@@ -145,8 +176,29 @@
 						<h2 id="event-info-title" class="event-info__title"></h2>
 					</section>
 					<section class="event-info__section">
-						<img src="./assets/img/writing.svg" class="event__icon-left" alt="Calendar" />
-						<p id="event-info-description" class="event-info__description"></p>
+						<img src="./assets/img/notes.svg" class="event__icon-left" alt="Description" />
+						<span id="event-info-description" class="event-info__data"></span>
+					</section>
+					<section class="event-info__section">
+						<img src="./assets/img/clock.svg" class="event__icon-left" alt="Initial Date" />
+						<div class="event-info__data event-info__data--row">
+							<span class="event-info__label">Initial date</span>
+							<span id="event-info-initial-date"></span>
+						</div>
+					</section>
+					<section class="event-info__section">
+						<img src="./assets/img/clock.svg" class="event__icon-left" alt="End date" />
+						<div class="event-info__data event-info__data--row">
+							<span class="event-info__label">End date</span>
+							<span id="event-info-end-date"></span>
+						</div>
+					</section>
+					<section class="event-info__section">
+						<img src="./assets/img/reminder.svg" class="event__icon-left" alt="Reminder" />
+						<div class="event-info__data event-info__data--row">
+							<span class="event-info__label">Reminder</span>
+							<span id="event-info-reminder"></span>
+						</div>
 					</section>
 				</div>
 			</section>
@@ -163,6 +215,14 @@
 					</section>
 				</div>
 			</section>
+		</template>
+
+		<template id="template-notification-card">
+			<article class="notification-card p-1">
+				<h2 class="notification-card__title">ggg</h2>
+				<p class="notification-card__date"><span class="material-icons">event</span><span></span></p>
+				<p class="notification-card__time"><span class="material-icons">schedule</span><span></span></p>
+			</article>
 		</template>
 
 		<script src="js/app.js" type="module"></script>
