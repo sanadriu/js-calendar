@@ -54,3 +54,16 @@
 .header__calendar__month {
 	text-align: center;
 }
+
+@media (max-width: 600px) {
+	.event-text {
+	  display: none;
+	}
+	.header__btn {
+		width: 3rem;
+		min-width: 3rem;
+	}
+	.calendar__grid {
+		padding: 0.5rem !important;
+	}
+  }

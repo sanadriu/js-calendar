@@ -6,7 +6,11 @@
 	gap: 0.25rem;
 	background-color: #f2f2f2;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-	flex-basis: 100%;
+	flex-basis: 75%;
+}
+
+.calendar__grid--full {
+	flex-basis: 100%
 }
 
 .calendar__cell {
@@ -21,6 +25,8 @@
 
 .calendar__cell--weekday-name {
 	line-height: 2rem;
+	white-space: nowrap;
+    overflow-x: hidden;
 }
 
 .calendar__cell--day {

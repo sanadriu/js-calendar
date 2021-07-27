@@ -13,7 +13,7 @@
 			<div class="dropdwon">
 				<button data-action="display-event-filter" class="header__btn">
 					<span class="material-icons">filter_alt</span>
-					<span>Filter</span>
+					<span class="event-text">Filter</span>
 				</button>
 				<ul class="event-filter">
 					<li>
@@ -33,7 +33,7 @@
 			<h1 class="header__title">JS Calendar</h1>
 			<button data-action="display-event-form set-current-date" class="header__btn">
 				<span class="material-icons">event</span>
-				<span>Add Event</span>
+				<span  class="event-text">Add Event</span>
 			</button>
 		</header>
 		<main>
@@ -51,7 +51,7 @@
 					<p id="day-info-hint" class="day-info__hint no-display">📭 There are no events for this day. You can create a new one</p>
 					<div id="event-list" class="event-list"></div>
 				</aside>
-				<section id="calendar-grid" class="calendar__grid">
+				<section id="calendar-grid" class="calendar__grid calendar__grid--full">
 					<div class="calendar__cell calendar__cell--weekday-name">
 						<span class="cell__weekday-name">Monday</span>
 					</div>
