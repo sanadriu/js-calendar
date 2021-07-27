@@ -26,8 +26,6 @@ export default function displayAsideEvents(day) {
 
   const calendarYear = sessionStorage.calendarYear;
   const calendarMonthName = getMonthName(sessionStorage.calendarMonth);
-  const daysSelected = [];
-  daysSelected.push("day.dataset.day");
   //Agregamos la nueva fecha y el icono de cerrar
   let spanDate = document.createElement("span");
   spanDate.textContent = `${calendarMonthName} ${day.dataset.day}, ${calendarYear}`;
