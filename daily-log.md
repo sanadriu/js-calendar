@@ -75,7 +75,7 @@ In this document will be registered the activities developed by the team every d
 - Adrián has improved the design for the event-info modal.
 - Gonzalo has improved the design for the form modal.
 
-### Monday, 26th of July 2021
+## Monday, 26th of July 2021
 
 ### 9:15 - 17:45
 
