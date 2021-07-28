@@ -89,3 +89,9 @@ In this document will be registered the activities developed by the team every d
 - Adrián has developed a feature to filter the tags in the calendar by their type. Also, has added another feature to mark the days in the calendar which are previous to the current date.
 - Gonzalo, Andrés and Adrián has been developing the aside where are displayed the events of the day.
 - Alberto has been developing the remainder. It has been created a new modal to register expirated events, and a feature to mark tasks whose initial date is previous to the current date.
+
+## Tuesday, 27th of July 2021
+
+### 9.15 - 14:00
+
+- Reminder has been integrated
